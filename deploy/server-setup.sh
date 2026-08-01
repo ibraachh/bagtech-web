@@ -37,9 +37,25 @@ with open(p, 'r+') as f:
 PY
 
 # 3) append fresh blocks (http always; ssl only once the cert exists)
+HAS_CERT=0
+[ -f /etc/letsencrypt/live/bagtech.az/fullchain.pem ] && HAS_CERT=1
+
 {
 echo ''
 echo '# >>> bagtech.az http'
+if [ "$HAS_CERT" = "1" ]; then
+# cert present: port 80 only passes ACME renewals and redirects to https
+cat <<'EOF'
+server {
+    listen 80;
+    server_name bagtech.az www.bagtech.az;
+
+    location ^~ /.well-known/acme-challenge/ { proxy_pass http://172.17.0.1:8083; }
+    location / { return 301 https://bagtech.az$request_uri; }
+}
+EOF
+else
+# no cert yet: serve the site over http so certbot webroot can pass
 cat <<'EOF'
 server {
     listen 80;
@@ -57,6 +73,7 @@ server {
     }
 }
 EOF
+fi
 echo '# <<< bagtech.az'
 } >> "$CONF"
 
