@@ -35,6 +35,7 @@ window.I18N = {
     "port.title": "Projects we've built",
     "port.lead": "Platforms we built and run from scratch, partner projects — plus new products in the works.",
     "port.visit": "Visit site",
+    "port.showall": "Show all",
     "port.soon": "In development",
     "port.c.etick": "E-ticketing & access",
     "port.c.bilet": "Ticket marketplace",

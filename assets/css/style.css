@@ -1746,3 +1746,94 @@ a.x-port__card:hover .x-port__logo img,
   .x-team__ava { width: 76px; height: 76px; }
   .x-team__go { width: 44px; height: 44px; }
 }
+
+/* =========================================================
+   MOBILE PASS
+   ========================================================= */
+
+/* show-all: desktop never needs it */
+.x-port__more { display: none; }
+
+@media (max-width: 620px) {
+
+  /* ---- portfolio: 2-up compact grid, collapsed to 8 cards ---- */
+  .x-port__grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .x-port__grid.is-collapsed .x-port__card:nth-child(n + 9) { display: none; }
+
+  .x-port__card { border-radius: 16px; }
+  .x-port__logo { height: 92px; padding: 16px; }
+  .x-port__logo img { max-height: 38px; max-width: 86%; }
+  .x-port__logo b { font-size: 1.05rem; }
+  .x-port__status { top: 8px; right: 8px; padding: 3px 7px; font-size: 8.5px; }
+
+  .x-port__body { padding: 12px 13px 14px; gap: 5px; }
+  .x-port__cat { font-size: 8.5px; letter-spacing: 0.09em; }
+  .x-port__card h3 { font-size: 0.98rem; }
+  .x-port__link { margin-top: 7px; font-size: 10.5px; gap: 6px; }
+  .x-port__link svg { width: 11px; height: 11px; }
+  .x-port__soon { margin-top: 7px; padding: 3px 8px; font-size: 9.5px; }
+  .x-port__sublinks { gap: 5px; margin-top: 7px; }
+  .x-port__sublinks a { font-size: 10px; gap: 5px; overflow-wrap: anywhere; }
+  .x-port__sublinks svg { width: 10px; height: 10px; }
+
+  /* text-mark card fits the small tile */
+  .x-port__logo--mono { padding: 12px; }
+  .x-mono { gap: 9px; }
+  .x-mono__mark { width: 36px; height: 36px; border-radius: 9px; font-size: 11px; }
+  .x-mono__wm b { font-size: 8px; letter-spacing: 0.14em; }
+  .x-mono__wm i { font-size: 0.78rem; }
+
+  .x-port__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin: 22px auto 0;
+    padding: 13px 26px;
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+    background: transparent;
+    font-family: var(--font-display);
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .x-port__more svg { width: 15px; height: 15px; }
+  .x-port__more[hidden] { display: none; }
+
+  /* ---- solutions list breathes tighter ---- */
+  .x-item { padding-block: 22px; gap: 14px; }
+  .x-item__body h3 { font-size: 1.15rem; }
+  .x-item__tags span { font-size: 10.5px; padding: 4px 9px; }
+
+  /* ---- aurora: lighter effect on small GPUs ---- */
+  .aurora::before, .aurora::after { filter: blur(70px); opacity: 0.3; }
+}
+
+/* ---- nav: drop the CTA on narrow screens (contact lives in the menu) ---- */
+@media (max-width: 520px) {
+  .nav__right .btn { display: none; }
+  .nav__inner { gap: 14px; height: 78px; }
+  .brand img { height: 30px; }
+  .nav__links.is-open { top: 78px; }
+  .hero { padding-top: 104px; }
+}
+
+/* ---- founders row on small phones ---- */
+@media (max-width: 480px) {
+  .x-team__ava { width: 62px; height: 62px; }
+  .x-team__orbit { inset: -8px; }
+  .x-team__who h3 { font-size: 1.15rem; }
+  .x-team__role { font-size: 10.5px; }
+  .x-team__go { width: 40px; height: 40px; }
+  .x-team__go svg { width: 15px; height: 15px; }
+  .x-team__row { gap: 14px; }
+}
+
+/* ---- iOS: inputs under 16px trigger viewport zoom on focus ---- */
+@media (max-width: 680px) {
+  .field input, .field textarea, .field select { font-size: 16px; }
+  .x-cta__head h2 { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .x-foot__about { font-size: 13.5px; }
+}

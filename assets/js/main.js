@@ -241,6 +241,20 @@
     paintTl();
   }
 
+  /* ---------- Portfolio: mobile "show all" ---------- */
+  const portGrid = $(".x-port__grid");
+  const portMore = $("#portMore");
+  if (portGrid && portMore) {
+    portGrid.classList.add("is-collapsed");
+    const hidden = portGrid.querySelectorAll(".x-port__card").length - 8;
+    if (hidden > 0) portMore.querySelector("span").textContent += ` (+${hidden})`;
+    portMore.addEventListener("click", () => {
+      portGrid.classList.remove("is-collapsed");
+      portMore.hidden = true;
+      dispatchEvent(new Event("scroll"));   // let the fx/reveal engines re-sweep
+    });
+  }
+
   /* ---------- Partners marquee ----------
      Clone the set until the track is at least twice the viewport, then shift
      by exactly one copy's width. Measuring in pixels (rather than a -50%
