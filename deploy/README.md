@@ -1,31 +1,25 @@
-# Deploy — bagtech.az
+# Deploy — bagtech.az (docker topology)
 
-Server: 76.13.120.8 · static site, nginx. Everything below is **additive**:
-its own directory (`/var/www/bagtech.az`) and its own nginx file. Existing
-projects on the server are not touched.
+Ports 80/443 are owned by the `eticksystem-nginx` container. bagtech.az is
+served by its own tiny container (`bagtech-static`, bound to 172.17.0.1:8083
+only) and proxied from eticksystem-nginx — same pattern as `shamil-static`.
+Nothing belonging to other projects is modified; the proxy config lives in a
+marker-delimited block inside the host-mounted
+`/opt/eticksystem-app/nginx/nginx.conf` (backed up on every run, validated
+with `nginx -t` before reload, auto-restored on failure).
 
-## First-time setup (run on the server)
-
+## First-time / repair
 ```bash
-# 1. get the site
-sudo git clone https://github.com/ibraachh/bagtech-web.git /var/www/bagtech.az
-
-# 2. nginx site (separate file; nothing shared is modified)
-sudo cp /var/www/bagtech.az/deploy/nginx/bagtech.az.conf /etc/nginx/sites-available/bagtech.az
-sudo ln -sf /etc/nginx/sites-available/bagtech.az /etc/nginx/sites-enabled/bagtech.az
-#   (if the server uses conf.d instead of sites-*: copy to /etc/nginx/conf.d/bagtech.az.conf)
-
-# 3. validate BEFORE reload — protects every other site on the box
-sudo nginx -t && sudo systemctl reload nginx
-
-# 4. HTTPS (after http://bagtech.az answers)
-sudo certbot --nginx -d bagtech.az -d www.bagtech.az
+sudo /var/www/bagtech.az/deploy/deploy.sh          # pull latest
+sudo bash /var/www/bagtech.az/deploy/server-setup.sh
 ```
 
-## Updating to the latest version
+## HTTPS (once HTTP answers)
+```bash
+sudo bash /var/www/bagtech.az/deploy/ssl-setup.sh
+```
 
+## Updates (content only — nothing restarts)
 ```bash
 sudo /var/www/bagtech.az/deploy/deploy.sh
 ```
-
-That's it — the script pulls `origin/main` and prints the deployed commit.
