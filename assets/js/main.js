@@ -250,13 +250,15 @@
   if (heroVisual && !reduced) {
     // x is a translate fraction of vw (container sits on the right, so
     // negative x moves the orb left); y in px; s = scale; o = opacity
+    // x — translate as a fraction of vw; yv — fraction of vh; s — scale; o — opacity
     const STATIONS = [
-      { sel: "#top",       x: 0,     y: 0,   s: 1,    o: 1    },
-      { sel: "#solutions", x: -0.62, y: 24,  s: 0.32, o: 0.55 },
-      { sel: "#process",   x: -0.02, y: -30, s: 0.30, o: 0.55 },
-      { sel: "#portfolio", x: -0.75, y: 0,   s: 0.34, o: 0.5  },
-      { sel: "#team",      x: -0.05, y: 20,  s: 0.30, o: 0.55 },
-      { sel: "#contact",   x: -0.62, y: 0,   s: 0.34, o: 0.55 },
+      { sel: "#top",       x: 0,     yv: 0,     s: 1,    o: 1    },
+      { sel: "#solutions", x: -0.62, yv: 0.24,  s: 0.36, o: 0.55 }, // bottom-left void under the sticky head
+      { sel: "#process",   x: -0.04, yv: 0.02,  s: 0.5,  o: 0.6  }, // big, filling the empty right half
+      { sel: "#portfolio", x: 0.27,  yv: -0.04, s: 0.26, o: 0.6  }, // peeks from the right edge behind cards
+      { sel: "#team",      x: -0.06, yv: 0.05,  s: 0.34, o: 0.55 }, // the void between names and CEO/CTO
+      { sel: "#contact",   x: -0.62, yv: 0,     s: 0.34, o: 0.55 },
+      { sel: ".x-foot",    x: -0.16, yv: -0.12, s: 0.26, o: 0.65 }, // beside the big footer wordmark
     ];
 
     const lerp = (a, b, t) => a + (b - a) * t;
@@ -284,14 +286,16 @@
         if (scrollY >= pts[i].at) { a = pts[i]; b = pts[i + 1] || null; }
       }
 
-      let x = a.x, y = a.y, sc = a.s, op = a.o;
+      const ay = (a.yv || 0) * vh;
+      let x = a.x, y = ay, sc = a.s, op = a.o;
       if (b) {
+        const by = (b.yv || 0) * vh;
         const p = (scrollY - a.at) / (b.at - a.at);
-        // park for the first 55% of the section, travel during the last 45%
-        const pt = Math.min(Math.max((p - 0.55) / 0.45, 0), 1);
+        // park for the first 45%, travel during 45–85%, settled before the next section
+        const pt = Math.min(Math.max((p - 0.45) / 0.4, 0), 1);
         const e = pt * pt * (3 - 2 * pt);            // smoothstep
         x = lerp(a.x, b.x, e);
-        y = lerp(a.y, b.y, e);
+        y = lerp(ay, by, e);
         sc = lerp(a.s, b.s, e);
         op = lerp(a.o, b.o, e);
       }

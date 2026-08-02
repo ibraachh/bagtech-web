@@ -1901,3 +1901,7 @@ a.x-port__card:hover .x-port__logo img,
   /* once shrunk it must never block clicks and sits behind content */
   .hero__visual.is-mini { pointer-events: none; z-index: 0; }
 }
+
+/* partners strip must paint above the travelling sphere (it was the only
+   non-positioned block, so the fixed orb slid over the logos) */
+.x-partners { position: relative; z-index: 2; }
