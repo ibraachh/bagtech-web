@@ -1837,3 +1837,67 @@ a.x-port__card:hover .x-port__logo img,
   .x-cta__head h2 { font-size: clamp(2rem, 9vw, 2.6rem); }
   .x-foot__about { font-size: 13.5px; }
 }
+
+/* =========================================================
+   COLOR PASS — lift the all-black feel, stay in the blue family
+   ========================================================= */
+
+/* big headings: subtle white → ice-blue gradient */
+.h-xl, .h-lg, .x-cta__head h2 {
+  background: linear-gradient(118deg, #fafafa 42%, #b7cfff 85%, #7fa8ff 115%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* eyebrows carry the accent now */
+.eyebrow { color: rgba(143, 184, 255, 0.8); }
+.eyebrow::before { background: linear-gradient(90deg, var(--accent), transparent); }
+
+/* primary buttons: brand-blue gradient instead of plain white */
+.btn-primary {
+  background: linear-gradient(135deg, #aecaff, #5b8dff);
+  border-color: transparent;
+  color: #06060c;
+}
+.btn-primary:hover { background: linear-gradient(135deg, #c2d7ff, #6f9bff); border-color: transparent; }
+
+/* solutions list: numbers, tags and arrows tinted */
+.x-item__no { color: rgba(143, 184, 255, 0.75); }
+.x-item__tags span { border-color: rgba(143, 184, 255, 0.26); color: #9db8e5; }
+.x-item__arrow { border-color: rgba(143, 184, 255, 0.4); }
+.x-item__arrow svg { stroke: var(--accent); }
+
+/* process: tinted duration chips */
+.x-step__meta {
+  border-color: rgba(143, 184, 255, 0.3);
+  background: rgba(143, 184, 255, 0.07);
+  color: #a9c2f0;
+}
+
+/* footer contact links pick up the accent on hover already; tint the socials */
+.socials a:hover { border-color: rgba(143, 184, 255, 0.5); }
+.socials a:hover svg { stroke: var(--accent); }
+
+/* stronger colour wash behind sections (desktop only — mobile stays light) */
+@media (min-width: 621px) {
+  .aurora::before { opacity: 0.62; }
+  .aurora::after  { opacity: 0.5; }
+}
+
+/* =========================================================
+   SPHERE COMPANION — shrinks and travels with the scroll
+   ========================================================= */
+@media (min-width: 1101px) {
+  .hero__visual {
+    position: fixed;          /* escapes the hero, follows the viewport */
+    top: 0;
+    right: -8%;
+    width: 62%;
+    height: 100svh;
+    transform-origin: center;
+    will-change: transform, opacity;
+  }
+  /* once shrunk it must never block clicks and sits behind content */
+  .hero__visual.is-mini { pointer-events: none; z-index: 0; }
+}

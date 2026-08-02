@@ -241,6 +241,80 @@
     paintTl();
   }
 
+  /* ---------- Sphere companion ----------
+     Desktop only. The sphere has a parking spot per section: it holds that
+     spot while the section scrolls by, then glides to the next one during the
+     last stretch of the section — так он "стоит на месте" и переезжает.
+     Runs sync in hidden tabs (no frames to wait for). */
+  const heroVisual = $(".hero__visual");
+  if (heroVisual && !reduced) {
+    // x is a translate fraction of vw (container sits on the right, so
+    // negative x moves the orb left); y in px; s = scale; o = opacity
+    const STATIONS = [
+      { sel: "#top",       x: 0,     y: 0,   s: 1,    o: 1    },
+      { sel: "#solutions", x: -0.62, y: 24,  s: 0.32, o: 0.55 },
+      { sel: "#process",   x: -0.02, y: -30, s: 0.30, o: 0.55 },
+      { sel: "#portfolio", x: -0.75, y: 0,   s: 0.34, o: 0.5  },
+      { sel: "#team",      x: -0.05, y: 20,  s: 0.30, o: 0.55 },
+      { sel: "#contact",   x: -0.62, y: 0,   s: 0.34, o: 0.55 },
+    ];
+
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    const followFx = () => {
+      if (!matchMedia("(min-width: 1101px)").matches) {
+        heroVisual.style.transform = "";
+        heroVisual.style.opacity = "";
+        heroVisual.classList.remove("is-mini");
+        return;
+      }
+      const vh = innerHeight, vw = innerWidth;
+
+      // resolve anchors fresh — section offsets move with content/layout
+      const pts = STATIONS
+        .map((st) => {
+          const el = document.querySelector(st.sel);
+          return el ? { ...st, at: Math.max(0, el.offsetTop - vh * 0.2) } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.at - b.at);
+
+      let a = pts[0], b = null;
+      for (let i = 0; i < pts.length; i++) {
+        if (scrollY >= pts[i].at) { a = pts[i]; b = pts[i + 1] || null; }
+      }
+
+      let x = a.x, y = a.y, sc = a.s, op = a.o;
+      if (b) {
+        const p = (scrollY - a.at) / (b.at - a.at);
+        // park for the first 55% of the section, travel during the last 45%
+        const pt = Math.min(Math.max((p - 0.55) / 0.45, 0), 1);
+        const e = pt * pt * (3 - 2 * pt);            // smoothstep
+        x = lerp(a.x, b.x, e);
+        y = lerp(a.y, b.y, e);
+        sc = lerp(a.s, b.s, e);
+        op = lerp(a.o, b.o, e);
+      }
+
+      heroVisual.style.transform =
+        `translate(${(x * vw).toFixed(1)}px, ${y.toFixed(1)}px) scale(${sc.toFixed(4)})`;
+      heroVisual.style.opacity = op.toFixed(3);
+      heroVisual.classList.toggle("is-mini", sc < 0.97);
+    };
+
+    let followPending = false;
+    const onFollow = () => {
+      if (document.hidden) { followFx(); return; }
+      if (followPending) return;
+      followPending = true;
+      requestAnimationFrame(() => { followFx(); followPending = false; });
+    };
+    addEventListener("scroll", onFollow, { passive: true });
+    addEventListener("resize", onFollow, { passive: true });
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) followFx(); });
+    followFx();
+  }
+
   /* ---------- Portfolio: mobile "show all" ---------- */
   const portGrid = $(".x-port__grid");
   const portMore = $("#portMore");
