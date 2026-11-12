@@ -1016,19 +1016,6 @@ section { position: relative; padding-block: clamp(76px, 9.5vw, 150px); }
   font-size: 13px;
   color: var(--muted);
 }
-.socials { display: flex; gap: 8px; }
-.socials a {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  transition: 0.25s var(--ease);
-}
-.socials a:hover { border-color: var(--line-strong); background: rgba(255, 255, 255, 0.05); }
-.socials svg { width: 14px; height: 14px; stroke: var(--muted); fill: none; }
-.socials a:hover svg { stroke: var(--ink); }
 
 /* ---------- Scroll reveal ----------
    Choreographed entrances. Elements are only hidden once JS has confirmed it
@@ -1651,7 +1638,20 @@ a.x-port__card:hover .x-port__logo img,
   .x-foot .x-foot__grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
-  .x-foot .x-foot__grid { grid-template-columns: 1fr; }
+  /* phones: services on the left, projects + company stacked on the right, contacts in one row */
+  .x-foot { padding-block: 48px 26px; }
+  .x-foot__top { gap: 14px; padding-bottom: 26px; margin-bottom: 26px; }
+  .x-foot .x-foot__grid { grid-template-columns: 1fr 1fr; column-gap: 18px; row-gap: 26px; }
+  .x-foot .footer__col:nth-child(1) { grid-row: span 2; }
+  .x-foot .footer__col:nth-child(4) {
+    grid-column: 1 / -1;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 18px;
+  }
+  .x-foot .footer__col:nth-child(4) h4 { flex-basis: 100%; }
+  .x-foot .footer__col h4 { margin-bottom: 8px; }
+  .x-foot .footer__col a { padding-block: 4px; font-size: 13.5px; line-height: 1.35; }
+  .x-foot .footer__col span { font-size: 13.5px; color: var(--muted); }
+  .x-foot .footer__bottom { margin-top: 28px; padding-top: 18px; font-size: 12px; }
 }
 
 /* =========================================================
@@ -1773,9 +1773,6 @@ a.x-port__card:hover .x-port__logo img,
   color: #a9c2f0;
 }
 
-/* footer contact links pick up the accent on hover already; tint the socials */
-.socials a:hover { border-color: rgba(143, 184, 255, 0.5); }
-.socials a:hover svg { stroke: var(--accent); }
 
 /* stronger colour wash behind sections (desktop only — mobile stays light) */
 @media (min-width: 621px) {
