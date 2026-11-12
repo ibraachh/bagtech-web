@@ -76,6 +76,7 @@
     navInd.style.transform = `translateX(${a.offsetLeft}px)`;
   };
   const setNavActive = (a) => { if (a !== navActive) { navActive = a; placeInd(); } };
+  setNavActive($("#navLinks a.is-active"));       // service pages mark "Həllər" in the HTML
   const navLinksEl = $("#navLinks");
   navLinksEl.addEventListener("pointerover", (e) => {
     const a = e.target.closest("a");
@@ -1078,6 +1079,16 @@
 
     $$("#lang button").forEach((b) => b.classList.toggle("is-active", b.dataset.lang === next));
     renderEco();
+
+    // internal links keep the chosen language (?lang=en) from page to page
+    $$('a[href^="/"]').forEach((a) => {
+      if (a.getAttribute("href").startsWith("//")) return;
+      if (!a.dataset.href) a.dataset.href = a.getAttribute("href");
+      const u = new URL(a.dataset.href, location.origin);
+      if (next === "en") u.searchParams.set("lang", "en");
+      else u.searchParams.delete("lang");
+      a.setAttribute("href", u.pathname + u.search + u.hash);
+    });
   };
 
   $$("#lang button").forEach((b) => {

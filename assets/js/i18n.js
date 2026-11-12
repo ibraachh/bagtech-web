@@ -13,6 +13,7 @@ window.I18N = {
     "nav.solutions": "Solutions",
     "nav.process": "How we work",
     "nav.eco": "Portfolio",
+    "nav.blog": "Blog",
     "nav.contact": "Contact",
     "nav.cta": "Get in touch",
 
