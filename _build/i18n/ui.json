@@ -1,13 +1,13 @@
 {
   "home.title": {
-    "az": "Bakıda IT şirkəti — proqram təminatı, saytlar, AI | BagTech",
-    "en": "IT company in Baku, Azerbaijan — software, web, AI | BagTech",
-    "ru": "IT-компания в Баку — разработка ПО, сайтов, AI | BagTech"
+    "az": "BagTech — biznes üçün IT həlləri",
+    "en": "BagTech — IT solutions for business",
+    "ru": "BagTech — IT-решения для бизнеса"
   },
   "home.desc": {
-    "az": "BagTech — Bakıda IT şirkəti: fərdi proqram təminatı, mobil tətbiqlər, saytların hazırlanması, süni intellekt, kibertəhlükəsizlik, CRM/ERP və IT autsorsinq.",
-    "en": "BagTech is an IT company in Baku, Azerbaijan: custom software, mobile apps, web development, AI solutions, cybersecurity, CRM/ERP and IT outsourcing.",
-    "ru": "BagTech — IT-компания в Баку: разработка ПО и мобильных приложений, создание сайтов, искусственный интеллект, кибербезопасность, CRM/ERP, IT-аутсорсинг."
+    "az": "Proqram təminatı, mobil tətbiqlər, saytlar, süni intellekt, kibertəhlükəsizlik və CRM/ERP. Layihəni ideyadan istifadəyə verilənədək aparırıq, sonra da dəstəkləyirik.",
+    "en": "Custom software, mobile apps, websites, AI, cybersecurity and CRM/ERP. We take each project from idea to launch and keep supporting it afterwards.",
+    "ru": "Разработка ПО, мобильные приложения, сайты, искусственный интеллект, кибербезопасность и CRM/ERP. Ведём проект от идеи до запуска и поддерживаем после."
   },
   "org.desc": {
     "az": "BagTech — Bakıda yerləşən IT şirkəti. 2018-ci ildən biznes üçün proqram təminatı, mobil tətbiqlər, saytlar, süni intellekt həlləri, kibertəhlükəsizlik, CRM/ERP sistemləri, sistem inteqrasiyası, IT infrastruktur və IT autsorsinq xidmətləri göstərir.",

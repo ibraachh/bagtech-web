@@ -29,8 +29,8 @@
 
 ## Other languages
 
-- [Azərbaycanca](https://bagtech.az/): BagTech — Bakıda IT şirkəti: fərdi proqram təminatı, mobil tətbiqlər, saytların hazırlanması, süni intellekt, kibertəhlükəsizlik, CRM/ERP və IT autsorsinq.
-- [Русский](https://bagtech.az/ru/): BagTech — IT-компания в Баку: разработка ПО и мобильных приложений, создание сайтов, искусственный интеллект, кибербезопасность, CRM/ERP, IT-аутсорсинг.
+- [Azərbaycanca](https://bagtech.az/): Proqram təminatı, mobil tətbiqlər, saytlar, süni intellekt, kibertəhlükəsizlik və CRM/ERP. Layihəni ideyadan istifadəyə verilənədək aparırıq, sonra da dəstəkləyirik.
+- [Русский](https://bagtech.az/ru/): Разработка ПО, мобильные приложения, сайты, искусственный интеллект, кибербезопасность и CRM/ERP. Ведём проект от идеи до запуска и поддерживаем после.
 
 ## Optional
 
