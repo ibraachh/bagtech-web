@@ -1,0 +1,53 @@
+<!--
+{
+  "title": "How to stop copying data by hand: an introduction to system integration",
+  "seo_title": "What is system integration? APIs and webhooks explained | BagTech",
+  "desc": "An order comes in from the website, the accountant retypes it, the warehouse keeps its own spreadsheet. How APIs, webhooks and sound design change that picture.",
+  "lead": "In many companies the same data is entered by hand several times: on the website, in the CRM, in the accounting software and in the stock spreadsheet. It wastes time and it is the main source of errors. System integration removes that repetition.",
+  "photo_alt": "Neatly connected yellow fibre-optic cables in a server rack"
+}
+-->
+<h2>What is the problem?</h2>
+<p>Every manual copy means lost time and a chance of error. An order amount is typed in wrong, a payment status is not updated, the stock balance does not match reality. As a result, decisions are based on outdated or incorrect data.</p>
+<h2>APIs and webhooks in plain language</h2>
+<ul>
+<li>An <b>API</b> is an agreed door through which one system can "ask" another: "what is the status of this order?", "create a new customer".</li>
+<li>A <b>webhook</b> works the other way round: the system itself sends the news, "the payment has just been completed successfully". The other system reacts immediately and has no need to keep checking.</li>
+<li><b>SSO</b> is signing in to all internal systems with a single account.</li>
+</ul>
+<h2>Four rules of a reliable integration</h2>
+<ol>
+<li><b>Everything is documented.</b> Which data is transferred, in what format and when must be written down, so that connecting a new partner is easy.</li>
+<li><b>Failed requests are retried.</b> The network can drop; the system must allow for this and send the request again.</li>
+<li><b>A repeated request does not produce a double result.</b> Even if the same payment notification arrives twice, the order must count as paid once. This is called idempotency.</li>
+<li><b>Everything is monitored.</b> Errors are logged and alerts arrive in time: the problem is visible before the customer calls.</li>
+</ol>
+<blockquote>A good integration is invisible: the data is simply where it is needed, at the moment it is needed.</blockquote>
+<h2>Example: from order to invoice</h2>
+<p>After integration, the path of a typical online order looks like this, and at no step does a person retype the data:</p>
+<ol>
+<li>The customer places an order on the website and pays by card.</li>
+<li>The payment system sends a webhook with the message "payment successful".</li>
+<li>The order is added automatically to the customer's history in the CRM.</li>
+<li>The inventory system reserves the product and updates the stock balance.</li>
+<li>An invoice is created in the accounting software, and a confirmation email goes to the customer.</li>
+</ol>
+<h2>Ready-made connector or custom integration?</h2>
+<p>Ready-made connectors exist for many popular services, and for simple scenarios they are enough. But when data has to be transformed by complex rules, when local payment systems or government portals are being connected, or when the flow is critical to the business, a custom integration is more reliable and easier to manage: you see the errors and you stay in control.</p>
+<h2>Where to start?</h2>
+<p>Make a list of the repetitive operations that take the most time: who copies which data, from which system to which, and how many times a day. The flow that requires the most manual work is the best candidate for the first integration. Usually this means connecting website orders and payments to the accounting or inventory system.</p>
+<p>We do this work as part of our <a href="/xidmetler/sistem-inteqrasiyasi/">system integration</a> service. On the link between CRM and ERP, see our article <a href="/blog/crm-yoxsa-erp/">“CRM or ERP”</a>.</p>
+<div class="callout"><p class="callout__title">In short</p><ul>
+<li>Manual copying wastes time and is a source of errors.</li>
+<li>An API is for requests; a webhook is for notifications.</li>
+<li>Documentation, retries, idempotency and monitoring are the basis of reliability.</li>
+<li>Start with the flow that requires the most manual work.</li>
+</ul></div>
+
+<!--faq-->
+<h3>What is system integration?</h3>
+<p>System integration is connecting separate applications to one another so that they exchange data automatically; as a result, the same data is no longer entered by hand several times.</p>
+<h3>What is an API?</h3>
+<p>An API is an agreed interface through which one program requests data from another or sends it a command.</p>
+<h3>What is idempotency?</h3>
+<p>Idempotency means that sending the same request again does not change the result: for example, even if a payment notification arrives twice, the order counts as paid once.</p>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is system integration? APIs and webhooks explained | BagTech</title>
+<meta name="description" content="An order comes in from the website, the accountant retypes it, the warehouse keeps its own spreadsheet. How APIs, webhooks and sound design change that picture.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://bagtech.az/en/blog/system-integration-introduction/">
+<link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/">
+<link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/system-integration-introduction/">
+<link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/sistemnaya-integraciya-vvedenie/">
+<link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/">
+<meta name="theme-color" content="#050508">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BagTech">
+<meta property="og:title" content="What is system integration? APIs and webhooks explained | BagTech">
+<meta property="og:description" content="An order comes in from the website, the accountant retypes it, the warehouse keeps its own spreadsheet. How APIs, webhooks and sound design change that picture.">
+<meta property="og:image" content="https://bagtech.az/assets/img/blog/sistem-inteqrasiyasi-giris-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="az_AZ">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:url" content="https://bagtech.az/en/blog/system-integration-introduction/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is system integration? APIs and webhooks explained | BagTech">
+<meta name="twitter:description" content="An order comes in from the website, the accountant retypes it, the warehouse keeps its own spreadsheet. How APIs, webhooks and sound design change that picture.">
+<meta name="twitter:image" content="https://bagtech.az/assets/img/blog/sistem-inteqrasiyasi-giris-og.jpg">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon.png?v=1785582282">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1785582282">
+<link rel="alternate" type="application/rss+xml" title="BagTech — Blog" href="/en/blog/rss.xml">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}html[lang="ru"]{--font-display:"Onest","Space Grotesk",-apple-system,BlinkMacSystemFont,sans-serif}</style>
+<link rel="stylesheet" href="/assets/css/style.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/service.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/blog.css?v=a1deed577d">
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","legalName":"BagTech MMC","url":"https://bagtech.az/en/","logo":"https://bagtech.az/assets/img/logo-light.png","image":"https://bagtech.az/assets/img/og.jpg?v=2","description":"BagTech is an IT company based in Baku, Azerbaijan. Since 2018 it has delivered custom software, mobile apps, websites, AI solutions, cybersecurity, CRM/ERP systems, system integration, IT infrastructure and IT outsourcing for businesses.","foundingDate":"2018","vatID":"1310001931","email":"info@bagtech.az","telephone":"+994505250555","address":{"@type":"PostalAddress","addressLocality":"Baku","addressCountry":"AZ"},"areaServed":{"@type":"Country","name":"Azerbaijan"},"knowsLanguage":["az","en","ru"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+994505250555","email":"info@bagtech.az","availableLanguage":["az","en","ru"]},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom software development","url":"https://bagtech.az/en/services/custom-software-development/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile app development","url":"https://bagtech.az/en/services/mobile-app-development/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI and smart solutions","url":"https://bagtech.az/en/services/ai-solutions/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Cybersecurity services","url":"https://bagtech.az/en/services/cybersecurity/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CRM and ERP systems","url":"https://bagtech.az/en/services/crm-erp-systems/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"System integration","url":"https://bagtech.az/en/services/system-integration/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website development and e-commerce","url":"https://bagtech.az/en/services/web-development/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT infrastructure and cloud","url":"https://bagtech.az/en/services/it-infrastructure/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT outsourcing and technical support","url":"https://bagtech.az/en/services/it-outsourcing/"}}]}},{"@type":"WebSite","@id":"https://bagtech.az/#site","url":"https://bagtech.az/","name":"BagTech","inLanguage":["az","en","ru"],"publisher":{"@id":"https://bagtech.az/#org"}},{"@type":"BlogPosting","@id":"https://bagtech.az/en/blog/system-integration-introduction/#post","headline":"How to stop copying data by hand: an introduction to system integration","description":"An order comes in from the website, the accountant retypes it, the warehouse keeps its own spreadsheet. How APIs, webhooks and sound design change that picture.","url":"https://bagtech.az/en/blog/system-integration-introduction/","mainEntityOfPage":"https://bagtech.az/en/blog/system-integration-introduction/","datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"en","image":"https://bagtech.az/assets/img/blog/sistem-inteqrasiyasi-giris-og.jpg","articleSection":"System integration","wordCount":518,"author":{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","url":"https://bagtech.az/"},"publisher":{"@id":"https://bagtech.az/#org"},"about":{"@id":"https://bagtech.az/en/services/system-integration/#service"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bagtech.az/en/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://bagtech.az/en/blog/"},{"@type":"ListItem","position":3,"name":"How to stop copying data by hand: an introduction to system integration","item":"https://bagtech.az/en/blog/system-integration-introduction/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is system integration?","acceptedAnswer":{"@type":"Answer","text":"System integration is connecting separate applications to one another so that they exchange data automatically; as a result, the same data is no longer entered by hand several times."}},{"@type":"Question","name":"What is an API?","acceptedAnswer":{"@type":"Answer","text":"An API is an agreed interface through which one program requests data from another or sends it a command."}},{"@type":"Question","name":"What is idempotency?","acceptedAnswer":{"@type":"Answer","text":"Idempotency means that sending the same request again does not change the result: for example, even if a payment notification arrives twice, the order counts as paid once."}}]}]}</script>
+</head>
+<body class="blog-page">
+<a class="skip" href="#main">Skip to content</a>
+<canvas class="signal" id="signal" aria-hidden="true"></canvas>
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a href="/en/" class="brand"><img src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></a>
+
+    <nav class="nav__links" id="navLinks">
+      <span class="nav__ind" aria-hidden="true"></span>
+      <a href="/en/#solutions">Solutions</a>
+      <a href="/en/#process">How we work</a>
+      <a href="/en/#portfolio">Portfolio</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/#contact">Contact</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="lang" id="lang"><a href="/blog/sistem-inteqrasiyasi-giris/" hreflang="az" lang="az">AZ</a><span>/</span><a href="/en/blog/system-integration-introduction/" hreflang="en" lang="en" class="is-active" aria-current="true">EN</a><span>/</span><a href="/ru/blog/sistemnaya-integraciya-vvedenie/" hreflang="ru" lang="ru">RU</a></div>
+      <a href="/en/#contact" class="btn btn-primary"><span>Get in touch</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu"><i></i><i></i></button>
+    </div>
+    <i class="nav__progress" aria-hidden="true"></i>
+  </div>
+</header>
+<main id="main">
+<section class="post-hero" id="top">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="/en/">Home</a><i></i><a href="/en/blog/">Blog</a><i></i><b>System integration</b></nav>
+    <h1>How to stop copying data by hand: an introduction to system integration</h1>
+    <p class="post-meta"><time datetime="2026-11-12">November 12, 2026</time><i></i><span>3 min read</span><i></i><span>BagTech team</span></p>
+    <p class="lead">In many companies the same data is entered by hand several times: on the website, in the CRM, in the accounting software and in the stock spreadsheet. It wastes time and it is the main source of errors. System integration removes that repetition.</p>
+    <figure class="post-photo">
+      <img src="/assets/img/blog/sistem-inteqrasiyasi-giris-1600.webp" srcset="/assets/img/blog/sistem-inteqrasiyasi-giris-800.webp 800w, /assets/img/blog/sistem-inteqrasiyasi-giris-1600.webp 1600w" sizes="(max-width: 1400px) 100vw, 1300px" alt="Neatly connected yellow fibre-optic cables in a server rack" width="1600" height="1142" fetchpriority="high" decoding="async">
+      <figcaption>Photo: <a href="https://unsplash.com/@albertstoynov?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Albert Stoynov</a> / <a href="https://unsplash.com/?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="shell post-layout">
+  <aside class="toc" aria-label="Contents"><p class="toc__title">Contents</p><ol></ol></aside>
+  <div class="post-main">
+    <article class="post-body">
+<h2>What is the problem?</h2>
+<p>Every manual copy means lost time and a chance of error. An order amount is typed in wrong, a payment status is not updated, the stock balance does not match reality. As a result, decisions are based on outdated or incorrect data.</p>
+<h2>APIs and webhooks in plain language</h2>
+<ul>
+<li>An <b>API</b> is an agreed door through which one system can "ask" another: "what is the status of this order?", "create a new customer".</li>
+<li>A <b>webhook</b> works the other way round: the system itself sends the news, "the payment has just been completed successfully". The other system reacts immediately and has no need to keep checking.</li>
+<li><b>SSO</b> is signing in to all internal systems with a single account.</li>
+</ul>
+<h2>Four rules of a reliable integration</h2>
+<ol>
+<li><b>Everything is documented.</b> Which data is transferred, in what format and when must be written down, so that connecting a new partner is easy.</li>
+<li><b>Failed requests are retried.</b> The network can drop; the system must allow for this and send the request again.</li>
+<li><b>A repeated request does not produce a double result.</b> Even if the same payment notification arrives twice, the order must count as paid once. This is called idempotency.</li>
+<li><b>Everything is monitored.</b> Errors are logged and alerts arrive in time: the problem is visible before the customer calls.</li>
+</ol>
+<blockquote>A good integration is invisible: the data is simply where it is needed, at the moment it is needed.</blockquote>
+<h2>Example: from order to invoice</h2>
+<p>After integration, the path of a typical online order looks like this, and at no step does a person retype the data:</p>
+<ol>
+<li>The customer places an order on the website and pays by card.</li>
+<li>The payment system sends a webhook with the message "payment successful".</li>
+<li>The order is added automatically to the customer's history in the CRM.</li>
+<li>The inventory system reserves the product and updates the stock balance.</li>
+<li>An invoice is created in the accounting software, and a confirmation email goes to the customer.</li>
+</ol>
+<h2>Ready-made connector or custom integration?</h2>
+<p>Ready-made connectors exist for many popular services, and for simple scenarios they are enough. But when data has to be transformed by complex rules, when local payment systems or government portals are being connected, or when the flow is critical to the business, a custom integration is more reliable and easier to manage: you see the errors and you stay in control.</p>
+<h2>Where to start?</h2>
+<p>Make a list of the repetitive operations that take the most time: who copies which data, from which system to which, and how many times a day. The flow that requires the most manual work is the best candidate for the first integration. Usually this means connecting website orders and payments to the accounting or inventory system.</p>
+<p>We do this work as part of our <a href="/en/services/system-integration/">system integration</a> service. On the link between CRM and ERP, see our article <a href="/en/blog/crm-vs-erp/">“CRM or ERP”</a>.</p>
+<div class="callout"><p class="callout__title">In short</p><ul>
+<li>Manual copying wastes time and is a source of errors.</li>
+<li>An API is for requests; a webhook is for notifications.</li>
+<li>Documentation, retries, idempotency and monitoring are the basis of reliability.</li>
+<li>Start with the flow that requires the most manual work.</li>
+</ul></div>
+<h2>Frequently asked questions</h2>
+<div class="faq">
+<details class="faq__item"><summary><span>What is system integration?</span><i></i></summary><div class="faq__a"><p>System integration is connecting separate applications to one another so that they exchange data automatically; as a result, the same data is no longer entered by hand several times.</p></div></details>
+<details class="faq__item"><summary><span>What is an API?</span><i></i></summary><div class="faq__a"><p>An API is an agreed interface through which one program requests data from another or sends it a command.</p></div></details>
+<details class="faq__item"><summary><span>What is idempotency?</span><i></i></summary><div class="faq__a"><p>Idempotency means that sending the same request again does not change the result: for example, even if a payment notification arrives twice, the order counts as paid once.</p></div></details>
+</div>
+    </article>
+    <div class="post-help">
+      <div>
+        <h3>Need help with this?</h3>
+        <p>Let's discuss your project: the first consultation is free.</p>
+      </div>
+      <div class="post-help__actions">
+        <a href="/en/#contact" class="btn btn-primary" data-track="cta_contact"><span>Discuss your project</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/en/services/system-integration/" class="btn btn-ghost"><span>System integration</span></a>
+      </div>
+    </div>
+    <p class="post-author"><img src="/assets/img/logo-light.webp" alt="BagTech" width="110" height="38" loading="lazy"><span>BagTech team</span><span>·</span><time datetime="2026-11-12">November 12, 2026</time></p>
+  </div>
+</div>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Blog</p>
+      <h2 class="h-lg" data-reveal data-decode>More articles</h2>
+    </div>
+    <div class="post-grid">
+      <a class="post-card" href="/en/blog/why-is-your-website-slow/" data-cat="web" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/sayt-niye-yavasdir-800.webp" alt="A laptop on a desk with an online store page open" width="800" height="462" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Web development</span><i></i><span>3 min read</span></p>
+          <h3>Why is your website slow? 7 technical checks for speed and SEO</h3>
+          <p>A slow website loses both customers and positions in search. Seven common causes of slow loading that you can check yourself, and how to fix each one.</p>
+          <span class="post-card__go"><span>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/en/blog/what-is-an-mvp/" data-cat="sw" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/mvp-nedir-800.webp" alt="A hand working on sketches of app screens on a whiteboard" width="800" height="533" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Custom software</span><i></i><span>4 min read</span></p>
+          <h3>What is an MVP and why your project should start with one</h3>
+          <p>Building a big system in one go looks tempting, but it is the most expensive route. How to choose the first version, what to leave for later and when to grow.</p>
+          <span class="post-card__go"><span>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/en/blog/face-recognition-in-the-office/" data-cat="ai" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/ofisde-uz-tanima-800.webp" alt="Turnstiles with light indicators at an office entrance" width="800" height="533" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">AI solutions</span><i></i><span>4 min read</span></p>
+          <h3>Face recognition in the office: how it works and where the data stays</h3>
+          <p>Cards get lost, passwords are forgotten and attendance sheets are filled in by hand. How face recognition solves this and what it takes to keep the data safe.</p>
+          <span class="post-card__go"><span>Read</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="x-foot">
+  <div class="shell">
+    <div class="x-foot__top" data-reveal>
+      <div class="x-foot__big"><img loading="lazy" decoding="async" src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></div>
+      <p class="x-foot__about">IT solutions for business: custom software, AI, cybersecurity, CRM/ERP and system integration. Baku, Azerbaijan.</p>
+    </div>
+    <div class="footer__grid x-foot__grid">
+      <div class="footer__col">
+        <h4>Solutions</h4>
+        <a href="/en/services/custom-software-development/">Software development</a>
+        <a href="/en/services/ai-solutions/">Artificial intelligence</a>
+        <a href="/en/services/cybersecurity/">Cybersecurity</a>
+        <a href="/en/services/crm-erp-systems/">CRM & ERP</a>
+        <a href="/en/services/system-integration/">System integration</a>
+      </div>
+      <div class="footer__col">
+        <h4>Products</h4>
+        <a href="https://brandmaker.az" target="_blank" rel="noopener">Brandmaker.az</a>
+        <a href="/en/#portfolio">BagERP</a>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="/en/#process">How we work</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/#contact">Contact</a>
+        <a href="/en/services/">Services</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="tel:+994505250555">+994 50 525 05 55</a>
+        <a href="mailto:info@bagtech.az">info@bagtech.az</a>
+        <span>Baku, Azerbaijan</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 BagTech MMC · VÖEN 1310001931 · <span>All rights reserved.</span></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=a1deed577d" defer></script>
+<script src="/assets/js/blog.js?v=a1deed577d" defer></script>
+<script src="/assets/js/analytics.js?v=a1deed577d" defer data-ga4="" data-gtm="" data-text="We use anonymous analytics to improve this site." data-yes="Accept" data-no="Decline"></script>
+</body>
+</html>

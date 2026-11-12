@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobil tətbiqlərin hazırlanması — iOS və Android | BagTech</title>
+<meta name="description" content="Bakıda iOS və Android üçün mobil tətbiqlərin hazırlanması: React Native, Swift və Flutter. Dizayndan App Store və Google Play-də yerləşdirilməyə qədər.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://bagtech.az/xidmetler/mobil-tetbiqler/">
+<link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/mobil-tetbiqler/">
+<link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/mobile-app-development/">
+<link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/">
+<link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/mobil-tetbiqler/">
+<meta name="theme-color" content="#050508">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BagTech">
+<meta property="og:title" content="Mobil tətbiqlərin hazırlanması — iOS və Android | BagTech">
+<meta property="og:description" content="Bakıda iOS və Android üçün mobil tətbiqlərin hazırlanması: React Native, Swift və Flutter. Dizayndan App Store və Google Play-də yerləşdirilməyə qədər.">
+<meta property="og:image" content="https://bagtech.az/assets/img/og.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="az_AZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:url" content="https://bagtech.az/xidmetler/mobil-tetbiqler/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mobil tətbiqlərin hazırlanması — iOS və Android | BagTech">
+<meta name="twitter:description" content="Bakıda iOS və Android üçün mobil tətbiqlərin hazırlanması: React Native, Swift və Flutter. Dizayndan App Store və Google Play-də yerləşdirilməyə qədər.">
+<meta name="twitter:image" content="https://bagtech.az/assets/img/og.jpg?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon.png?v=1785582282">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1785582282">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/space-grotesk-latin-ext.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}html[lang="ru"]{--font-display:"Onest","Space Grotesk",-apple-system,BlinkMacSystemFont,sans-serif}</style>
+<link rel="stylesheet" href="/assets/css/style.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/service.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/blog.css?v=a1deed577d">
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","legalName":"BagTech MMC","url":"https://bagtech.az/","logo":"https://bagtech.az/assets/img/logo-light.png","image":"https://bagtech.az/assets/img/og.jpg?v=2","description":"BagTech — Bakıda yerləşən IT şirkəti. 2018-ci ildən biznes üçün proqram təminatı, mobil tətbiqlər, saytlar, süni intellekt həlləri, kibertəhlükəsizlik, CRM/ERP sistemləri, sistem inteqrasiyası, IT infrastruktur və IT autsorsinq xidmətləri göstərir.","foundingDate":"2018","vatID":"1310001931","email":"info@bagtech.az","telephone":"+994505250555","address":{"@type":"PostalAddress","addressLocality":"Bakı","addressCountry":"AZ"},"areaServed":{"@type":"Country","name":"Azerbaijan"},"knowsLanguage":["az","en","ru"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+994505250555","email":"info@bagtech.az","availableLanguage":["az","en","ru"]},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Xidmətlər","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fərdi proqram təminatının hazırlanması","url":"https://bagtech.az/xidmetler/proqram-teminati/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobil tətbiqlərin hazırlanması","url":"https://bagtech.az/xidmetler/mobil-tetbiqler/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Süni intellekt və ağıllı həllər","url":"https://bagtech.az/xidmetler/suni-intellekt/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Kibertəhlükəsizlik xidmətləri","url":"https://bagtech.az/xidmetler/kibertehlukesizlik/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CRM və ERP sistemləri","url":"https://bagtech.az/xidmetler/crm-erp/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistem inteqrasiyası","url":"https://bagtech.az/xidmetler/sistem-inteqrasiyasi/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Saytların hazırlanması və e-ticarət","url":"https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT infrastrukturu və bulud","url":"https://bagtech.az/xidmetler/it-infrastruktur/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT autsorsinq və texniki dəstək","url":"https://bagtech.az/xidmetler/it-autsorsinq/"}}]}},{"@type":"WebSite","@id":"https://bagtech.az/#site","url":"https://bagtech.az/","name":"BagTech","inLanguage":["az","en","ru"],"publisher":{"@id":"https://bagtech.az/#org"}},{"@type":"WebPage","@id":"https://bagtech.az/xidmetler/mobil-tetbiqler/#page","url":"https://bagtech.az/xidmetler/mobil-tetbiqler/","name":"Mobil tətbiqlərin hazırlanması — iOS və Android | BagTech","description":"Bakıda iOS və Android üçün mobil tətbiqlərin hazırlanması: React Native, Swift və Flutter. Dizayndan App Store və Google Play-də yerləşdirilməyə qədər.","inLanguage":"az","isPartOf":{"@id":"https://bagtech.az/#site"},"about":{"@id":"https://bagtech.az/#org"}},{"@type":"Service","@id":"https://bagtech.az/xidmetler/mobil-tetbiqler/#service","name":"Mobil tətbiqlərin hazırlanması","serviceType":"Mobil tətbiqlər","description":"iOS və Android üçün mobil tətbiqlər: ideya və dizayndan App Store və Google Play-də yerləşdirilməyə qədər. Tətbiq mövcud saytınız, CRM və ödəniş sistemlərinizlə inteqrasiya olunur.","url":"https://bagtech.az/xidmetler/mobil-tetbiqler/","provider":{"@id":"https://bagtech.az/#org"},"areaServed":{"@type":"Country","name":"Azerbaijan"},"inLanguage":"az"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana səhifə","item":"https://bagtech.az/"},{"@type":"ListItem","position":2,"name":"Xidmətlər","item":"https://bagtech.az/xidmetler/"},{"@type":"ListItem","position":3,"name":"Mobil tətbiqlər","item":"https://bagtech.az/xidmetler/mobil-tetbiqler/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Mobil tətbiq hazırlamaq üçün nə lazımdır?","acceptedAnswer":{"@type":"Answer","text":"Əsas ssenarinin təsviri (istifadəçi tətbiqdə nə edəcək), hədəf platformalar və mövcud sistemlər haqqında məlumat kifayətdir. Qalanını — tələbləri, dizaynı və arxitekturanı — audit mərhələsində birlikdə hazırlayırıq."}},{"@type":"Question","name":"Nativ, yoxsa krossplatform tətbiq seçmək lazımdır?","acceptedAnswer":{"@type":"Answer","text":"Krossplatform tətbiq (React Native, Flutter) vahid kod bazası ilə hər iki platformanı əhatə edir və adətən daha tez və ucuz hazırlanır. Nativ tətbiq (Swift) cihazın imkanlarından tam istifadə etmək lazım olan və yüksək performans tələb olunan hallarda uyğundur. Seçimi layihənin tələblərinə əsasən birlikdə edirik."}},{"@type":"Question","name":"Mobil tətbiqin hazırlanması neçəyə başa gəlir?","acceptedAnswer":{"@type":"Answer","text":"Qiymət ekranların və funksiyaların sayından, platformalardan, inteqrasiyalardan və dizayndan asılıdır. İlkin qiymətləndirmə pulsuzdur; adətən MVP-dən, yəni ilk minimal versiyadan başlamağı tövsiyə edirik."}},{"@type":"Question","name":"Tətbiqi App Store və Google Play-də siz yerləşdirirsinizmi?","acceptedAnswer":{"@type":"Answer","text":"Bəli. Tətbiqin mağazalarda yerləşdirilməsini və sonrakı yeniləmələri biz həyata keçiririk."}}]}]}</script>
+</head>
+<body class="svc-page">
+<a class="skip" href="#main">Əsas məzmuna keçid</a>
+<canvas class="signal" id="signal" aria-hidden="true"></canvas>
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a href="/" class="brand"><img src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></a>
+
+    <nav class="nav__links" id="navLinks">
+      <span class="nav__ind" aria-hidden="true"></span>
+      <a href="/#solutions" class="is-active">Həllər</a>
+      <a href="/#process">Necə işləyirik</a>
+      <a href="/#portfolio">Portfolio</a>
+      <a href="/blog/">Bloq</a>
+      <a href="/#contact">Əlaqə</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="lang" id="lang"><a href="/xidmetler/mobil-tetbiqler/" hreflang="az" lang="az" class="is-active" aria-current="true">AZ</a><span>/</span><a href="/en/services/mobile-app-development/" hreflang="en" lang="en">EN</a><span>/</span><a href="/ru/uslugi/mobilnye-prilozheniya/" hreflang="ru" lang="ru">RU</a></div>
+      <a href="/#contact" class="btn btn-primary"><span>Əlaqə saxlayın</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menyu"><i></i><i></i></button>
+    </div>
+    <i class="nav__progress" aria-hidden="true"></i>
+  </div>
+</header>
+<main id="main">
+<section class="svc-hero" id="top">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell svc-hero__grid">
+    <div class="svc-hero__copy">
+      <nav class="crumbs" aria-label="breadcrumb"><a href="/">Ana səhifə</a><i></i><a href="/xidmetler/">Xidmətlər</a><i></i><b>02</b></nav>
+      <h1 class="h-xl svc-h1" data-decode>Mobil tətbiqlərin hazırlanması</h1>
+      <p class="lead">iOS və Android üçün mobil tətbiqlər: ideya və dizayndan App Store və Google Play-də yerləşdirilməyə qədər. Tətbiq mövcud saytınız, CRM və ödəniş sistemlərinizlə inteqrasiya olunur.</p>
+      <div class="hero__cta">
+        <a href="/#contact" class="btn btn-primary" data-track="cta_contact"><span>Layihəni müzakirə edək</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/" class="btn btn-ghost"><span>Bütün xidmətlər</span></a>
+      </div>
+      <div class="svc-tags"><span>Swift</span><span>React Native</span><span>Flutter</span><span>iOS</span><span>Android</span></div>
+    </div>
+    <div class="svc-art" aria-hidden="true"><canvas data-art="mobile"></canvas></div>
+  </div>
+</section>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Problemlər</p>
+      <h2 class="h-lg" data-reveal data-decode>Hansı problemləri həll edirik</h2>
+    </div>
+    <div class="svc-probs">
+        <div class="svc-prob" data-fx="rise" data-fx-amt="30"><h3>Müştərilər telefondan istifadə edir, saytınız isə rahat deyil</h3><p>Sifariş, qeydiyyat və ödəniş üçün istifadəçilər tətbiq gözləyir.</p></div>
+        <div class="svc-prob" data-fx="rise" data-fx-amt="30"><h3>Nativ, yoxsa krossplatform — seçim çətindir</h3><p>Yanlış texnologiya seçimi büdcəni və buraxılış müddətini artırır.</p></div>
+        <div class="svc-prob" data-fx="rise" data-fx-amt="30"><h3>Tətbiq mövcud sistemlərlə əlaqəsiz qalır</h3><p>Məlumat ayrı-ayrı yerlərdə saxlanılır və əl ilə sinxronlaşdırılır.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-sec">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Nə daxildir</p>
+      <h2 class="h-lg" data-reveal data-decode>Bu istiqamətdə nə edirik</h2>
+    </div>
+    <div class="svc-grid">
+        <article class="svc-card" data-fx="rise" data-fx-amt="36">
+          <span class="svc-card__no">01</span>
+          <h3>iOS tətbiqləri</h3>
+          <p>iPhone və iPad üçün Swift dilində nativ tətbiqlər.</p>
+        </article>
+        <article class="svc-card" data-fx="rise" data-fx-amt="36">
+          <span class="svc-card__no">02</span>
+          <h3>Android tətbiqləri</h3>
+          <p>Müxtəlif ekran ölçüləri və cihazlar üçün Android tətbiqləri.</p>
+        </article>
+        <article class="svc-card" data-fx="rise" data-fx-amt="36">
+          <span class="svc-card__no">03</span>
+          <h3>Krossplatform tətbiqlər</h3>
+          <p>React Native və ya Flutter ilə vahid kod bazası əsasında hər iki platforma üçün tətbiq.</p>
+        </article>
+        <article class="svc-card" data-fx="rise" data-fx-amt="36">
+          <span class="svc-card__no">04</span>
+          <h3>Korporativ mobil tətbiqlər</h3>
+          <p>Əməkdaşlar üçün daxili tətbiqlər: tapşırıqlar, təsdiqlər və hesabatlar.</p>
+        </article>
+        <article class="svc-card" data-fx="rise" data-fx-amt="36">
+          <span class="svc-card__no">05</span>
+          <h3>İnteqrasiya</h3>
+          <p>Tətbiqin mövcud saytınız, CRM və ERP, ödəniş sistemləri və digər API-lərlə əlaqələndirilməsi.</p>
+        </article>
+        <article class="svc-card" data-fx="rise" data-fx-amt="36">
+          <span class="svc-card__no">06</span>
+          <h3>Yerləşdirmə və dəstək</h3>
+          <p>App Store və Google Play-də yerləşdirmə, yeniləmələr və texniki dəstək.</p>
+        </article>
+    </div>
+  </div>
+</section>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Nəticə</p>
+      <h2 class="h-lg" data-reveal data-decode>Nə əldə edirsiniz</h2>
+    </div>
+    <div class="svc-out">
+        <div class="svc-out__item" data-reveal>
+          <b>Hər iki platforma</b>
+          <p>iOS və Android istifadəçiləri tətbiqdən eyni rahatlıqla istifadə edir.</p>
+        </div>
+        <div class="svc-out__item" data-reveal>
+          <b>Vahid sistem</b>
+          <p>Tətbiq sayt və daxili sistemlərinizlə eyni məlumatla işləyir.</p>
+        </div>
+        <div class="svc-out__item" data-reveal>
+          <b>Davamlı inkişaf</b>
+          <p>Tətbiq yayımlandıqdan sonra da yenilənir, yeni funksiyalar əlavə olunur.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Proses</p>
+      <h2 class="h-lg" data-reveal data-decode>Necə işləyirik</h2>
+    </div>
+    <ol class="svc-steps">
+        <li data-fx="rise" data-fx-amt="30"><b>01</b><h3>Audit və tələblərin toplanması</h3><p>Mövcud infrastrukturu və biznes proseslərini araşdırırıq, real problemləri və prioritetləri müəyyən edirik.</p><span>1–2 həftə</span></li>
+        <li data-fx="rise" data-fx-amt="30"><b>02</b><h3>Arxitektura və təklif</h3><p>Texniki həll, mərhələlər, müddətlər və büdcə. Nəyi necə edəcəyimizi müqavilədən əvvəl yazılı şəkildə razılaşdırırıq.</p><span>1 həftə</span></li>
+        <li data-fx="rise" data-fx-amt="30"><b>03</b><h3>Hazırlanma və inteqrasiya</h3><p>İşi mərhələlərlə təhvil veririk: hər mərhələnin sonunda real işləyən nəticəni görürsünüz.</p><span>Layihədən asılıdır</span></li>
+        <li data-fx="rise" data-fx-amt="30"><b>04</b><h3>Dəstək və inkişaf</h3><p>Məlumatların köçürülməsi, əməkdaşların təlimi, SLA üzrə texniki dəstək və sistemin sonrakı inkişafı.</p><span>Davamlı</span></li>
+    </ol>
+  </div>
+</section>
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Bloq</p>
+      <h2 class="h-lg" data-reveal data-decode>Bu mövzuda yazılar</h2>
+    </div>
+    <div class="post-grid">
+      <a class="post-card" href="/blog/mvp-nedir/" data-cat="sw" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/mvp-nedir-800.webp" alt="Lövhədə tətbiq ekranlarının eskizləri üzərində işləyən əl" width="800" height="533" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Proqram təminatı</span><i></i><span>4 dəqiqəyə oxunur</span></p>
+          <h3>MVP nədir və layihəyə niyə ondan başlamaq lazımdır</h3>
+          <p>MVP nədir, ilk versiyanı necə seçmək, nəyi sonraya saxlamaq və nə vaxt böyümək lazımdır? Layihəyə kiçik, lakin işləyən məhsulla başlamağın praktik izahı.</p>
+          <span class="post-card__go"><span>Ardını oxu</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="svc-sec">
+  <div class="shell x-faq__grid">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Suallar</p>
+      <h2 class="h-lg" data-reveal data-decode>Tez-tez verilən suallar</h2>
+    </div>
+    <div class="faq">
+<details class="faq__item"><summary><span>Mobil tətbiq hazırlamaq üçün nə lazımdır?</span><i></i></summary><div class="faq__a"><p>Əsas ssenarinin təsviri (istifadəçi tətbiqdə nə edəcək), hədəf platformalar və mövcud sistemlər haqqında məlumat kifayətdir. Qalanını — tələbləri, dizaynı və arxitekturanı — audit mərhələsində birlikdə hazırlayırıq.</p></div></details>
+<details class="faq__item"><summary><span>Nativ, yoxsa krossplatform tətbiq seçmək lazımdır?</span><i></i></summary><div class="faq__a"><p>Krossplatform tətbiq (React Native, Flutter) vahid kod bazası ilə hər iki platformanı əhatə edir və adətən daha tez və ucuz hazırlanır. Nativ tətbiq (Swift) cihazın imkanlarından tam istifadə etmək lazım olan və yüksək performans tələb olunan hallarda uyğundur. Seçimi layihənin tələblərinə əsasən birlikdə edirik.</p></div></details>
+<details class="faq__item"><summary><span>Mobil tətbiqin hazırlanması neçəyə başa gəlir?</span><i></i></summary><div class="faq__a"><p>Qiymət ekranların və funksiyaların sayından, platformalardan, inteqrasiyalardan və dizayndan asılıdır. İlkin qiymətləndirmə pulsuzdur; adətən MVP-dən, yəni ilk minimal versiyadan başlamağı tövsiyə edirik.</p></div></details>
+<details class="faq__item"><summary><span>Tətbiqi App Store və Google Play-də siz yerləşdirirsinizmi?</span><i></i></summary><div class="faq__a"><p>Bəli. Tətbiqin mağazalarda yerləşdirilməsini və sonrakı yeniləmələri biz həyata keçiririk.</p></div></details>
+</div>
+  </div>
+</section>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Digər xidmətlər</p>
+      <h2 class="h-lg" data-reveal data-decode>Başqa nə edirik</h2>
+    </div>
+    <div class="svc-others" data-reveal>
+        <a href="/xidmetler/proqram-teminati/"><em>01</em><span>Fərdi proqram təminatının hazırlanması</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/suni-intellekt/"><em>03</em><span>Süni intellekt və ağıllı həllər</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/kibertehlukesizlik/"><em>04</em><span>Kibertəhlükəsizlik xidmətləri</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/crm-erp/"><em>05</em><span>CRM və ERP sistemləri</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/sistem-inteqrasiyasi/"><em>06</em><span>Sistem inteqrasiyası</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/saytlarin-hazirlanmasi/"><em>07</em><span>Saytların hazırlanması və e-ticarət</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/it-infrastruktur/"><em>08</em><span>IT infrastrukturu və bulud</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/xidmetler/it-autsorsinq/"><em>09</em><span>IT autsorsinq və texniki dəstək</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="svc-sec">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell svc-cta">
+    <div data-reveal>
+      <h2>Layihənizi<br>müzakirə edək</h2>
+      <p class="lead">İlkin konsultasiya və layihənin təxmini dəyərinin hesablanması pulsuzdur. Müraciətlərə 24 saat ərzində cavab veririk.</p>
+    </div>
+    <div class="svc-cta__side" data-reveal>
+      <a href="/#contact" class="btn btn-primary" data-track="cta_contact"><span>Layihəni müzakirə edək</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="contact-list">
+        <a href="tel:+994505250555" data-track="cta_phone"><svg viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>+994 50 525 05 55</a>
+        <a href="mailto:info@bagtech.az" data-track="cta_email"><svg viewBox="0 0 24 24" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>info@bagtech.az</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="x-foot">
+  <div class="shell">
+    <div class="x-foot__top" data-reveal>
+      <div class="x-foot__big"><img loading="lazy" decoding="async" src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></div>
+      <p class="x-foot__about">Biznes üçün IT həlləri: proqram təminatı, süni intellekt, kibertəhlükəsizlik, CRM/ERP və sistem inteqrasiyası. Bakı, Azərbaycan.</p>
+    </div>
+    <div class="footer__grid x-foot__grid">
+      <div class="footer__col">
+        <h4>Həllər</h4>
+        <a href="/xidmetler/proqram-teminati/">Proqram təminatı</a>
+        <a href="/xidmetler/suni-intellekt/">Süni intellekt</a>
+        <a href="/xidmetler/kibertehlukesizlik/">Kibertəhlükəsizlik</a>
+        <a href="/xidmetler/crm-erp/">CRM və ERP</a>
+        <a href="/xidmetler/sistem-inteqrasiyasi/">Sistem inteqrasiyası</a>
+      </div>
+      <div class="footer__col">
+        <h4>Məhsullar</h4>
+        <a href="https://brandmaker.az" target="_blank" rel="noopener">Brandmaker.az</a>
+        <a href="/#portfolio">BagERP</a>
+      </div>
+      <div class="footer__col">
+        <h4>Şirkət</h4>
+        <a href="/#process">Necə işləyirik</a>
+        <a href="/blog/">Bloq</a>
+        <a href="/#contact">Əlaqə</a>
+        <a href="/xidmetler/">Xidmətlər</a>
+      </div>
+      <div class="footer__col">
+        <h4>Əlaqə</h4>
+        <a href="tel:+994505250555">+994 50 525 05 55</a>
+        <a href="mailto:info@bagtech.az">info@bagtech.az</a>
+        <span>Bakı, Azərbaycan</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 BagTech MMC · VÖEN 1310001931 · <span>Bütün hüquqlar qorunur.</span></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=a1deed577d" defer></script>
+<script src="/assets/js/service.js?v=a1deed577d" defer></script>
+<script src="/assets/js/analytics.js?v=a1deed577d" defer data-ga4="" data-gtm="" data-text="Saytın işini yaxşılaşdırmaq üçün anonim statistikadan istifadə edirik." data-yes="Razıyam" data-no="İmtina edirəm"></script>
+</body>
+</html>

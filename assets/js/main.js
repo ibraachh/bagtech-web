@@ -8,11 +8,14 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  let lang = "az";
-
-  // Cache the original AZ copy up front: the heading decoder temporarily
-  // rewrites text, and the language switch must never cache that state.
-  $$("[data-i18n]").forEach((el) => { el.dataset.az = el.innerHTML; });
+  // Each language is its own static page (/, /en/, /ru/). Old ?lang=en links
+  // from the time the text was swapped in the browser are sent to the real page.
+  const lang = document.documentElement.lang || "az";
+  {
+    const old = new URLSearchParams(location.search).get("lang");
+    const alt = old && old !== lang && $(`link[rel="alternate"][hreflang="${old}"]`);
+    if (alt) location.replace(alt.href + location.hash);
+  }
 
   const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
 
@@ -1065,53 +1068,11 @@
     document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
   }
 
-  /* ---------- Language switch ---------- */
-  const applyLang = (next) => {
-    lang = next;
-    document.documentElement.lang = next;
-
-    const dict = window.I18N[next] || {};
-    $$("[data-i18n]").forEach((el) => {
-      const key = el.dataset.i18n;
-      if (!el.dataset.az) el.dataset.az = el.innerHTML;  // cache the original AZ copy
-      el.innerHTML = next === "az" ? el.dataset.az : (dict[key] ?? el.dataset.az);
-    });
-
-    $$("#lang button").forEach((b) => b.classList.toggle("is-active", b.dataset.lang === next));
-    renderEco();
-
-    // internal links keep the chosen language (?lang=en) from page to page
-    $$('a[href^="/"]').forEach((a) => {
-      if (a.getAttribute("href").startsWith("//")) return;
-      if (!a.dataset.href) a.dataset.href = a.getAttribute("href");
-      const u = new URL(a.dataset.href, location.origin);
-      if (next === "en") u.searchParams.set("lang", "en");
-      else u.searchParams.delete("lang");
-      a.setAttribute("href", u.pathname + u.search + u.hash);
-    });
-  };
-
-  $$("#lang button").forEach((b) => {
-    b.addEventListener("click", () => {
-      applyLang(b.dataset.lang);
-      // keep the language in the URL so EN has an indexable address (?lang=en)
-      const url = new URL(location.href);
-      if (b.dataset.lang === "en") url.searchParams.set("lang", "en");
-      else url.searchParams.delete("lang");
-      history.replaceState(null, "", url.pathname + (url.search || "") + url.hash);
-    });
-  });
-
-  // deep-linked language (hreflang target)
-  if (new URLSearchParams(location.search).get("lang") === "en") applyLang("en");
-
   /* ---------- Contact form (prototype only) ---------- */
   $("#form")?.addEventListener("submit", (e) => {
     e.preventDefault();
     const note = $("#formNote");
-    note.textContent = lang === "az"
-      ? "Təşəkkürlər! Bu demo versiyadır — mesaj real olaraq göndərilmədi."
-      : window.I18N.en["f.sent"];
+    note.textContent = e.target.dataset.sent || "";
     note.style.color = "var(--accent)";
     e.target.reset();
   });

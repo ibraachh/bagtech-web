@@ -1,0 +1,101 @@
+{
+  "order": [
+    "mvp",
+    "face",
+    "sec",
+    "crm",
+    "int",
+    "web"
+  ],
+  "base": {
+    "az": "blog",
+    "en": "en/blog",
+    "ru": "ru/blog"
+  },
+  "slug": {
+    "mvp": {
+      "az": "mvp-nedir",
+      "en": "what-is-an-mvp",
+      "ru": "chto-takoe-mvp"
+    },
+    "face": {
+      "az": "ofisde-uz-tanima",
+      "en": "face-recognition-in-the-office",
+      "ru": "raspoznavanie-lic-v-ofise"
+    },
+    "sec": {
+      "az": "kibertehlukesizlik-10-addim",
+      "en": "cybersecurity-first-10-steps",
+      "ru": "kiberbezopasnost-10-shagov"
+    },
+    "crm": {
+      "az": "crm-yoxsa-erp",
+      "en": "crm-vs-erp",
+      "ru": "crm-ili-erp"
+    },
+    "int": {
+      "az": "sistem-inteqrasiyasi-giris",
+      "en": "system-integration-introduction",
+      "ru": "sistemnaya-integraciya-vvedenie"
+    },
+    "web": {
+      "az": "sayt-niye-yavasdir",
+      "en": "why-is-your-website-slow",
+      "ru": "pochemu-sayt-medlennyy"
+    }
+  },
+  "service": {
+    "mvp": "sw",
+    "face": "ai",
+    "sec": "sec",
+    "crm": "crm",
+    "int": "int",
+    "web": "web"
+  },
+  "published": "2026-11-12",
+  "modified": "2026-11-12",
+  "photo": {
+    "mvp": {
+      "file": "mvp-nedir",
+      "w": 1600,
+      "h": 1066,
+      "author": "Alvaro Reyes",
+      "handle": "alvarordesign"
+    },
+    "face": {
+      "file": "ofisde-uz-tanima",
+      "w": 1600,
+      "h": 1066,
+      "author": "Martin Leitgeb",
+      "handle": "martin_leitgeb_photos"
+    },
+    "sec": {
+      "file": "kibertehlukesizlik-10-addim",
+      "w": 1600,
+      "h": 1067,
+      "author": "FlyD",
+      "handle": "flyd2069"
+    },
+    "crm": {
+      "file": "crm-yoxsa-erp",
+      "w": 1600,
+      "h": 1065,
+      "author": "Centre for Ageing Better",
+      "handle": "ageing_better"
+    },
+    "int": {
+      "file": "sistem-inteqrasiyasi-giris",
+      "w": 1600,
+      "h": 1142,
+      "author": "Albert Stoynov",
+      "handle": "albertstoynov"
+    },
+    "web": {
+      "file": "sayt-niye-yavasdir",
+      "w": 1600,
+      "h": 924,
+      "author": "Igor Miske",
+      "handle": "igormiske"
+    }
+  }
+}

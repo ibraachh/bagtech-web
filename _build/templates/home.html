@@ -1,0 +1,591 @@
+<!-- Signal field: live dot network behind the whole page (reacts to scroll + cursor) -->
+<canvas class="signal" id="signal" aria-hidden="true"></canvas>
+
+<!-- Section minimap: nodes sit at each section's real position on the page -->
+<nav class="rail" id="rail" aria-label="Bölmələr">
+  <span class="rail__line"><i class="rail__fill"></i></span>
+  <a class="rail__node" href="#solutions"><b>01</b><span data-i18n="nav.solutions">Həllər</span></a>
+  <a class="rail__node" href="#process"><b>02</b><span data-i18n="nav.process">Necə işləyirik</span></a>
+  <a class="rail__node" href="#portfolio"><b>03</b><span data-i18n="nav.eco">Portfolio</span></a>
+  <a class="rail__node" href="#contact"><b>04</b><span data-i18n="nav.contact">Əlaqə</span></a>
+  <i class="rail__packet"></i>
+</nav>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a href="#top" class="brand"><img src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></a>
+
+    <nav class="nav__links" id="navLinks">
+      <span class="nav__ind" aria-hidden="true"></span>
+      <a href="#solutions" data-i18n="nav.solutions">Həllər</a>
+      <a href="#process" data-i18n="nav.process">Necə işləyirik</a>
+      <a href="#portfolio" data-i18n="nav.eco">Portfolio</a>
+      <a href="/blog/" data-i18n="nav.blog">Bloq</a>
+      <a href="#contact" data-i18n="nav.contact">Əlaqə</a>
+    </nav>
+
+    <div class="nav__right">
+      <!--LANG-->
+      <a href="#contact" class="btn btn-primary"><span data-i18n="nav.cta">Əlaqə saxlayın</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menyu"><i></i><i></i></button>
+    </div>
+    <i class="nav__progress" aria-hidden="true"></i>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__visual"><canvas id="sphere"></canvas></div>
+
+  <div class="shell">
+    <div class="hero__copy">
+      <p class="eyebrow" data-reveal data-i18n="hero.eyebrow">Bakı, Azərbaycan · 2018-ci ildən bəri</p>
+
+      <h1 class="h-xl" data-reveal data-decode style="transition-delay:.06s">
+        <span data-i18n="hero.h1">Biznesiniz üçün<br>IT həlləri</span>
+      </h1>
+
+      <p class="lead" data-reveal style="transition-delay:.14s" data-i18n="hero.lead">
+        Fərdi proqram təminatı, süni intellekt həlləri, kibertəhlükəsizlik, CRM/ERP və
+        sistem inteqrasiyası. Layihəni auditdən istifadəyə verilənədək aparırıq, sonra da dəstək göstəririk.
+      </p>
+
+      <div class="hero__cta" data-reveal style="transition-delay:.22s">
+        <a href="#contact" class="btn btn-primary">
+          <span data-i18n="hero.cta1">Layihəni müzakirə edək</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#solutions" class="btn btn-ghost"><span data-i18n="hero.cta2">Həllərimiz</span></a>
+      </div>
+
+      <div class="hero__disciplines" data-reveal style="transition-delay:.3s">
+        <span data-i18n="hero.d1">Proqram təminatı</span>
+        <span data-i18n="hero.d2">Süni intellekt</span>
+        <span data-i18n="hero.d3">Kibertəhlükəsizlik</span>
+        <span data-i18n="hero.d4">CRM və ERP</span>
+        <span data-i18n="hero.d5">Sistem inteqrasiyası</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><i></i><span data-i18n="hero.scroll">aşağı</span></div>
+  <div class="hero__foot">© 2026 BagTech MMC</div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<div class="x-partners" data-reveal>
+  <div class="x-partners__label" data-i18n="pt.title">Bizə etibar edirlər</div>
+  <div class="marquee">
+    <div class="marquee__track" id="partnersTrack">
+      <span class="marquee__item"><img src="/assets/img/partners/w-yigim.webp" alt="Yığım Payment Services" width="158" height="38" style="--w:158;--h:38"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-ph.webp" alt="PAŞA Holding" width="127" height="47" style="--w:127;--h:47"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-bir.webp" alt="bir" width="110" height="55" style="--w:110;--h:55"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-atib.webp" alt="ATİB — Azərbaycan-Türkiyə İş Adamları Birliyi" width="115" height="52" style="--w:115;--h:52"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-agro.webp" alt="International Agro Business Forum" width="131" height="46" style="--w:131;--h:46"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-adau.webp" alt="Azərbaycan Dövlət Aqrar Universiteti Tələbə Həmkarlar İttifaqı Komitəsi" width="125" height="48" style="--w:125;--h:48"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-biznestv.webp" alt="Biznes TV" width="144" height="42" style="--w:144;--h:42"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-bakujazz.webp" alt="Baku Jazz Festival" width="76" height="62" style="--w:76;--h:62"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-agriconnect.webp" alt="Agriconnect" width="193" height="31" style="--w:193;--h:31"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-insun.webp" alt="İnsun Yaşam Mərkəzi" width="100" height="60" style="--w:100;--h:60"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-shahin.webp" alt="Shahin Novrasli Festival" width="90" height="62" style="--w:90;--h:62"></span>
+      <span class="marquee__item"><img src="/assets/img/partners/w-eleven.webp" alt="Eleven" width="172" height="35" style="--w:172;--h:35"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SOLUTIONS — sticky split index ============ -->
+<section class="x-sol" id="solutions">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell x-split">
+    <aside class="x-split__head">
+      <span class="x-idx">01</span>
+      <p class="eyebrow" data-reveal data-i18n="sol.eyebrow">Nə edirik</p>
+      <h2 class="h-lg" data-fx="parallax" data-fx-amt="22" data-decode data-i18n="sol.title">Biznesinizin bütün IT ehtiyacları —<br>bir komandada</h2>
+      <p class="lead" data-reveal data-i18n="sol.lead">Ayrı-ayrı xidmətlər yox, hazır və işləyən sistem təhvil veririk: təhlil, hazırlanma, inteqrasiya və davamlı dəstək.</p>
+      <p class="x-split__count"><b id="solNow">01</b><span class="x-split__of"> / 09</span> <span data-i18n="sol.count">istiqamət</span></p>
+    </aside>
+
+    <div class="x-split__body">
+      <a class="x-item" href="/xidmetler/proqram-teminati/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">01</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.sw.t">Fərdi proqram təminatı</span></h3>
+          <p data-i18n="sol.sw.d">Veb platformalar, daxili korporativ sistemlər, API və server hissəsi. İdeyadan hazır məhsula qədər.</p>
+          <div class="x-item__tags"><span>Java / Spring</span><span>React / Next.js</span><span>API</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item" href="/xidmetler/mobil-tetbiqler/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">02</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.mob.t">Mobil tətbiqlərin hazırlanması</span></h3>
+          <p data-i18n="sol.mob.d">iOS və Android tətbiqləri: nativ və krossplatform. Dizayndan App Store və Google Play-də yerləşdirilməyə qədər.</p>
+          <div class="x-item__tags"><span>Swift</span><span>React Native</span><span>Flutter</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item x-item--new" href="/xidmetler/suni-intellekt/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">03</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.ai.t">Süni intellekt və ağıllı həllər</span> <span class="x-item__new" data-i18n="sol.new">Yeni</span></h3>
+          <p data-i18n="sol.ai.d">Real vaxt rejimində üz tanıma, müştərilər üçün virtual köməkçilər, sənədlərin avtomatik emalı və ağıllı giriş sistemləri.</p>
+          <div class="x-item__tags"><span data-i18n="sol.ai.g1">Üz tanıma</span><span data-i18n="sol.ai.g2">Virtual köməkçilər</span><span data-i18n="sol.ai.g3">QR giriş</span><span data-i18n="sol.ai.g4">Öz serverinizdə</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item" href="/xidmetler/kibertehlukesizlik/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">04</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.sec.t">Kibertəhlükəsizlik</span></h3>
+          <p data-i18n="sol.sec.d">İkifaktorlu autentifikasiya (2FA), şifrələmə, girişlərin auditi, zəifliklərin yoxlanılması və insidentlərə operativ müdaxilə.</p>
+          <div class="x-item__tags"><span>2FA</span><span data-i18n="sol.sec.g1">Şifrələmə</span><span>Audit</span><span>Pentest</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item" href="/xidmetler/crm-erp/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">05</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.crm.t">CRM və ERP sistemləri</span></h3>
+          <p data-i18n="sol.crm.d">Satış, müştəri bazası, kadrlar, maliyyə və anbar — vahid sistemdə. Hazır platforma (ERPNext) əsasında və ya sıfırdan.</p>
+          <div class="x-item__tags"><span>CRM</span><span>ERP</span><span>ERPNext</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item" href="/xidmetler/sistem-inteqrasiyasi/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">06</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.int.t">Sistem inteqrasiyası</span></h3>
+          <p data-i18n="sol.int.d">Ödəniş sistemlərini, dövlət portallarını, ERP və digər kənar xidmətləri vahid sistemə birləşdiririk.</p>
+          <div class="x-item__tags"><span>REST / GraphQL</span><span>Webhook</span><span data-i18n="sol.int.g1">Onlayn ödənişlər</span><span>SSO</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item" href="/xidmetler/saytlarin-hazirlanmasi/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">07</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.web.t">Saytların hazırlanması və e-ticarət</span></h3>
+          <p data-i18n="sol.web.d">Korporativ saytlar, portallar, onlayn mağazalar və e-ticarət platformaları.</p>
+          <div class="x-item__tags"><span data-i18n="sol.web.g1">Korporativ saytlar</span><span data-i18n="sol.web.g2">Portallar</span><span data-i18n="sol.web.g3">E-ticarət</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item" href="/xidmetler/it-infrastruktur/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">08</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.infra.t">IT infrastrukturu</span></h3>
+          <p data-i18n="sol.infra.d">Server və şəbəkələrin quraşdırılması, virtuallaşdırma, buluda köçürmə, korporativ e-poçt və 24/7 monitorinq.</p>
+          <div class="x-item__tags"><span>Linux</span><span>VMware</span><span data-i18n="sol.infra.g1">Bulud</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+
+      <a class="x-item" href="/xidmetler/it-autsorsinq/" data-fx="rise" data-fx-amt="44">
+        <span class="x-item__no">09</span>
+        <div class="x-item__body">
+          <h3><span data-i18n="sol.sup.t">IT autsorsinq və texniki dəstək</span></h3>
+          <p data-i18n="sol.sup.d">IT şöbənizin işini öhdəmizə götürürük: gündəlik texniki dəstək, SLA ilə razılaşdırılmış cavab müddəti, müraciətlərin vahid qeydiyyatı.</p>
+          <div class="x-item__tags"><span>SLA</span><span>Helpdesk</span><span data-i18n="sol.sup.g1">Monitorinq</span></div>
+        </div>
+        <i class="x-item__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i>
+      </a>
+      <a class="x-split__all" href="/xidmetler/" data-reveal><span data-i18n="sol.all">Bütün xidmətlər</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS — vertical timeline ============ -->
+<section class="x-proc" id="process">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <span class="x-idx" data-reveal>02</span>
+      <p class="eyebrow" data-reveal data-i18n="proc.eyebrow">Proses</p>
+      <h2 class="h-lg" data-reveal data-decode data-i18n="proc.title">Necə işləyirik</h2>
+      <p class="lead" data-reveal data-i18n="proc.lead">Auditdən dəstəyə qədər dörd mərhələ. Hər mərhələdə nə əldə edəcəyiniz əvvəlcədən bəllidir.</p>
+    </div>
+
+    <div class="x-proc__grid">
+      <div class="x-timeline" id="xTimeline">
+        <div class="x-timeline__rail"><span class="x-timeline__fill" id="xTlFill"></span></div>
+  
+        <div class="x-step" data-fx="rise" data-fx-amt="40">
+          <span class="x-step__dot"></span>
+          <span class="x-step__no">01</span>
+          <h3 data-i18n="proc.1.t">Audit və tələblərin toplanması</h3>
+          <p data-i18n="proc.1.d">Mövcud infrastrukturu və biznes proseslərini araşdırırıq, real problemləri və prioritetləri müəyyən edirik.</p>
+          <span class="x-step__meta" data-i18n="proc.1.m">1–2 həftə</span>
+        </div>
+  
+        <div class="x-step" data-fx="rise" data-fx-amt="40">
+          <span class="x-step__dot"></span>
+          <span class="x-step__no">02</span>
+          <h3 data-i18n="proc.2.t">Arxitektura və təklif</h3>
+          <p data-i18n="proc.2.d">Texniki həll, mərhələlər, müddətlər və büdcə. Nəyi necə edəcəyimizi müqavilədən əvvəl yazılı şəkildə razılaşdırırıq.</p>
+          <span class="x-step__meta" data-i18n="proc.2.m">1 həftə</span>
+        </div>
+  
+        <div class="x-step" data-fx="rise" data-fx-amt="40">
+          <span class="x-step__dot"></span>
+          <span class="x-step__no">03</span>
+          <h3 data-i18n="proc.3.t">Hazırlanma və inteqrasiya</h3>
+          <p data-i18n="proc.3.d">İşi mərhələlərlə təhvil veririk: hər mərhələnin sonunda real işləyən nəticəni görürsünüz.</p>
+          <span class="x-step__meta" data-i18n="proc.3.m">Layihədən asılıdır</span>
+        </div>
+  
+        <div class="x-step" data-fx="rise" data-fx-amt="40">
+          <span class="x-step__dot"></span>
+          <span class="x-step__no">04</span>
+          <h3 data-i18n="proc.4.t">Dəstək və inkişaf</h3>
+          <p data-i18n="proc.4.d">Məlumatların köçürülməsi, əməkdaşların təlimi, SLA üzrə texniki dəstək və sistemin sonrakı inkişafı.</p>
+          <span class="x-step__meta" data-i18n="proc.4.m">Davamlı</span>
+        </div>
+      </div>
+
+      <!-- Giant step numeral: follows the reader, fills as the step is read,
+           rolls like a counter to the next step -->
+      <div class="x-proc__aside" aria-hidden="true">
+        <div class="bignum">
+          <div class="bignum__win">
+            <div class="bignum__strip" id="bnStrip"><span>01</span><span>02</span><span>03</span><span>04</span></div>
+          </div>
+          <p class="bignum__meta"><span id="bnMeta"></span><span class="bignum__of">/ 04</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="x-port" id="portfolio">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <span class="x-idx" data-reveal>03</span>
+      <p class="eyebrow" data-reveal data-i18n="port.eyebrow">Portfolio</p>
+      <h2 class="h-lg" data-reveal data-decode data-i18n="port.title">Hazırladığımız layihələr</h2>
+      <p class="lead" data-reveal data-i18n="port.lead">Sıfırdan hazırlayıb dəstəklədiyimiz platformalar, tərəfdaşlarla birgə layihələr və üzərində işlədiyimiz yeni məhsullar.</p>
+    </div>
+
+    <div class="x-port__grid">
+      <a class="x-port__card" href="https://agrobusiness.az/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#1b7040;--chip2:#0b3a1d"><img loading="lazy" decoding="async" src="/assets/img/p-agro.webp" alt="International Agro Business Forum" width="640" height="225"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.agro">Forum / tədbir platforması</span>
+          <h3>Agro Business Forum</h3>
+          <span class="x-port__link"><span>agrobusiness.az</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <div class="x-port__card x-port__card--multi" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#edf1f8;--chip2:#dbe3f0"><img loading="lazy" decoding="async" src="/assets/img/p2-biznestv.webp" alt="Biznes TV" width="640" height="185"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.biznestv">Media / TV platforması</span>
+          <h3>Biznes TV</h3>
+          <div class="x-port__sublinks">
+            <a href="https://biznestv.az" target="_blank" rel="noopener">biznestv.az<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a href="https://portal.biznestv.az" target="_blank" rel="noopener">portal.biznestv.az<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <a class="x-port__card" href="https://sabahpsc.az/en/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#f9f0f4;--chip2:#eedae5"><img loading="lazy" decoding="async" src="/assets/img/p-sabah.webp" alt="Sabah PSC" width="202" height="254"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.sabah">İdman klubu</span>
+          <h3>Sabah PSC</h3>
+          <span class="x-port__link"><span>sabahpsc.az</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <div class="x-port__card x-port__card--multi" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#eef2f8;--chip2:#dce4f0"><img loading="lazy" decoding="async" src="/assets/img/p2-adau.webp" alt="ADAU THİK" width="640" height="245"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.adau">Universitet / təhsil portalı</span>
+          <h3>ADAU THİK</h3>
+          <div class="x-port__sublinks">
+            <a href="https://adauthik.az/" target="_blank" rel="noopener">adauthik.az<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a href="https://campus.adauthik.az" target="_blank" rel="noopener">campus.adauthik.az<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a href="https://graduation.adauthik.az" target="_blank" rel="noopener">graduation.adauthik.az<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <a class="x-port__card" href="https://oygib.az" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#eef6f9;--chip2:#d9e9f0"><img loading="lazy" decoding="async" src="/assets/img/p2-oygib.webp" alt="Odlar Yurdu Gənclər İctimai Birliyi" width="616" height="188"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.oygib">İctimai birlik saytı</span>
+          <h3>OYGİB</h3>
+          <span class="x-port__link"><span>oygib.az</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://insun.az" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#f6f3ee;--chip2:#e9e2d5"><img loading="lazy" decoding="async" src="/assets/img/p2-insun.webp" alt="İnsun" width="640" height="383"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.insun">Yaşam mərkəzi saytı</span>
+          <h3>İnsun</h3>
+          <span class="x-port__link"><span>insun.az</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://leylagasimova.com/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#f4f2ef;--chip2:#e6e2db"><img loading="lazy" decoding="async" src="/assets/img/p2-leyla.webp" alt="Leyla Gasimova" width="513" height="113"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.leyla">Şəxsi brend saytı</span>
+          <h3>Leyla Gasimova</h3>
+          <span class="x-port__link"><span>leylagasimova.com</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://dukkanproject.az/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#f2f1ee;--chip2:#e4e1da"><img loading="lazy" decoding="async" src="/assets/img/p2-dukkanproj.webp" alt="Dukkan Projects" width="495" height="306"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.dukkan">Yaradıcı studiya</span>
+          <h3>Dukkan Projects</h3>
+          <span class="x-port__link"><span>dukkanproject.az</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://part.agency/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#f2f1ee;--chip2:#e2dfd8"><img loading="lazy" decoding="async" src="/assets/img/p-part.webp" alt="Part Agency" width="640" height="202"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.part">Agentlik / marketinq</span>
+          <h3>Part Agency</h3>
+          <span class="x-port__link"><span>part.agency</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://dukkan.az/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#f2f1ee;--chip2:#e4e1da"><img loading="lazy" decoding="async" style="max-height:30px" src="/assets/img/p2-dukkanaz.webp" alt="Dukkan" width="84" height="29"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.dukkanaz">Onlayn platforma</span>
+          <h3>Dukkan.az</h3>
+          <span class="x-port__link"><span>dukkan.az</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://brandmaker.az" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#f3f1ec;--chip2:#e6e2d9"><img loading="lazy" decoding="async" src="/assets/img/p2-brandmaker.webp" alt="Brandmaker.az" width="570" height="111"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.brand">E-ticarət platforması</span>
+          <h3>Brandmaker.az</h3>
+          <span class="x-port__link"><span>brandmaker.az</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://mflexlog.com" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#0f3120;--chip2:#07200f"><img loading="lazy" decoding="async" src="/assets/img/p-mflexlog.webp" alt="M-Flex Logistics" width="640" height="114"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.mflex">Logistika / ekspedisiya</span>
+          <h3>M-Flex Logistics</h3>
+          <span class="x-port__link"><span>mflexlog.com</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://bekgenerator.com/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo" style="--chip:#eef2f7;--chip2:#dde5ef"><img loading="lazy" decoding="async" src="/assets/img/p2-bek.webp" alt="BEK Generator" width="640" height="210"></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.bek">Generator / avadanlıq</span>
+          <h3>BEK Generator</h3>
+          <span class="x-port__link"><span>bekgenerator.com</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <a class="x-port__card" href="https://sacramentorepairappliance.com/" target="_blank" rel="noopener" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-live" data-i18n="eco.n.live">Aktiv</span>
+        <div class="x-port__logo x-port__logo--mono" style="--chip:#1c2a4a;--chip2:#111a2e">
+          <span class="x-mono">
+            <b class="x-mono__mark">SAR</b>
+            <span class="x-mono__wm"><b>Sacramento</b><i>Appliance Repair</i></span>
+          </span>
+        </div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.sar">Məişət texnikası təmiri</span>
+          <h3>Sacramento Appliance Repair</h3>
+          <span class="x-port__link"><span>sacramentorepairappliance.com</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></i></span>
+        </div>
+      </a>
+
+      <div class="x-port__card is-soon" data-fx="rise" data-fx-amt="40">
+        <span class="x-port__status is-soon" data-i18n="eco.n.soon">2026</span>
+        <div class="x-port__logo" style="--chip:#182742;--chip2:#0e1626"><b>BagERP</b></div>
+        <div class="x-port__body">
+          <span class="x-port__cat" data-i18n="port.c.erp">Bulud əsaslı ERP sistemi</span>
+          <h3>BagERP</h3>
+          <span class="x-port__soon" data-i18n="port.soon">Hazırlanır</span>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="x-port__more" id="portMore">
+      <span data-i18n="port.showall">Hamısını göstər</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="x-faq" id="faq">
+  <div class="shell x-faq__grid">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal data-i18n="faq.eyebrow">Suallar</p>
+      <h2 class="h-lg" data-reveal data-decode data-i18n="faq.title">Tez-tez verilən suallar</h2>
+    </div>
+    <div class="faq">
+      <details class="faq__item" data-reveal>
+        <summary><span data-i18n="faq.1.q">BagTech hansı xidmətləri göstərir?</span><i></i></summary>
+        <div class="faq__a"><p data-i18n="faq.1.a">BagTech Bakıda fəaliyyət göstərən IT şirkətidir. Fərdi proqram təminatı, mobil tətbiqlər, süni intellekt həlləri, kibertəhlükəsizlik, CRM və ERP sistemləri, sistem inteqrasiyası, saytların hazırlanması, IT infrastruktur və IT autsorsinq xidmətləri göstəririk.</p></div>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary><span data-i18n="faq.2.q">IT şirkəti seçərkən nələrə diqqət yetirmək lazımdır?</span><i></i></summary>
+        <div class="faq__a"><p data-i18n="faq.2.a">Şirkətin real layihələrinə (portfoliosuna), iş mərhələlərinin və büdcənin əvvəlcədən yazılı razılaşdırılmasına, təhvildən sonra dəstək göstərilməsinə və komandanın sizin sahənizi nə dərəcədə başa düşməsinə.</p></div>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary><span data-i18n="faq.3.q">Layihə necə başlayır?</span><i></i></summary>
+        <div class="faq__a"><p data-i18n="faq.3.a">Pulsuz ilkin konsultasiyadan. Sonra audit və tələblərin toplanması (1–2 həftə), ardınca arxitekturanın hazırlanması və kommersiya təklifi (1 həftə). Mərhələlər, müddət və büdcə müqavilədən əvvəl yazılı razılaşdırılır.</p></div>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary><span data-i18n="faq.4.q">Layihənin qiyməti necə hesablanır?</span><i></i></summary>
+        <div class="faq__a"><p data-i18n="faq.4.a">Qiymət işin həcmindən, inteqrasiyalardan və platformalardan asılıdır. Sabit qiymət cədvəlimiz yoxdur: hər layihə üçün tələblərə əsasən ayrıca təklif hazırlanır, ilkin qiymətləndirmə isə pulsuzdur.</p></div>
+      </details>
+      <details class="faq__item" data-reveal>
+        <summary><span data-i18n="faq.5.q">Yalnız Bakıdakı şirkətlərlə işləyirsinizmi?</span><i></i></summary>
+        <div class="faq__a"><p data-i18n="faq.5.a">Xeyr. Əsas bazarımız Azərbaycandır, lakin xarici sifarişçilərlə də uzaqdan işləyirik.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT — editorial ============ -->
+<section class="x-cta" id="contact">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <div class="x-cta__grid">
+      <div class="x-cta__head" data-reveal-group data-reveal-step="0.1">
+        <span class="x-idx" data-reveal>04</span>
+        <p class="eyebrow" data-reveal data-i18n="cta.eyebrow">Əlaqə</p>
+        <h2 data-reveal data-decode data-i18n="cta.title">Layihənizi<br>müzakirə edək</h2>
+        <p class="lead" data-reveal data-i18n="cta.lead">İlkin konsultasiya və layihənin təxmini dəyərinin hesablanması pulsuzdur. Müraciətlərə 24 saat ərzində cavab veririk.</p>
+        <div class="contact-list" data-reveal>
+          <a href="tel:+994505250555">
+            <svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+            +994 50 525 05 55
+          </a>
+          <a href="mailto:info@bagtech.az">
+            <svg viewBox="0 0 24 24" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            info@bagtech.az
+          </a>
+          <span class="contact-list__item">
+            <svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="cta.addr">Bakı, Azərbaycan</span>
+          </span>
+        </div>
+      </div>
+
+      <form class="form x-cta__form" id="form" data-reveal novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label data-i18n="f.name">Ad və soyad</label>
+            <input type="text" name="name" placeholder="Əmir Əmirov" required>
+          </div>
+          <div class="field">
+            <label data-i18n="f.company">Şirkət</label>
+            <input type="text" name="company" placeholder="Şirkət MMC">
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <label data-i18n="f.email">E-poçt</label>
+            <input type="email" name="email" placeholder="amir@sirket.az" required>
+          </div>
+          <div class="field">
+            <label data-i18n="f.topic">Mövzu</label>
+            <select name="topic">
+              <option data-i18n="f.t1">Proqram təminatı</option>
+              <option data-i18n="f.t2">Süni intellekt</option>
+              <option data-i18n="f.t3">Kibertəhlükəsizlik</option>
+              <option data-i18n="f.t4">CRM və ERP</option>
+              <option data-i18n="f.t5">Sistem inteqrasiyası</option>
+              <option data-i18n="f.t7">Sayt və e-ticarət</option>
+              <option data-i18n="f.t8">IT infrastrukturu</option>
+              <option data-i18n="f.t9">Mobil tətbiq</option>
+              <option data-i18n="f.t6">Digər</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label data-i18n="f.msg">Mesaj</label>
+          <textarea name="message" rows="4" placeholder="Layihəniz haqqında qısaca..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <span data-i18n="f.send">Göndər</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+        <p class="form__note" id="formNote" data-i18n="f.note">Bu, sınaq versiyasıdır: forma hələ serverə qoşulmayıb.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="x-foot">
+  <div class="shell">
+    <div class="x-foot__top" data-reveal>
+      <div class="x-foot__big"><img loading="lazy" decoding="async" src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></div>
+      <p class="x-foot__about" data-i18n="ft.about">Biznes üçün IT həlləri: proqram təminatı, süni intellekt, kibertəhlükəsizlik, CRM/ERP və sistem inteqrasiyası. Bakı, Azərbaycan.</p>
+    </div>
+    <div class="footer__grid x-foot__grid">
+      <div class="footer__col">
+        <h4 data-i18n="ft.solutions">Həllər</h4>
+        <a href="/xidmetler/proqram-teminati/" data-i18n="ft.s1">Proqram təminatı</a>
+        <a href="/xidmetler/suni-intellekt/" data-i18n="ft.s2">Süni intellekt</a>
+        <a href="/xidmetler/kibertehlukesizlik/" data-i18n="ft.s3">Kibertəhlükəsizlik</a>
+        <a href="/xidmetler/crm-erp/" data-i18n="ft.s4">CRM və ERP</a>
+        <a href="/xidmetler/sistem-inteqrasiyasi/" data-i18n="ft.s5">Sistem inteqrasiyası</a>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="ft.products">Məhsullar</h4>
+        <a href="https://brandmaker.az" target="_blank" rel="noopener">Brandmaker.az</a>
+        <a href="#portfolio">BagERP</a>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="ft.company">Şirkət</h4>
+        <a href="#process" data-i18n="ft.c1">Necə işləyirik</a>
+        <a href="/blog/" data-i18n="nav.blog">Bloq</a>
+        <a href="#contact" data-i18n="ft.c2">Əlaqə</a>
+        <a href="/xidmetler/" data-i18n="ft.c5">Xidmətlər</a>
+      </div>
+      <div class="footer__col">
+        <h4 data-i18n="nav.contact">Əlaqə</h4>
+        <a href="tel:+994505250555">+994 50 525 05 55</a>
+        <a href="mailto:info@bagtech.az">info@bagtech.az</a>
+        <span data-i18n="cta.addr">Bakı, Azərbaycan</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 BagTech MMC · VÖEN 1310001931 · <span data-i18n="ft.rights">Bütün hüquqlar qorunur.</span></span>
+    </div>
+  </div>
+</footer>

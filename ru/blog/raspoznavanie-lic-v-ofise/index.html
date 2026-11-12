@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Распознавание лиц в офисе: как работает система | BagTech</title>
+<meta name="description" content="Карты теряются, пароли забываются, табели заполняются вручную. Как распознавание лиц решает эти проблемы и что учесть, чтобы данные были в безопасности.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/">
+<link rel="alternate" hreflang="az" href="https://bagtech.az/blog/ofisde-uz-tanima/">
+<link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/face-recognition-in-the-office/">
+<link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/">
+<link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/ofisde-uz-tanima/">
+<meta name="theme-color" content="#050508">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BagTech">
+<meta property="og:title" content="Распознавание лиц в офисе: как работает система | BagTech">
+<meta property="og:description" content="Карты теряются, пароли забываются, табели заполняются вручную. Как распознавание лиц решает эти проблемы и что учесть, чтобы данные были в безопасности.">
+<meta property="og:image" content="https://bagtech.az/assets/img/blog/ofisde-uz-tanima-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="az_AZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Распознавание лиц в офисе: как работает система | BagTech">
+<meta name="twitter:description" content="Карты теряются, пароли забываются, табели заполняются вручную. Как распознавание лиц решает эти проблемы и что учесть, чтобы данные были в безопасности.">
+<meta name="twitter:image" content="https://bagtech.az/assets/img/blog/ofisde-uz-tanima-og.jpg">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon.png?v=1785582282">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1785582282">
+<link rel="alternate" type="application/rss+xml" title="BagTech — Блог" href="/ru/blog/rss.xml">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/onest-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-cyrillic.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}html[lang="ru"]{--font-display:"Onest","Space Grotesk",-apple-system,BlinkMacSystemFont,sans-serif}</style>
+<link rel="stylesheet" href="/assets/css/style.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/service.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/blog.css?v=a1deed577d">
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","legalName":"BagTech MMC","url":"https://bagtech.az/ru/","logo":"https://bagtech.az/assets/img/logo-light.png","image":"https://bagtech.az/assets/img/og.jpg?v=2","description":"BagTech — IT-компания из Баку. С 2018 года разрабатывает программное обеспечение, мобильные приложения и сайты, внедряет искусственный интеллект, CRM/ERP-системы и системную интеграцию, обеспечивает кибербезопасность, IT-инфраструктуру и IT-аутсорсинг.","foundingDate":"2018","vatID":"1310001931","email":"info@bagtech.az","telephone":"+994505250555","address":{"@type":"PostalAddress","addressLocality":"Баку","addressCountry":"AZ"},"areaServed":{"@type":"Country","name":"Azerbaijan"},"knowsLanguage":["az","en","ru"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+994505250555","email":"info@bagtech.az","availableLanguage":["az","en","ru"]},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Услуги","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка программного обеспечения на заказ","url":"https://bagtech.az/ru/uslugi/razrabotka-po/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка мобильных приложений","url":"https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Искусственный интеллект и умные решения для бизнеса","url":"https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Услуги кибербезопасности","url":"https://bagtech.az/ru/uslugi/kiberbezopasnost/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CRM- и ERP-системы","url":"https://bagtech.az/ru/uslugi/crm-erp-sistemy/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Системная интеграция","url":"https://bagtech.az/ru/uslugi/sistemnaya-integraciya/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка сайтов и интернет-магазинов","url":"https://bagtech.az/ru/uslugi/razrabotka-saytov/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT-инфраструктура и облако","url":"https://bagtech.az/ru/uslugi/it-infrastruktura/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT-аутсорсинг и техническая поддержка","url":"https://bagtech.az/ru/uslugi/it-autsorsing/"}}]}},{"@type":"WebSite","@id":"https://bagtech.az/#site","url":"https://bagtech.az/","name":"BagTech","inLanguage":["az","en","ru"],"publisher":{"@id":"https://bagtech.az/#org"}},{"@type":"BlogPosting","@id":"https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/#post","headline":"Распознавание лиц в офисе: как это работает и где остаются данные","description":"Карты теряются, пароли забываются, табели заполняются вручную. Как распознавание лиц решает эти проблемы и что учесть, чтобы данные были в безопасности.","url":"https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/","mainEntityOfPage":"https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/","datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"ru","image":"https://bagtech.az/assets/img/blog/ofisde-uz-tanima-og.jpg","articleSection":"Искусственный интеллект","wordCount":475,"author":{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","url":"https://bagtech.az/"},"publisher":{"@id":"https://bagtech.az/#org"},"about":{"@id":"https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/#service"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://bagtech.az/ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://bagtech.az/ru/blog/"},{"@type":"ListItem","position":3,"name":"Распознавание лиц в офисе: как это работает и где остаются данные","item":"https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"От чего зависит точность распознавания лиц?","acceptedAnswer":{"@type":"Answer","text":"Точность зависит от освещения, расположения и высоты камеры, а также от качества регистрации: когда лицо сохранено с нескольких ракурсов, система устойчивее к изменениям внешности."}},{"@type":"Question","name":"Нужно ли специальное оборудование для системы распознавания лиц?","acceptedAnswer":{"@type":"Answer","text":"Наша система быстро работает даже на обычном ноутбуке. Для контроля доступа достаточно камеры и турникета или электронного замка."}},{"@type":"Question","name":"Безопасно ли хранить данные о лицах?","acceptedAnswer":{"@type":"Answer","text":"Система сравнивает не фотографии, а цифровые слепки лиц и работает на собственном сервере компании. Для безопасности нужно заранее определить порядок получения согласия, права доступа и правила удаления данных."}}]}]}</script>
+</head>
+<body class="blog-page">
+<a class="skip" href="#main">Перейти к содержимому</a>
+<canvas class="signal" id="signal" aria-hidden="true"></canvas>
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a href="/ru/" class="brand"><img src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></a>
+
+    <nav class="nav__links" id="navLinks">
+      <span class="nav__ind" aria-hidden="true"></span>
+      <a href="/ru/#solutions">Решения</a>
+      <a href="/ru/#process">Как работаем</a>
+      <a href="/ru/#portfolio">Портфолио</a>
+      <a href="/ru/blog/">Блог</a>
+      <a href="/ru/#contact">Контакты</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="lang" id="lang"><a href="/blog/ofisde-uz-tanima/" hreflang="az" lang="az">AZ</a><span>/</span><a href="/en/blog/face-recognition-in-the-office/" hreflang="en" lang="en">EN</a><span>/</span><a href="/ru/blog/raspoznavanie-lic-v-ofise/" hreflang="ru" lang="ru" class="is-active" aria-current="true">RU</a></div>
+      <a href="/ru/#contact" class="btn btn-primary"><span>Связаться</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Меню"><i></i><i></i></button>
+    </div>
+    <i class="nav__progress" aria-hidden="true"></i>
+  </div>
+</header>
+<main id="main">
+<section class="post-hero" id="top">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="/ru/">Главная</a><i></i><a href="/ru/blog/">Блог</a><i></i><b>Искусственный интеллект</b></nav>
+    <h1>Распознавание лиц в офисе: как это работает и где остаются данные</h1>
+    <p class="post-meta"><time datetime="2026-11-12">12 ноября 2026</time><i></i><span>4 мин чтения</span><i></i><span>Команда BagTech</span></p>
+    <p class="lead">Пропуска теряют и передают другим, а табели посещаемости часто заполняют вручную. Система распознавания лиц автоматизирует эти процессы, но, чтобы ей можно было доверять, её нужно правильно выстроить.</p>
+    <figure class="post-photo">
+      <img src="/assets/img/blog/ofisde-uz-tanima-1600.webp" srcset="/assets/img/blog/ofisde-uz-tanima-800.webp 800w, /assets/img/blog/ofisde-uz-tanima-1600.webp 1600w" sizes="(max-width: 1400px) 100vw, 1300px" alt="Турникеты со световыми индикаторами на входе в офис" width="1600" height="1066" fetchpriority="high" decoding="async">
+      <figcaption>Фото: <a href="https://unsplash.com/@martin_leitgeb_photos?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Martin Leitgeb</a> / <a href="https://unsplash.com/?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="shell post-layout">
+  <aside class="toc" aria-label="Содержание"><p class="toc__title">Содержание</p><ol></ol></aside>
+  <div class="post-main">
+    <article class="post-body">
+<h2>Как работает система?</h2>
+<p>На изображении с камеры система сначала находит лицо, а затем превращает его в цифровой слепок — набор чисел, описывающих черты лица. При входе новый слепок сравнивается со слепками в базе: если совпадение найдено, дверь открывается или отмечается посещение.</p>
+<p>Важный момент: сравниваются не фотографии, а именно эти цифровые слепки. Это ускоряет работу и уменьшает объём хранимых данных.</p>
+<h2>Регистрация занимает несколько секунд</h2>
+<p>В нашей системе добавление нового сотрудника занимает около 15 секунд: человек слегка поворачивает голову вправо и влево перед камерой, а система запоминает лицо с разных ракурсов. Отдельная фотосессия или специальное оборудование не нужны.</p>
+<p>Подробнее о возможностях системы: <a href="/ru/uslugi/iskusstvennyy-intellekt/">решения на базе искусственного интеллекта и распознавания лиц</a>.</p>
+<h2>Где это применяется</h2>
+<ul>
+<li><b>Доступ в офис и на объекты</b>: вместо карт и ключей.</li>
+<li><b>Учёт посещаемости сотрудников</b>: время прихода и ухода фиксируется автоматически.</li>
+<li><b>Вход VIP-персон и гостей на мероприятиях</b>: проверка по списку проходит без очередей.</li>
+<li><b>Безопасность</b>: контроль входа людей, у которых нет допуска.</li>
+</ul>
+<h2>Где хранятся данные?</h2>
+<p>Данные о лице — это персональные данные, и они требуют особого внимания. Поэтому наша система работает на собственном сервере компании (on-premise): данные не отправляются во внешнее облако и не покидают компанию. Система быстро работает даже на обычном ноутбуке, поэтому покупать дорогой сервер не нужно.</p>
+<p>Перед внедрением учтите и следующее:</p>
+<ul>
+<li>Расскажите сотрудникам о системе и получите их согласие.</li>
+<li>Определите, у кого есть доступ к базе, и ведите журнал обращений к ней.</li>
+<li>Вовремя удаляйте данные уволившихся сотрудников.</li>
+<li>Храните резервную копию базы в зашифрованном виде.</li>
+</ul>
+<p>Подробнее о правах доступа и резервных копиях мы писали в статье <a href="/ru/blog/kiberbezopasnost-10-shagov/">о первых 10 шагах в кибербезопасности</a>.</p>
+<blockquote>Распознавание лиц приносит удобство, но доверие зависит от того, как обращаются с данными.</blockquote>
+<h2>От чего зависит точность?</h2>
+<ul>
+<li><b>Освещение.</b> Сильный свет сзади или тёмный коридор затрудняют распознавание. Камеру лучше ставить не против света, а по направлению света.</li>
+<li><b>Расположение и высота камеры.</b> Камера должна видеть лицо примерно на уровне глаз, прямо, а не под углом.</li>
+<li><b>Качество регистрации.</b> Когда лицо сохранено с нескольких ракурсов, система устойчивее к очкам, новой причёске или бороде.</li>
+<li><b>Поток людей.</b> Если на входе одновременно оказывается несколько человек, под это нужно настроить поле зрения камеры и логику работы двери.</li>
+</ul>
+<h2>Защита от подделки</h2>
+<p>Выбирая систему, обязательно спросите: можно ли её обмануть фотографией на экране телефона или распечатанным снимком? Такая проверка называется liveness (проверка «живости») и позволяет отличить живого человека от изображения. Для контроля доступа это важное требование.</p>
+<h2>Связь с существующими системами</h2>
+<p>Распознавание лиц не работает само по себе: оно интегрируется с турникетом или электронным замком, с HR-системой и системой учёта посещаемости, а иногда и с регистрацией на мероприятия. Поэтому до внедрения нужно определить, какие системы будут получать данные и в каком формате.</p>
+<p>Подключение к турникетам, HR-системам и системам учёта посещаемости — это задача <a href="/ru/uslugi/sistemnaya-integraciya/">системной интеграции</a>.</p>
+<div class="callout"><p class="callout__title">Коротко о главном</p><ul>
+<li>Система сравнивает не фотографии, а цифровые слепки лиц.</li>
+<li>Регистрация занимает около 15 секунд.</li>
+<li>Данные остаются на собственном сервере компании.</li>
+<li>Согласие, права доступа и правила удаления данных нужно определить заранее.</li>
+</ul></div>
+<h2>Частые вопросы</h2>
+<div class="faq">
+<details class="faq__item"><summary><span>От чего зависит точность распознавания лиц?</span><i></i></summary><div class="faq__a"><p>Точность зависит от освещения, расположения и высоты камеры, а также от качества регистрации: когда лицо сохранено с нескольких ракурсов, система устойчивее к изменениям внешности.</p></div></details>
+<details class="faq__item"><summary><span>Нужно ли специальное оборудование для системы распознавания лиц?</span><i></i></summary><div class="faq__a"><p>Наша система быстро работает даже на обычном ноутбуке. Для контроля доступа достаточно камеры и турникета или электронного замка.</p></div></details>
+<details class="faq__item"><summary><span>Безопасно ли хранить данные о лицах?</span><i></i></summary><div class="faq__a"><p>Система сравнивает не фотографии, а цифровые слепки лиц и работает на собственном сервере компании. Для безопасности нужно заранее определить порядок получения согласия, права доступа и правила удаления данных.</p></div></details>
+</div>
+    </article>
+    <div class="post-help">
+      <div>
+        <h3>Нужна помощь по этой теме?</h3>
+        <p>Обсудим ваш проект: первая консультация бесплатна.</p>
+      </div>
+      <div class="post-help__actions">
+        <a href="/ru/#contact" class="btn btn-primary" data-track="cta_contact"><span>Обсудить проект</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/ru/uslugi/iskusstvennyy-intellekt/" class="btn btn-ghost"><span>Искусственный интеллект и умные решения для бизнеса</span></a>
+      </div>
+    </div>
+    <p class="post-author"><img src="/assets/img/logo-light.webp" alt="BagTech" width="110" height="38" loading="lazy"><span>Команда BagTech</span><span>·</span><time datetime="2026-11-12">12 ноября 2026</time></p>
+  </div>
+</div>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Блог</p>
+      <h2 class="h-lg" data-reveal data-decode>Другие статьи</h2>
+    </div>
+    <div class="post-grid">
+      <a class="post-card" href="/ru/blog/kiberbezopasnost-10-shagov/" data-cat="sec" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/kibertehlukesizlik-10-addim-800.webp" alt="Красный замок на клавиатуре компьютера" width="800" height="534" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Кибербезопасность</span><i></i><span>3 мин чтения</span></p>
+          <h3>Кибербезопасность для малого и среднего бизнеса: первые 10 шагов</h3>
+          <p>Большинство атак начинается не со сложных технологий, а со слабого пароля и необновлённой программы. 10 практических шагов, которые не требуют большого бюджета.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/ru/blog/crm-ili-erp/" data-cat="crm" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/crm-yoxsa-erp-800.webp" alt="Сотрудники с планшетом идут между складскими стеллажами" width="800" height="532" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">CRM и ERP</span><i></i><span>3 мин чтения</span></p>
+          <h3>CRM или ERP: что нужно вашей компании?</h3>
+          <p>Эти два термина часто путают. Объясняем, чем CRM отличается от ERP, в какой ситуации нужна каждая и как выбрать между готовой платформой и системой с нуля.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/ru/blog/sistemnaya-integraciya-vvedenie/" data-cat="int" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/sistem-inteqrasiyasi-giris-800.webp" alt="Аккуратно подключённые жёлтые оптические кабели в серверном шкафу" width="800" height="571" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Системная интеграция</span><i></i><span>3 мин чтения</span></p>
+          <h3>Как перестать переносить данные вручную: введение в системную интеграцию</h3>
+          <p>Заказ приходит с сайта, бухгалтер переносит его в программу, склад ведёт свою таблицу. Как это изменить с помощью API, вебхуков и продуманной архитектуры.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="x-foot">
+  <div class="shell">
+    <div class="x-foot__top" data-reveal>
+      <div class="x-foot__big"><img loading="lazy" decoding="async" src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></div>
+      <p class="x-foot__about">IT-решения для бизнеса: разработка ПО, искусственный интеллект, кибербезопасность, CRM/ERP и системная интеграция. Баку, Азербайджан.</p>
+    </div>
+    <div class="footer__grid x-foot__grid">
+      <div class="footer__col">
+        <h4>Решения</h4>
+        <a href="/ru/uslugi/razrabotka-po/">Разработка ПО</a>
+        <a href="/ru/uslugi/iskusstvennyy-intellekt/">Искусственный интеллект</a>
+        <a href="/ru/uslugi/kiberbezopasnost/">Кибербезопасность</a>
+        <a href="/ru/uslugi/crm-erp-sistemy/">CRM и ERP</a>
+        <a href="/ru/uslugi/sistemnaya-integraciya/">Системная интеграция</a>
+      </div>
+      <div class="footer__col">
+        <h4>Продукты</h4>
+        <a href="https://brandmaker.az" target="_blank" rel="noopener">Brandmaker.az</a>
+        <a href="/ru/#portfolio">BagERP</a>
+      </div>
+      <div class="footer__col">
+        <h4>Компания</h4>
+        <a href="/ru/#process">Как мы работаем</a>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/#contact">Контакты</a>
+        <a href="/ru/uslugi/">Услуги</a>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+994505250555">+994 50 525 05 55</a>
+        <a href="mailto:info@bagtech.az">info@bagtech.az</a>
+        <span>Баку, Азербайджан</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 BagTech MMC · VÖEN 1310001931 · <span>Все права защищены.</span></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=a1deed577d" defer></script>
+<script src="/assets/js/blog.js?v=a1deed577d" defer></script>
+<script src="/assets/js/analytics.js?v=a1deed577d" defer data-ga4="" data-gtm="" data-text="Мы используем анонимную статистику, чтобы улучшать сайт." data-yes="Принять" data-no="Отклонить"></script>
+</body>
+</html>

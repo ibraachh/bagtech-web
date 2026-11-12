@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Что такое MVP и зачем начинать проект с него | BagTech</title>
+<meta name="description" content="Строить большую систему сразу заманчиво, но это самый дорогой путь. Объясняем, как выбрать первую версию продукта, что отложить на потом и когда пора расти.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://bagtech.az/ru/blog/chto-takoe-mvp/">
+<link rel="alternate" hreflang="az" href="https://bagtech.az/blog/mvp-nedir/">
+<link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/what-is-an-mvp/">
+<link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/chto-takoe-mvp/">
+<link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/mvp-nedir/">
+<meta name="theme-color" content="#050508">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BagTech">
+<meta property="og:title" content="Что такое MVP и зачем начинать проект с него | BagTech">
+<meta property="og:description" content="Строить большую систему сразу заманчиво, но это самый дорогой путь. Объясняем, как выбрать первую версию продукта, что отложить на потом и когда пора расти.">
+<meta property="og:image" content="https://bagtech.az/assets/img/blog/mvp-nedir-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="az_AZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://bagtech.az/ru/blog/chto-takoe-mvp/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Что такое MVP и зачем начинать проект с него | BagTech">
+<meta name="twitter:description" content="Строить большую систему сразу заманчиво, но это самый дорогой путь. Объясняем, как выбрать первую версию продукта, что отложить на потом и когда пора расти.">
+<meta name="twitter:image" content="https://bagtech.az/assets/img/blog/mvp-nedir-og.jpg">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon.png?v=1785582282">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1785582282">
+<link rel="alternate" type="application/rss+xml" title="BagTech — Блог" href="/ru/blog/rss.xml">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/onest-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-cyrillic.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}html[lang="ru"]{--font-display:"Onest","Space Grotesk",-apple-system,BlinkMacSystemFont,sans-serif}</style>
+<link rel="stylesheet" href="/assets/css/style.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/service.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/blog.css?v=a1deed577d">
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","legalName":"BagTech MMC","url":"https://bagtech.az/ru/","logo":"https://bagtech.az/assets/img/logo-light.png","image":"https://bagtech.az/assets/img/og.jpg?v=2","description":"BagTech — IT-компания из Баку. С 2018 года разрабатывает программное обеспечение, мобильные приложения и сайты, внедряет искусственный интеллект, CRM/ERP-системы и системную интеграцию, обеспечивает кибербезопасность, IT-инфраструктуру и IT-аутсорсинг.","foundingDate":"2018","vatID":"1310001931","email":"info@bagtech.az","telephone":"+994505250555","address":{"@type":"PostalAddress","addressLocality":"Баку","addressCountry":"AZ"},"areaServed":{"@type":"Country","name":"Azerbaijan"},"knowsLanguage":["az","en","ru"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+994505250555","email":"info@bagtech.az","availableLanguage":["az","en","ru"]},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Услуги","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка программного обеспечения на заказ","url":"https://bagtech.az/ru/uslugi/razrabotka-po/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка мобильных приложений","url":"https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Искусственный интеллект и умные решения для бизнеса","url":"https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Услуги кибербезопасности","url":"https://bagtech.az/ru/uslugi/kiberbezopasnost/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CRM- и ERP-системы","url":"https://bagtech.az/ru/uslugi/crm-erp-sistemy/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Системная интеграция","url":"https://bagtech.az/ru/uslugi/sistemnaya-integraciya/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка сайтов и интернет-магазинов","url":"https://bagtech.az/ru/uslugi/razrabotka-saytov/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT-инфраструктура и облако","url":"https://bagtech.az/ru/uslugi/it-infrastruktura/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT-аутсорсинг и техническая поддержка","url":"https://bagtech.az/ru/uslugi/it-autsorsing/"}}]}},{"@type":"WebSite","@id":"https://bagtech.az/#site","url":"https://bagtech.az/","name":"BagTech","inLanguage":["az","en","ru"],"publisher":{"@id":"https://bagtech.az/#org"}},{"@type":"BlogPosting","@id":"https://bagtech.az/ru/blog/chto-takoe-mvp/#post","headline":"Что такое MVP и почему проект стоит начинать с него","description":"Строить большую систему сразу заманчиво, но это самый дорогой путь. Объясняем, как выбрать первую версию продукта, что отложить на потом и когда пора расти.","url":"https://bagtech.az/ru/blog/chto-takoe-mvp/","mainEntityOfPage":"https://bagtech.az/ru/blog/chto-takoe-mvp/","datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"ru","image":"https://bagtech.az/assets/img/blog/mvp-nedir-og.jpg","articleSection":"Разработка ПО","wordCount":538,"author":{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","url":"https://bagtech.az/"},"publisher":{"@id":"https://bagtech.az/#org"},"about":{"@id":"https://bagtech.az/ru/uslugi/razrabotka-po/#service"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://bagtech.az/ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://bagtech.az/ru/blog/"},{"@type":"ListItem","position":3,"name":"Что такое MVP и почему проект стоит начинать с него","item":"https://bagtech.az/ru/blog/chto-takoe-mvp/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое MVP?","acceptedAnswer":{"@type":"Answer","text":"MVP (Minimum Viable Product, минимально жизнеспособный продукт) — это самая маленькая работающая версия продукта, которая решает основную задачу и которую можно дать реальным пользователям."}},{"@type":"Question","name":"Чем MVP отличается от прототипа?","acceptedAnswer":{"@type":"Answer","text":"Прототип — это макет, который показывает идею и не предназначен для реальной работы. MVP — работающий продукт, которым пользуются реальные люди, просто функций в нём мало."}},{"@type":"Question","name":"Какие функции включать в MVP?","acceptedAnswer":{"@type":"Answer","text":"В MVP включают только те функции, без которых пользователь не сможет пройти основной сценарий. Остальное откладывают на следующие этапы."}}]}]}</script>
+</head>
+<body class="blog-page">
+<a class="skip" href="#main">Перейти к содержимому</a>
+<canvas class="signal" id="signal" aria-hidden="true"></canvas>
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a href="/ru/" class="brand"><img src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></a>
+
+    <nav class="nav__links" id="navLinks">
+      <span class="nav__ind" aria-hidden="true"></span>
+      <a href="/ru/#solutions">Решения</a>
+      <a href="/ru/#process">Как работаем</a>
+      <a href="/ru/#portfolio">Портфолио</a>
+      <a href="/ru/blog/">Блог</a>
+      <a href="/ru/#contact">Контакты</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="lang" id="lang"><a href="/blog/mvp-nedir/" hreflang="az" lang="az">AZ</a><span>/</span><a href="/en/blog/what-is-an-mvp/" hreflang="en" lang="en">EN</a><span>/</span><a href="/ru/blog/chto-takoe-mvp/" hreflang="ru" lang="ru" class="is-active" aria-current="true">RU</a></div>
+      <a href="/ru/#contact" class="btn btn-primary"><span>Связаться</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Меню"><i></i><i></i></button>
+    </div>
+    <i class="nav__progress" aria-hidden="true"></i>
+  </div>
+</header>
+<main id="main">
+<section class="post-hero" id="top">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="/ru/">Главная</a><i></i><a href="/ru/blog/">Блог</a><i></i><b>Разработка ПО</b></nav>
+    <h1>Что такое MVP и почему проект стоит начинать с него</h1>
+    <p class="post-meta"><time datetime="2026-11-12">12 ноября 2026</time><i></i><span>4 мин чтения</span><i></i><span>Команда BagTech</span></p>
+    <p class="lead">Когда появляется идея нового продукта, хочется построить всё сразу — это естественно. Но пока нет реальных пользователей, мы не знаем, какие функции действительно нужны. MVP — способ получить ответ на этот вопрос с минимальными затратами.</p>
+    <figure class="post-photo">
+      <img src="/assets/img/blog/mvp-nedir-1600.webp" srcset="/assets/img/blog/mvp-nedir-800.webp 800w, /assets/img/blog/mvp-nedir-1600.webp 1600w" sizes="(max-width: 1400px) 100vw, 1300px" alt="Рука над эскизами экранов приложения на доске" width="1600" height="1066" fetchpriority="high" decoding="async">
+      <figcaption>Фото: <a href="https://unsplash.com/@alvarordesign?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Alvaro Reyes</a> / <a href="https://unsplash.com/?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="shell post-layout">
+  <aside class="toc" aria-label="Содержание"><p class="toc__title">Содержание</p><ol></ol></aside>
+  <div class="post-main">
+    <article class="post-body">
+<h2>Что такое MVP?</h2>
+<p>MVP (Minimum Viable Product, минимально жизнеспособный продукт) — это самая маленькая версия продукта, которая решает основную задачу и которую уже можно дать реальным пользователям. Это не недоделанный и не некачественный продукт: функций в MVP мало, но те, что есть, работают надёжно.</p>
+<p>Например, в MVP системы онлайн-записи клиент выбирает услугу и время и получает подтверждение, а администратор видит все записи в одном списке. Программа лояльности, сложные отчёты и мобильное приложение остаются на следующие этапы.</p>
+<h2>Почему не большая система сразу?</h2>
+<ul>
+<li><b>Гипотезы остаются непроверенными.</b> Мы предполагаем, что нужно пользователям, а они часто идут другим путём.</li>
+<li><b>Бюджет уходит не туда, куда планировали.</b> Месяцы тратятся на функции, которыми никто не пользуется.</li>
+<li><b>Выход на рынок затягивается.</b> За это время конкурент с более простым продуктом уже забирает клиентов.</li>
+<li><b>Изменения дорожают.</b> Перестроить большую систему гораздо сложнее, чем расширить маленькую версию.</li>
+</ul>
+<h2>Как выбрать, что войдёт в MVP</h2>
+<p>Самый полезный вопрос звучит так: что пользователь должен уметь сделать как минимум, чтобы продукт начал приносить ему пользу? Мы советуем три шага:</p>
+<ol>
+<li><b>Опишите основной сценарий.</b> В нескольких предложениях изложите путь пользователя от входа до результата.</li>
+<li><b>Разделите функции на три группы:</b> «обязательно», «хорошо бы» и «потом». В MVP попадает только первая группа.</li>
+<li><b>Заранее определите, чем измерите успех.</b> Например: 100 записей за первый месяц или 30% заказов через онлайн.</li>
+</ol>
+<blockquote>В хорошем MVP про каждую функцию на вопрос «сможет ли пользователь работать с продуктом без неё?» отвечают «нет».</blockquote>
+<h2>Пример: система онлайн-записи</h2>
+<p>Возьмём систему записи для салона красоты или клиники. Идея простая, но список пожеланий быстро растёт. Разделить его можно так:</p>
+<table>
+<thead><tr><th>Этап</th><th>Что входит</th></tr></thead>
+<tbody>
+<tr><td>MVP</td><td>Выбор услуги и специалиста, свободное время, подтверждение по SMS или электронной почте, список записей для администратора</td></tr>
+<tr><td>2-й этап</td><td>Онлайн-оплата, напоминания, личный кабинет клиента</td></tr>
+<tr><td>3-й этап</td><td>Программа лояльности, отчёты, мобильное приложение</td></tr>
+</tbody>
+</table>
+<p>После запуска MVP может выясниться, что напоминания нужны клиентам больше, чем оплата. Тогда порядок работ на втором этапе меняется, и бюджет идёт на самое важное.</p>
+<h2>Частые ошибки при создании MVP</h2>
+<ul>
+<li><b>Понимать «минимальный» как «некачественный».</b> Функций может быть мало, но на безопасности, скорости и удобстве экономить нельзя.</li>
+<li><b>Забыть про аналитику.</b> Если вы не измеряете, что делают пользователи, MVP ничему не учит.</li>
+<li><b>Не собирать обратную связь.</b> Разговор с первыми пользователями даёт больше, чем любой отчёт.</li>
+<li><b>Растягивать MVP «до бесконечности».</b> Когда каждую неделю добавляется новая функция, первая версия так и не выходит.</li>
+</ul>
+<h2>Сколько времени это занимает?</h2>
+<p>Срок зависит от объёма проекта, но правильно выбранный MVP обычно измеряется неделями, а не месяцами. Если план первой версии получается длиннее полугода, это знак, что в списке всё ещё слишком много функций из группы «хорошо бы».</p>
+<h2>Что происходит после MVP?</h2>
+<p>После выхода первой версии начинается настоящая работа: собираются данные о реальном использовании, клиенты дают обратную связь, а приоритеты следующего этапа определяются по фактам, а не по предположениям.</p>
+<p>Для этого архитектура с первого дня должна быть рассчитана на рост, чтобы новые модули добавлялись без разборки системы. По нашему опыту, самые успешные проекты развиваются короткими циклами: раз в несколько недель — работающее обновление, измерение и следующее решение.</p>
+<p>Именно так мы ведём проекты по <a href="/ru/uslugi/razrabotka-po/">разработке программного обеспечения на заказ</a>. Если вы планируете мобильный продукт, загляните и на страницу <a href="/ru/uslugi/mobilnye-prilozheniya/">разработки мобильных приложений</a>.</p>
+<div class="callout"><p class="callout__title">Коротко о главном</p><ul>
+<li>MVP — самая маленькая работающая версия продукта, которая решает основную задачу.</li>
+<li>Разделите функции на «обязательно», «хорошо бы» и «потом».</li>
+<li>Определите критерий успеха до запуска.</li>
+<li>Стройте архитектуру с расчётом на рост.</li>
+</ul></div>
+<h2>Частые вопросы</h2>
+<div class="faq">
+<details class="faq__item"><summary><span>Что такое MVP?</span><i></i></summary><div class="faq__a"><p>MVP (Minimum Viable Product, минимально жизнеспособный продукт) — это самая маленькая работающая версия продукта, которая решает основную задачу и которую можно дать реальным пользователям.</p></div></details>
+<details class="faq__item"><summary><span>Чем MVP отличается от прототипа?</span><i></i></summary><div class="faq__a"><p>Прототип — это макет, который показывает идею и не предназначен для реальной работы. MVP — работающий продукт, которым пользуются реальные люди, просто функций в нём мало.</p></div></details>
+<details class="faq__item"><summary><span>Какие функции включать в MVP?</span><i></i></summary><div class="faq__a"><p>В MVP включают только те функции, без которых пользователь не сможет пройти основной сценарий. Остальное откладывают на следующие этапы.</p></div></details>
+</div>
+    </article>
+    <div class="post-help">
+      <div>
+        <h3>Нужна помощь по этой теме?</h3>
+        <p>Обсудим ваш проект: первая консультация бесплатна.</p>
+      </div>
+      <div class="post-help__actions">
+        <a href="/ru/#contact" class="btn btn-primary" data-track="cta_contact"><span>Обсудить проект</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/ru/uslugi/razrabotka-po/" class="btn btn-ghost"><span>Разработка программного обеспечения на заказ</span></a>
+      </div>
+    </div>
+    <p class="post-author"><img src="/assets/img/logo-light.webp" alt="BagTech" width="110" height="38" loading="lazy"><span>Команда BagTech</span><span>·</span><time datetime="2026-11-12">12 ноября 2026</time></p>
+  </div>
+</div>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Блог</p>
+      <h2 class="h-lg" data-reveal data-decode>Другие статьи</h2>
+    </div>
+    <div class="post-grid">
+      <a class="post-card" href="/ru/blog/raspoznavanie-lic-v-ofise/" data-cat="ai" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/ofisde-uz-tanima-800.webp" alt="Турникеты со световыми индикаторами на входе в офис" width="800" height="533" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Искусственный интеллект</span><i></i><span>4 мин чтения</span></p>
+          <h3>Распознавание лиц в офисе: как это работает и где остаются данные</h3>
+          <p>Карты теряются, пароли забываются, табели заполняются вручную. Как распознавание лиц решает эти проблемы и что учесть, чтобы данные были в безопасности.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/ru/blog/kiberbezopasnost-10-shagov/" data-cat="sec" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/kibertehlukesizlik-10-addim-800.webp" alt="Красный замок на клавиатуре компьютера" width="800" height="534" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Кибербезопасность</span><i></i><span>3 мин чтения</span></p>
+          <h3>Кибербезопасность для малого и среднего бизнеса: первые 10 шагов</h3>
+          <p>Большинство атак начинается не со сложных технологий, а со слабого пароля и необновлённой программы. 10 практических шагов, которые не требуют большого бюджета.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/ru/blog/crm-ili-erp/" data-cat="crm" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/crm-yoxsa-erp-800.webp" alt="Сотрудники с планшетом идут между складскими стеллажами" width="800" height="532" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">CRM и ERP</span><i></i><span>3 мин чтения</span></p>
+          <h3>CRM или ERP: что нужно вашей компании?</h3>
+          <p>Эти два термина часто путают. Объясняем, чем CRM отличается от ERP, в какой ситуации нужна каждая и как выбрать между готовой платформой и системой с нуля.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="x-foot">
+  <div class="shell">
+    <div class="x-foot__top" data-reveal>
+      <div class="x-foot__big"><img loading="lazy" decoding="async" src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></div>
+      <p class="x-foot__about">IT-решения для бизнеса: разработка ПО, искусственный интеллект, кибербезопасность, CRM/ERP и системная интеграция. Баку, Азербайджан.</p>
+    </div>
+    <div class="footer__grid x-foot__grid">
+      <div class="footer__col">
+        <h4>Решения</h4>
+        <a href="/ru/uslugi/razrabotka-po/">Разработка ПО</a>
+        <a href="/ru/uslugi/iskusstvennyy-intellekt/">Искусственный интеллект</a>
+        <a href="/ru/uslugi/kiberbezopasnost/">Кибербезопасность</a>
+        <a href="/ru/uslugi/crm-erp-sistemy/">CRM и ERP</a>
+        <a href="/ru/uslugi/sistemnaya-integraciya/">Системная интеграция</a>
+      </div>
+      <div class="footer__col">
+        <h4>Продукты</h4>
+        <a href="https://brandmaker.az" target="_blank" rel="noopener">Brandmaker.az</a>
+        <a href="/ru/#portfolio">BagERP</a>
+      </div>
+      <div class="footer__col">
+        <h4>Компания</h4>
+        <a href="/ru/#process">Как мы работаем</a>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/#contact">Контакты</a>
+        <a href="/ru/uslugi/">Услуги</a>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+994505250555">+994 50 525 05 55</a>
+        <a href="mailto:info@bagtech.az">info@bagtech.az</a>
+        <span>Баку, Азербайджан</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 BagTech MMC · VÖEN 1310001931 · <span>Все права защищены.</span></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=a1deed577d" defer></script>
+<script src="/assets/js/blog.js?v=a1deed577d" defer></script>
+<script src="/assets/js/analytics.js?v=a1deed577d" defer data-ga4="" data-gtm="" data-text="Мы используем анонимную статистику, чтобы улучшать сайт." data-yes="Принять" data-no="Отклонить"></script>
+</body>
+</html>

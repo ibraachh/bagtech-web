@@ -64,7 +64,5 @@
     requestAnimationFrame(() => { paint(); pending = false; });
   }, { passive: true });
 
-  // the language switch rewrites the article body: rebuild the contents after it
-  $$("#lang button").forEach((b) => b.addEventListener("click", () => setTimeout(build, 0)));
   build();
 })();

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog — practical writing on IT for business | BagTech</title>
+    <link>https://bagtech.az/en/blog/</link>
+    <atom:link href="https://bagtech.az/en/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>The BagTech blog: practical articles on software development, AI, cybersecurity, CRM/ERP, system integration and websites for business.</description>
+    <language>en</language>
+    <item>
+      <title>What is an MVP and why your project should start with one</title>
+      <link>https://bagtech.az/en/blog/what-is-an-mvp/</link>
+      <guid isPermaLink="true">https://bagtech.az/en/blog/what-is-an-mvp/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Building a big system in one go looks tempting, but it is the most expensive route. How to choose the first version, what to leave for later and when to grow.</description>
+    </item>
+    <item>
+      <title>Face recognition in the office: how it works and where the data stays</title>
+      <link>https://bagtech.az/en/blog/face-recognition-in-the-office/</link>
+      <guid isPermaLink="true">https://bagtech.az/en/blog/face-recognition-in-the-office/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Cards get lost, passwords are forgotten and attendance sheets are filled in by hand. How face recognition solves this and what it takes to keep the data safe.</description>
+    </item>
+    <item>
+      <title>Cybersecurity for small and mid-sized businesses: the first 10 steps</title>
+      <link>https://bagtech.az/en/blog/cybersecurity-first-10-steps/</link>
+      <guid isPermaLink="true">https://bagtech.az/en/blog/cybersecurity-first-10-steps/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Most attacks start with a weak password or unpatched software, not with sophisticated technology. Ten practical steps that do not require a big budget.</description>
+    </item>
+    <item>
+      <title>CRM or ERP: which one does your company need?</title>
+      <link>https://bagtech.az/en/blog/crm-vs-erp/</link>
+      <guid isPermaLink="true">https://bagtech.az/en/blog/crm-vs-erp/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>CRM and ERP are often confused. We explain how they differ, when you need each one, and how to choose between a ready-made platform and a custom-built system.</description>
+    </item>
+    <item>
+      <title>How to stop copying data by hand: an introduction to system integration</title>
+      <link>https://bagtech.az/en/blog/system-integration-introduction/</link>
+      <guid isPermaLink="true">https://bagtech.az/en/blog/system-integration-introduction/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>An order comes in from the website, the accountant retypes it, the warehouse keeps its own spreadsheet. How APIs, webhooks and sound design change that picture.</description>
+    </item>
+    <item>
+      <title>Why is your website slow? 7 technical checks for speed and SEO</title>
+      <link>https://bagtech.az/en/blog/why-is-your-website-slow/</link>
+      <guid isPermaLink="true">https://bagtech.az/en/blog/why-is-your-website-slow/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>A slow website loses both customers and positions in search. Seven common causes of slow loading that you can check yourself, and how to fix each one.</description>
+    </item>
+  </channel>
+</rss>

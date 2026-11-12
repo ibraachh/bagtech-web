@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bloq — biznes üçün IT haqqında praktik yazılar | BagTech</title>
+    <link>https://bagtech.az/blog/</link>
+    <atom:link href="https://bagtech.az/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>BagTech bloqu: proqram təminatı, süni intellekt, kibertəhlükəsizlik, CRM/ERP, sistem inteqrasiyası və saytlar haqqında praktik yazılar.</description>
+    <language>az</language>
+    <item>
+      <title>MVP nədir və layihəyə niyə ondan başlamaq lazımdır</title>
+      <link>https://bagtech.az/blog/mvp-nedir/</link>
+      <guid isPermaLink="true">https://bagtech.az/blog/mvp-nedir/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>MVP nədir, ilk versiyanı necə seçmək, nəyi sonraya saxlamaq və nə vaxt böyümək lazımdır? Layihəyə kiçik, lakin işləyən məhsulla başlamağın praktik izahı.</description>
+    </item>
+    <item>
+      <title>Ofisdə üz tanıma: necə işləyir və məlumatlar harada qalır</title>
+      <link>https://bagtech.az/blog/ofisde-uz-tanima/</link>
+      <guid isPermaLink="true">https://bagtech.az/blog/ofisde-uz-tanima/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Üz tanıma sistemi ofisdə necə işləyir, qeydiyyat nə qədər çəkir və üz məlumatları harada saxlanılır? Giriş və davamiyyət nəzarəti üçün praktik bələdçi.</description>
+    </item>
+    <item>
+      <title>Kiçik və orta biznes üçün kibertəhlükəsizlik: ilk 10 addım</title>
+      <link>https://bagtech.az/blog/kibertehlukesizlik-10-addim/</link>
+      <guid isPermaLink="true">https://bagtech.az/blog/kibertehlukesizlik-10-addim/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Hücumların çoxu mürəkkəb texnologiya ilə yox, zəif parol və yenilənməmiş proqramla başlayır. Böyük büdcə tələb etməyən 10 praktik addım.</description>
+    </item>
+    <item>
+      <title>CRM, yoxsa ERP: şirkətinizə hansı lazımdır?</title>
+      <link>https://bagtech.az/blog/crm-yoxsa-erp/</link>
+      <guid isPermaLink="true">https://bagtech.az/blog/crm-yoxsa-erp/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>CRM və ERP arasında fərq nədir, hansı vəziyyətdə hansı lazımdır və hazır platforma ilə sıfırdan sistem arasında necə seçim etmək olar? Sadə izah.</description>
+    </item>
+    <item>
+      <title>Məlumatı əl ilə köçürməyi necə dayandırmaq olar: sistem inteqrasiyasına giriş</title>
+      <link>https://bagtech.az/blog/sistem-inteqrasiyasi-giris/</link>
+      <guid isPermaLink="true">https://bagtech.az/blog/sistem-inteqrasiyasi-giris/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Sifariş saytdan gəlir, mühasib onu proqrama köçürür, anbar isə ayrıca cədvəl aparır. Bu vəziyyəti API və webhook-larla necə dəyişmək olar?</description>
+    </item>
+    <item>
+      <title>Saytınız niyə yavaşdır: sürət və SEO üçün 7 texniki yoxlama</title>
+      <link>https://bagtech.az/blog/sayt-niye-yavasdir/</link>
+      <guid isPermaLink="true">https://bagtech.az/blog/sayt-niye-yavasdir/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Yavaş sayt həm müştəriləri, həm də axtarışdakı mövqeyini itirir. Özünüz yoxlaya biləcəyiniz 7 səbəb: şəkillər, skriptlər, keş, CDN, şriftlər və hostinq.</description>
+    </item>
+  </channel>
+</rss>

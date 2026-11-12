@@ -1,0 +1,785 @@
+{
+  "sw": {
+    "nav": "Proqram təminatı",
+    "h1": "Fərdi proqram təminatının hazırlanması",
+    "seo_title": "Proqram təminatının hazırlanması — fərdi sistemlər | BagTech",
+    "desc": "Bakıda fərdi proqram təminatının hazırlanması: veb platformalar, korporativ sistemlər, onlayn rezervasiya və marketpleyslər. İdeyadan MVP-yə, sonra böyük sistemə.",
+    "lead": "Veb platformalar, daxili korporativ sistemlər, API və server hissəsi. İdeyadan hazır məhsula qədər: əvvəlcə ilk versiya (MVP), sonra böyük sistem.",
+    "problems": [
+      [
+        "Hazır proqramlar prosesinizə uyğun gəlmir",
+        "Standart həllər biznesinizin xüsusiyyətlərini nəzərə almır və işi onlara uyğunlaşdırmaq lazım gəlir."
+      ],
+      [
+        "İş Excel cədvəllərində və messencerlərdə aparılır",
+        "Məlumat dağınıqdır, eyni işi bir neçə nəfər təkrar edir və nəzarət çətinləşir."
+      ],
+      [
+        "İdeya var, amma haradan başlamaq bəlli deyil",
+        "Büdcəni riskə atmadan ilk versiyanı necə hazırlamaq lazım olduğu aydın deyil."
+      ]
+    ],
+    "inc": [
+      [
+        "Veb platformalar",
+        "Şəxsi kabinetlər, idarəetmə panelləri və mürəkkəb biznes məntiqi olan veb sistemlər."
+      ],
+      [
+        "API və server hissəsi",
+        "Etibarlı server məntiqi, sənədləşdirilmiş API-lər və verilənlər bazasının arxitekturası."
+      ],
+      [
+        "Rezervasiya və onlayn qeydiyyat",
+        "Xidmətlərə onlayn qeydiyyat, növbə və təqvim sistemləri — onlayn ödənişlə birlikdə."
+      ],
+      [
+        "Marketpleyslər",
+        "Satıcı və alıcı kabinetləri, sifarişlərin idarə olunması, komissiyalar və hesabatlar."
+      ],
+      [
+        "Daxili korporativ sistemlər",
+        "Şirkətin öz prosesləri üçün: sorğular, təsdiqlər, sənədlər və hesabatlar."
+      ],
+      [
+        "MVP-dən böyük sistemə",
+        "Əvvəl ən vacib funksiyalarla ilk versiyanı buraxırıq, sonra real istifadəyə əsasən genişləndiririk."
+      ]
+    ],
+    "out": [
+      [
+        "İşləyən məhsul",
+        "Hər mərhələdə təqdimat yox, real işləyən versiyanı görürsünüz."
+      ],
+      [
+        "Böyüməyə hazır",
+        "Arxitektura ilk gündən yeni modullar və istifadəçilər nəzərə alınaraq qurulur."
+      ],
+      [
+        "Təhvildən sonra da yanınızdayıq",
+        "Dəstək, yeniləmələr və yeni funksiyalar: layihə təhvil verilməklə bitmir."
+      ]
+    ],
+    "faq": [
+      [
+        "Proqram təminatının hazırlanması nə qədər vaxt aparır?",
+        "Müddət layihənin həcmindən asılıdır. Adətən əvvəlcə ən vacib funksiyalarla ilk versiyanı (MVP) istifadəyə veririk, sonra sistemi mərhələlərlə genişləndiririk. Dəqiq müddət audit və tələblərin toplanmasından sonra təklifdə göstərilir."
+      ],
+      [
+        "Layihənin qiyməti necə müəyyən olunur?",
+        "Qiymət funksiyaların sayından, inteqrasiyalardan, dizaynın mürəkkəbliyindən və platformalardan (veb, iOS, Android) asılıdır. İlkin konsultasiya və qiymətləndirmə pulsuzdur; razılaşmadan əvvəl mərhələlər, müddət və büdcə sənədləşdirilir."
+      ],
+      [
+        "Hazır proqram almaq, yoxsa fərdi sistem sifariş etmək daha sərfəlidir?",
+        "Prosesləriniz standartdırsa, hazır həll daha tez və ucuz başa gəlir. Proseslər qeyri-standartdırsa və ya hazır proqramı daim uyğunlaşdırmaq lazım gəlirsə, fərdi sistem uzunmüddətli perspektivdə daha sərfəli olur."
+      ],
+      [
+        "Layihə təhvil verildikdən sonra dəstək göstərirsinizmi?",
+        "Bəli. Təhvildən sonra texniki dəstək, yeniləmələr və yeni funksiyaların əlavə edilməsi SLA (xidmət səviyyəsi razılaşması) əsasında davam edir."
+      ],
+      [
+        "Hansı texnologiyalardan istifadə edirsiniz?",
+        "Server tərəfində Java / Spring, veb interfeyslər üçün React və Next.js, mobil tətbiqlər üçün React Native, Swift və Flutter."
+      ]
+    ],
+    "tags": [
+      "Java / Spring",
+      "React / Next.js",
+      "React Native",
+      "Swift",
+      "Flutter"
+    ]
+  },
+  "mob": {
+    "nav": "Mobil tətbiqlər",
+    "h1": "Mobil tətbiqlərin hazırlanması",
+    "seo_title": "Mobil tətbiqlərin hazırlanması — iOS və Android | BagTech",
+    "desc": "Bakıda iOS və Android üçün mobil tətbiqlərin hazırlanması: React Native, Swift və Flutter. Dizayndan App Store və Google Play-də yerləşdirilməyə qədər.",
+    "lead": "iOS və Android üçün mobil tətbiqlər: ideya və dizayndan App Store və Google Play-də yerləşdirilməyə qədər. Tətbiq mövcud saytınız, CRM və ödəniş sistemlərinizlə inteqrasiya olunur.",
+    "problems": [
+      [
+        "Müştərilər telefondan istifadə edir, saytınız isə rahat deyil",
+        "Sifariş, qeydiyyat və ödəniş üçün istifadəçilər tətbiq gözləyir."
+      ],
+      [
+        "Nativ, yoxsa krossplatform — seçim çətindir",
+        "Yanlış texnologiya seçimi büdcəni və buraxılış müddətini artırır."
+      ],
+      [
+        "Tətbiq mövcud sistemlərlə əlaqəsiz qalır",
+        "Məlumat ayrı-ayrı yerlərdə saxlanılır və əl ilə sinxronlaşdırılır."
+      ]
+    ],
+    "inc": [
+      [
+        "iOS tətbiqləri",
+        "iPhone və iPad üçün Swift dilində nativ tətbiqlər."
+      ],
+      [
+        "Android tətbiqləri",
+        "Müxtəlif ekran ölçüləri və cihazlar üçün Android tətbiqləri."
+      ],
+      [
+        "Krossplatform tətbiqlər",
+        "React Native və ya Flutter ilə vahid kod bazası əsasında hər iki platforma üçün tətbiq."
+      ],
+      [
+        "Korporativ mobil tətbiqlər",
+        "Əməkdaşlar üçün daxili tətbiqlər: tapşırıqlar, təsdiqlər və hesabatlar."
+      ],
+      [
+        "İnteqrasiya",
+        "Tətbiqin mövcud saytınız, CRM və ERP, ödəniş sistemləri və digər API-lərlə əlaqələndirilməsi."
+      ],
+      [
+        "Yerləşdirmə və dəstək",
+        "App Store və Google Play-də yerləşdirmə, yeniləmələr və texniki dəstək."
+      ]
+    ],
+    "out": [
+      [
+        "Hər iki platforma",
+        "iOS və Android istifadəçiləri tətbiqdən eyni rahatlıqla istifadə edir."
+      ],
+      [
+        "Vahid sistem",
+        "Tətbiq sayt və daxili sistemlərinizlə eyni məlumatla işləyir."
+      ],
+      [
+        "Davamlı inkişaf",
+        "Tətbiq yayımlandıqdan sonra da yenilənir, yeni funksiyalar əlavə olunur."
+      ]
+    ],
+    "faq": [
+      [
+        "Mobil tətbiq hazırlamaq üçün nə lazımdır?",
+        "Əsas ssenarinin təsviri (istifadəçi tətbiqdə nə edəcək), hədəf platformalar və mövcud sistemlər haqqında məlumat kifayətdir. Qalanını — tələbləri, dizaynı və arxitekturanı — audit mərhələsində birlikdə hazırlayırıq."
+      ],
+      [
+        "Nativ, yoxsa krossplatform tətbiq seçmək lazımdır?",
+        "Krossplatform tətbiq (React Native, Flutter) vahid kod bazası ilə hər iki platformanı əhatə edir və adətən daha tez və ucuz hazırlanır. Nativ tətbiq (Swift) cihazın imkanlarından tam istifadə etmək lazım olan və yüksək performans tələb olunan hallarda uyğundur. Seçimi layihənin tələblərinə əsasən birlikdə edirik."
+      ],
+      [
+        "Mobil tətbiqin hazırlanması neçəyə başa gəlir?",
+        "Qiymət ekranların və funksiyaların sayından, platformalardan, inteqrasiyalardan və dizayndan asılıdır. İlkin qiymətləndirmə pulsuzdur; adətən MVP-dən, yəni ilk minimal versiyadan başlamağı tövsiyə edirik."
+      ],
+      [
+        "Tətbiqi App Store və Google Play-də siz yerləşdirirsinizmi?",
+        "Bəli. Tətbiqin mağazalarda yerləşdirilməsini və sonrakı yeniləmələri biz həyata keçiririk."
+      ]
+    ],
+    "tags": [
+      "Swift",
+      "React Native",
+      "Flutter",
+      "iOS",
+      "Android"
+    ]
+  },
+  "ai": {
+    "nav": "Süni intellekt",
+    "h1": "Süni intellekt və ağıllı həllər",
+    "seo_title": "Süni intellekt həlləri və üz tanıma sistemi | BagTech",
+    "desc": "Üz tanıma sistemi, virtual köməkçilər, sənədlərin avtomatik emalı və ağıllı giriş sistemləri. Məlumatlar şirkətin öz serverində qalır — BagTech, Bakı.",
+    "lead": "Üz tanıma, müştəri suallarını cavablandıran virtual köməkçilər, sənədlərin avtomatik emalı və ağıllı giriş sistemləri — real biznes tapşırıqları üçün süni intellekt.",
+    "problems": [
+      [
+        "Giriş kartları itir, davamiyyət uçotu əl ilə aparılır",
+        "Kart və jurnal ilə nəzarət həm vaxt aparır, həm də sui-istifadəyə yol açır."
+      ],
+      [
+        "Operatorlar eyni suallara dəfələrlə cavab verir",
+        "Təkrarlanan müraciətlər komandanın vaxtını alır, müştəri isə cavabı gözləyir."
+      ],
+      [
+        "Sənədlər əl ilə emal olunur",
+        "Məlumatın sənədlərdən sistemə köçürülməsi ləng gedir və səhvlərə səbəb olur."
+      ]
+    ],
+    "inc": [
+      [
+        "Üz tanıma sistemi",
+        "Sistem kamera görüntüsündə üzləri real vaxt rejimində tanıyır. Yeni şəxsi bazaya əlavə etmək təxminən 15 saniyə çəkir: kameranın qarşısında başını bir az döndərmək kifayətdir."
+      ],
+      [
+        "Xüsusi server lazım deyil",
+        "Adi noutbukda da sürətli işləyir. Məlumatlar şirkətin öz serverində qalır."
+      ],
+      [
+        "Üz tanımanın istifadə sahələri",
+        "Ofis və obyektlərə giriş, əməkdaşların davamiyyəti, tədbirlərdə VIP və qonaqların girişi, təhlükəsizlik."
+      ],
+      [
+        "Virtual köməkçilər",
+        "Müştəri suallarını avtomatik cavablandırır və operatorları təkrarlanan suallardan azad edir."
+      ],
+      [
+        "Sənəd və məlumat emalı",
+        "Sənədlərin və məlumatların avtomatik emalı, məlumatlara əsaslanan proqnoz və analitika."
+      ],
+      [
+        "Ağıllı giriş sistemləri",
+        "QR biletlər, stadion turniketləri ilə inteqrasiya, forum iştirakçılarının akkreditasiyası və yaxa kartlarının çapı."
+      ]
+    ],
+    "out": [
+      [
+        "≈15 saniyə",
+        "Yeni şəxsi sistemə əlavə etmək üçün bu qədər vaxt kifayətdir."
+      ],
+      [
+        "Öz serveriniz",
+        "Üz məlumatları şirkətinizdən kənara çıxmır."
+      ],
+      [
+        "Adi avadanlıq",
+        "Sistem adi noutbukda işləyir — xüsusi server almağa ehtiyac yoxdur."
+      ]
+    ],
+    "faq": [
+      [
+        "Biznesdə süni intellekt necə tətbiq olunur?",
+        "Ən çox fayda verən istiqamətlər: müştəri suallarını cavablandıran virtual köməkçilər, sənədlərin və məlumatların avtomatik emalı, məlumatlara əsaslanan proqnoz və analitika, həmçinin üz tanıma ilə giriş və davamiyyətə nəzarət. İş konkret problemin seçilməsi və kiçik pilot layihə ilə başlayır."
+      ],
+      [
+        "Üz tanıma sistemi necə işləyir?",
+        "Kamera üzü tapır və onu rəqəmsal şablona çevirir; bu şablon bazadakı şablonlarla müqayisə olunur. Yeni şəxsin sistemə əlavə edilməsi təxminən 15 saniyə çəkir."
+      ],
+      [
+        "Üz məlumatları harada saxlanılır?",
+        "Sistem şirkətin öz serverində işləyir və məlumatlar xarici buluda göndərilmir. Adi noutbukda da sürətli işlədiyi üçün xüsusi server tələb olunmur."
+      ],
+      [
+        "Virtual köməkçi mövcud sistemlərimizlə işləyə bilərmi?",
+        "Bəli. Köməkçi sayt, CRM və digər sistemlərlə API vasitəsilə inteqrasiya olunur."
+      ]
+    ],
+    "tags": [
+      "Üz tanıma",
+      "Virtual köməkçilər",
+      "QR giriş",
+      "Öz serverinizdə"
+    ]
+  },
+  "sec": {
+    "nav": "Kibertəhlükəsizlik",
+    "h1": "Kibertəhlükəsizlik xidmətləri",
+    "seo_title": "Kibertəhlükəsizlik xidmətləri — audit, 2FA, pentest | BagTech",
+    "desc": "İkifaktorlu autentifikasiya, şifrələmə, girişlərin auditi, zəifliklərin yoxlanılması və insidentlərə müdaxilə. Sistemlərinizi hücumdan əvvəl qoruyuruq.",
+    "lead": "İkifaktorlu autentifikasiya, şifrələmə, girişlərin auditi, zəifliklərin yoxlanılması və insidentlərə müdaxilə. Sistemlərinizi və məlumatlarınızı hücum baş verməmişdən əvvəl qoruyuruq.",
+    "problems": [
+      [
+        "Zəif parollar və ortaq hesablar",
+        "Bir hesabın ələ keçirilməsi bütün sistemə yol aça bilər."
+      ],
+      [
+        "Kimin hansı sistemlərə girişi olduğu bəlli deyil",
+        "İşdən çıxan əməkdaşların hesabları açıq qalır, giriş hüquqları nəzarətsiz artır."
+      ],
+      [
+        "İnsident zamanı nə etmək lazım olduğu bilinmir",
+        "Hazır plan olmadıqda itirilən hər saat zərəri artırır."
+      ]
+    ],
+    "inc": [
+      [
+        "İkifaktorlu autentifikasiya (2FA)",
+        "Hesablara girişi paroldan əlavə ikinci təsdiq addımı ilə qoruyuruq."
+      ],
+      [
+        "Şifrələmə",
+        "Məlumatlar həm ötürülərkən, həm də saxlanılarkən şifrələnir."
+      ],
+      [
+        "Girişlərin auditi",
+        "Kim, nə vaxt və hansı sistemə daxil olub — hamısı qeydə alınır və yoxlanılır."
+      ],
+      [
+        "Zəifliklərin yoxlanılması (pentest)",
+        "Sistemlərinizi hakerin gözü ilə yoxlayır, zəif yerləri aradan qaldırırıq."
+      ],
+      [
+        "İnsidentlərə müdaxilə",
+        "Hadisə baş verdikdə operativ addımlar: təcrid, araşdırma və bərpa."
+      ],
+      [
+        "Təhlükəsizlik qaydaları",
+        "Parollar, giriş hüquqları və ehtiyat nüsxələr üçün aydın qaydalar."
+      ]
+    ],
+    "out": [
+      [
+        "Aydın risk mənzərəsi",
+        "Auditdən sonra zəif yerlərin və prioritetlərin dəqiq siyahısı."
+      ],
+      [
+        "Qorunan hesablar",
+        "2FA və giriş qaydaları hesabların ələ keçirilməsini çətinləşdirir."
+      ],
+      [
+        "Hazır plan",
+        "İnsident zamanı nə ediləcəyi əvvəlcədən bəllidir."
+      ]
+    ],
+    "faq": [
+      [
+        "Kibertəhlükəsizlik auditi nədən başlayır?",
+        "Mövcud sistemlərin, giriş hüquqlarının və ehtiyat nüsxələrin yoxlanılmasından. Nəticədə zəif yerlərin və prioritetlərin aydın siyahısını alırsınız."
+      ],
+      [
+        "Kiçik şirkətə kibertəhlükəsizlik lazımdırmı?",
+        "Bəli. Hücumların çoxu zəif parol, yenilənməmiş proqram və fişinq məktubları ilə başlayır; bu risklər şirkətin böyüklüyündən asılı deyil."
+      ],
+      [
+        "Pentest (zəifliklərin yoxlanılması) nədir?",
+        "Sistemlərinizin hakerin gözü ilə yoxlanılmasıdır. Məqsəd zəif yerləri real hücumdan əvvəl tapıb aradan qaldırmaqdır."
+      ],
+      [
+        "İlk növbədə nə etmək lazımdır?",
+        "İkifaktorlu autentifikasiya, bərpası yoxlanılmış ehtiyat nüsxələr və vaxtında yeniləmələr ən geniş yayılmış riskləri ciddi şəkildə azaldır."
+      ]
+    ],
+    "tags": [
+      "2FA",
+      "Şifrələmə",
+      "Audit",
+      "Pentest"
+    ]
+  },
+  "crm": {
+    "nav": "CRM və ERP",
+    "h1": "CRM və ERP sistemləri",
+    "seo_title": "CRM və ERP sistemlərinin tətbiqi və uyğunlaşdırılması | BagTech",
+    "desc": "Bakıda CRM və ERP sistemlərinin tətbiqi: satış, müştəri bazası, kadrlar, maliyyə və anbar vahid sistemdə. ERPNext əsasında və ya sıfırdan hazırlanan sistem.",
+    "lead": "Satış, müştəri bazası, kadrlar, maliyyə və anbar — vahid sistemdə. Hazır platformanı (məsələn, ERPNext) proseslərinizə uyğunlaşdırırıq və ya sistemi sıfırdan hazırlayırıq, mövcud proqramlarınızla inteqrasiya edirik.",
+    "problems": [
+      [
+        "Müraciətlər itir",
+        "Müştəri tarixçəsi Excel cədvəllərində və messencerlərdə saxlanılır, satış planının icrasını izləmək çətindir."
+      ],
+      [
+        "Anbar və mühasibat rəqəmləri üst-üstə düşmür",
+        "Şöbələr məlumatı bir-birinə əl ilə ötürür və rəqəmlər fərqlənir."
+      ],
+      [
+        "Hesabat hazırlamaq günlər çəkir",
+        "Rəhbərlik qərarları köhnəlmiş məlumatlar əsasında qəbul edir."
+      ]
+    ],
+    "inc": [
+      [
+        "CRM",
+        "Müştəri bazası, satış mərhələləri, tapşırıqlar, müştərilərlə ünsiyyət tarixçəsi və menecerlərin göstəriciləri."
+      ],
+      [
+        "ERP",
+        "Kadrlar, maliyyə, anbar və satış modulları ilə şirkət resurslarının vahid idarə olunması."
+      ],
+      [
+        "Proseslərin avtomatlaşdırılması",
+        "Müraciətlərin, təsdiqlərin və tapşırıqların icrası — kağız işi və təkrarlanan əl əməyi olmadan."
+      ],
+      [
+        "Rollar və icazələr",
+        "Direktor, menecer, işçi — hər kəs yalnız öz işinə lazım olanı görür."
+      ],
+      [
+        "Hazır platforma və ya sıfırdan",
+        "ERPNext kimi hazır həllin uyğunlaşdırılması və ya tamamilə sizin proseslərinizə uyğun hazırlanmış sistem."
+      ],
+      [
+        "İnteqrasiya",
+        "Mövcud sistemlərinizlə əlaqə: sayt, ödənişlər, mühasibat və digər xidmətlər."
+      ]
+    ],
+    "out": [
+      [
+        "Tam mənzərə",
+        "Satışdan anbara qədər bütün göstəricilər bir yerdə."
+      ],
+      [
+        "Daha az əl əməyi",
+        "Təkrarlanan əməliyyatlar avtomatlaşdırılır."
+      ],
+      [
+        "Şəffaf nəzarət",
+        "Hər tapşırığın vəziyyəti və məsul şəxsi görünür."
+      ]
+    ],
+    "faq": [
+      [
+        "ERP sistemi nədir?",
+        "ERP (Enterprise Resource Planning) şirkətin daxili əməliyyatlarını — kadrları, maliyyəni, anbarı, satınalmanı və satışı — vahid sistemdə birləşdirən proqramdır. Məqsəd bütün şöbələrin eyni məlumatla işləməsidir."
+      ],
+      [
+        "CRM sistemi nədir və ERP-dən nə ilə fərqlənir?",
+        "CRM müştəri münasibətlərini və satışı idarə edir: müştəri bazası, sövdələşmə mərhələləri, tapşırıqlar. ERP isə şirkətin daxili resurslarını əhatə edir. Böyüyən şirkətlərdə hər iki sistem bir-biri ilə inteqrasiya olunmuş şəkildə işləyir."
+      ],
+      [
+        "Hazır platforma, yoxsa sıfırdan sistem?",
+        "Prosesləriniz standarta yaxındırsa, ERPNext kimi hazır platformanın uyğunlaşdırılması daha tez və sərfəlidir. Qeyri-standart biznes modeli üçün sıfırdan hazırlanan sistem daha uyğun olur."
+      ],
+      [
+        "Sistemin tətbiqi hansı mərhələlərdən keçir?",
+        "Audit, bir şöbədə sınaq (pilot) istifadəsi, məlumatların köçürülməsi, əməkdaşların təlimi və sistemin mərhələlərlə digər şöbələrə yayılması."
+      ],
+      [
+        "Mövcud proqramlarımızla inteqrasiya mümkündürmü?",
+        "Bəli: sayt, ödəniş sistemləri, mühasibat və digər xidmətlər API vasitəsilə qoşulur."
+      ]
+    ],
+    "tags": [
+      "CRM",
+      "ERP",
+      "ERPNext"
+    ]
+  },
+  "int": {
+    "nav": "Sistem inteqrasiyası",
+    "h1": "Sistem inteqrasiyası",
+    "seo_title": "Sistem inteqrasiyası — API, ödəniş sistemləri, SSO | BagTech",
+    "desc": "Ödəniş sistemlərinin, dövlət portallarının, ERP və digər kənar xidmətlərin inteqrasiyası. Sənədləşdirilmiş API-lər, webhook-lar və SSO — BagTech, Bakı.",
+    "lead": "Ödəniş sistemlərini, dövlət portallarını, ERP və digər kənar xidmətləri vahid sistemə birləşdiririk. Sənədləşdirilmiş API-lər və etibarlı məlumat mübadiləsi.",
+    "problems": [
+      [
+        "Eyni məlumat bir neçə dəfə daxil edilir",
+        "Sifariş saytda, CRM-də və mühasibat proqramında ayrı-ayrılıqda qeyd olunur."
+      ],
+      [
+        "Ödəniş və sifariş statusları üst-üstə düşmür",
+        "Sistemlər bir-birindən xəbərsizdir, səhvlər müştəri zəng edəndə üzə çıxır."
+      ],
+      [
+        "Yeni tərəfdaşı qoşmaq həftələr çəkir",
+        "Sənədləşdirilmiş API olmadıqda hər inteqrasiya sıfırdan başlayır."
+      ]
+    ],
+    "inc": [
+      [
+        "Ödəniş sistemləri",
+        "Onlayn ödənişlərin qəbulu, vəsaitin geri qaytarılması və ödəniş statuslarının sinxronlaşdırılması."
+      ],
+      [
+        "Dövlət portalları",
+        "Dövlət xidmətləri və portalları ilə məlumat mübadiləsi."
+      ],
+      [
+        "ERP və kənar xidmətlər",
+        "Mühasibat, anbar, CRM və digər sistemlər arasında avtomatik məlumat mübadiləsi."
+      ],
+      [
+        "API-lərin hazırlanması",
+        "Aydın sənədləri olan REST və GraphQL API-lər."
+      ],
+      [
+        "Webhook-lar",
+        "Bir sistemdə dəyişiklik baş verən kimi digər sistem bundan dərhal xəbər tutur."
+      ],
+      [
+        "Vahid giriş (SSO)",
+        "Bir hesabla bütün daxili sistemlərə giriş."
+      ]
+    ],
+    "out": [
+      [
+        "Əl ilə köçürməyə ehtiyac qalmır",
+        "Məlumat sistemlər arasında avtomatik ötürülür."
+      ],
+      [
+        "Sənədləşdirilmiş API",
+        "Yeni sistemləri və tərəfdaşları qoşmaq asanlaşır."
+      ],
+      [
+        "Etibarlı mübadilə",
+        "Xətalar izlənilir, uğursuz sorğular avtomatik təkrarlanır."
+      ]
+    ],
+    "faq": [
+      [
+        "Sistem inteqrasiyası nədir?",
+        "Ayrı-ayrı proqramların — saytın, CRM və ERP-nin, ödəniş sistemlərinin, dövlət portallarının — avtomatik məlumat mübadiləsi aparması üçün bir-birinə qoşulmasıdır. Nəticədə məlumatı əl ilə köçürməyə ehtiyac qalmır."
+      ],
+      [
+        "API və webhook arasında fərq nədir?",
+        "API bir sistemin digərindən məlumat sorğulaması üçündür. Webhook isə hadisə baş verən kimi sistemin özünün digər sistemə bildiriş göndərməsidir."
+      ],
+      [
+        "Hansı sistemləri inteqrasiya edirsiniz?",
+        "Ödəniş sistemləri, dövlət portalları, ERP və CRM, mühasibat və anbar proqramları, həmçinin vahid giriş (SSO)."
+      ],
+      [
+        "İnteqrasiyanın etibarlılığı necə təmin olunur?",
+        "Ətraflı sənədləşmə, uğursuz sorğuların avtomatik təkrarlanması, təkrar sorğunun ikiqat nəticə yaratmaması (idempotentlik) və daimi monitorinq vasitəsilə."
+      ]
+    ],
+    "tags": [
+      "REST / GraphQL",
+      "Webhook",
+      "Onlayn ödənişlər",
+      "SSO"
+    ]
+  },
+  "web": {
+    "nav": "Saytların hazırlanması",
+    "h1": "Saytların hazırlanması və e-ticarət",
+    "seo_title": "Veb sayt hazırlanması — korporativ sayt, onlayn mağaza | BagTech",
+    "desc": "Bakıda saytların hazırlanması: korporativ saytlar, onlayn mağazalar, media və universitet portalları. Sürətli, mobil cihazlara uyğun və SEO üçün optimallaşdırılmış.",
+    "lead": "Veb saytların hazırlanması: korporativ saytlar, şəxsi brend saytları, media və universitet portalları, onlayn mağazalar. Sürətli, mobil cihazlara uyğun və axtarış sistemləri üçün optimallaşdırılmış.",
+    "problems": [
+      [
+        "Sayt köhnəlib, telefonda istifadəsi rahat deyil",
+        "Ziyarətçilərin çoxu saytı telefondan açır və bir neçə saniyədən sonra tərk edir."
+      ],
+      [
+        "Sayt axtarışda görünmür",
+        "Texniki SEO aparılmayıb, səhifələr yavaş yüklənir."
+      ],
+      [
+        "Məzmunu yeniləmək üçün hər dəfə proqramçı lazımdır",
+        "Sadə mətn və şəkil dəyişikliyi günlər çəkir."
+      ]
+    ],
+    "inc": [
+      [
+        "Korporativ saytlar",
+        "Şirkəti, xidmətləri və komandanı aydın təqdim edən saytlar."
+      ],
+      [
+        "Şəxsi brend saytları",
+        "Ekspertlər və ictimai şəxslər üçün şəxsi saytlar."
+      ],
+      [
+        "Media portalları",
+        "Xəbər, video və yayım platformaları — idarəetmə paneli ilə."
+      ],
+      [
+        "Universitet portalları",
+        "Tələbələr, məzunlar və kampus həyatı üçün portallar."
+      ],
+      [
+        "Onlayn mağazalar",
+        "Kataloq, səbət, onlayn ödəniş və sifarişlərin idarə olunması."
+      ],
+      [
+        "SEO və sürət",
+        "Texniki SEO, sürətli yüklənmə və analitika sistemlərinin qoşulması."
+      ]
+    ],
+    "out": [
+      [
+        "Mobil cihazlara uyğun",
+        "Sayt hər ekranda düzgün görünür və işləyir."
+      ],
+      [
+        "Rahat idarəetmə",
+        "Məzmunu yeniləmək üçün sadə idarəetmə paneli."
+      ],
+      [
+        "Axtarışda görünürlük",
+        "Texniki SEO ilk gündən nəzərə alınır."
+      ]
+    ],
+    "faq": [
+      [
+        "Sayt hazırlanmasının qiyməti nə qədərdir?",
+        "Qiymət saytın növündən (korporativ sayt, onlayn mağaza, portal), səhifələrin sayından, dizayndan, dil versiyalarından və inteqrasiyalardan (ödəniş, CRM) asılıdır. İlkin konsultasiya və qiymətləndirmə pulsuzdur; dəqiq büdcə və müddət tələblər toplandıqdan sonra təklifdə göstərilir."
+      ],
+      [
+        "Korporativ sayt necə hazırlanır?",
+        "Dörd mərhələdə: tələblərin toplanması və strukturun hazırlanması, dizayn, proqramlaşdırma və məzmunun yerləşdirilməsi, sonda isə test və saytın istifadəyə verilməsi. Hər mərhələdə aralıq nəticəni görürsünüz."
+      ],
+      [
+        "Onlayn mağazaya ödəniş sistemi qoşursunuzmu?",
+        "Bəli. Onlayn ödənişi qoşur, sifarişlərin idarə olunmasını qurur, saytı anbar və ya mühasibat sistemləri ilə inteqrasiya edirik."
+      ],
+      [
+        "Sayt axtarış sistemləri üçün optimallaşdırılırmı?",
+        "Bəli: unikal başlıqlar və təsvirlər, düzgün başlıq strukturu, sayt xəritəsi (sitemap), sürətli yüklənmə və strukturlaşdırılmış məlumatlar ilk gündən nəzərə alınır."
+      ],
+      [
+        "Saytı sonradan özümüz yeniləyə bilərikmi?",
+        "Bəli, məzmunu proqramçı olmadan yeniləmək üçün sadə idarəetmə paneli qurulur."
+      ]
+    ],
+    "tags": [
+      "Korporativ saytlar",
+      "Portallar",
+      "E-ticarət",
+      "SEO"
+    ]
+  },
+  "infra": {
+    "nav": "IT infrastrukturu",
+    "h1": "IT infrastrukturu və bulud",
+    "seo_title": "IT infrastrukturu — serverlər, şəbəkə, buluda köçürmə | BagTech",
+    "desc": "Server və şəbəkələrin quraşdırılması, DNS/DHCP, virtuallaşdırma, buluda köçürmə, korporativ e-poçt serverləri və 24/7 monitorinq — BagTech, Bakı.",
+    "lead": "Server və şəbəkələrin quraşdırılması, virtuallaşdırma, buluda köçürmə, korporativ e-poçt serverləri və 24/7 monitorinq.",
+    "problems": [
+      [
+        "Server infrastrukturu plansız genişlənib",
+        "Sənədləşmə yoxdur və hər şey bir nəfərin biliyindən asılıdır."
+      ],
+      [
+        "Nasazlıqlardan istifadəçilər vasitəsilə xəbər tutursunuz",
+        "Monitorinq olmadıqda problem yalnız iş dayandıqdan sonra üzə çıxır."
+      ],
+      [
+        "Ehtiyat nüsxələr yoxlanılmır",
+        "Bərpanın işləyib-işləmədiyi yalnız lazım olanda bəlli olur."
+      ]
+    ],
+    "inc": [
+      [
+        "Server və şəbəkə",
+        "Serverlərin və şəbəkə avadanlığının quraşdırılması və sazlanması."
+      ],
+      [
+        "DNS / DHCP",
+        "Şəbəkə xidmətlərinin düzgün və dayanıqlı konfiqurasiyası."
+      ],
+      [
+        "Virtuallaşdırma",
+        "VMware və Linux mühitində resursların səmərəli istifadəsi."
+      ],
+      [
+        "Buluda köçürmə",
+        "Sistemlərin planlı şəkildə buluda köçürülməsi."
+      ],
+      [
+        "Korporativ e-poçt",
+        "Öz domeninizdə e-poçt serverləri: quraşdırma, təhlükəsizlik və dəstək."
+      ],
+      [
+        "24/7 monitorinq",
+        "Problemi istifadəçilər hiss etməmişdən əvvəl görürük."
+      ]
+    ],
+    "out": [
+      [
+        "Dayanıqlı infrastruktur",
+        "Sistemlər yüksək yük və nasazlıq zamanı da işləməyə davam edir."
+      ],
+      [
+        "Aydın sxem",
+        "Bütün infrastruktur sənədləşdirilir."
+      ],
+      [
+        "Daimi nəzarət",
+        "Monitorinq və vaxtında xəbərdarlıqlar."
+      ]
+    ],
+    "faq": [
+      [
+        "IT infrastrukturuna nə daxildir?",
+        "Serverlər, şəbəkə avadanlığı, DNS və DHCP kimi şəbəkə xidmətləri, virtuallaşdırma, bulud resursları, korporativ e-poçt və monitorinq."
+      ],
+      [
+        "Buluda köçürmə necə aparılır?",
+        "Əvvəlcə mövcud sistemlər və onların asılılıqları təhlil olunur, sonra köçürmə mərhələlərlə planlaşdırılır ki, iş dayanmasın."
+      ],
+      [
+        "Öz e-poçt serverimiz ola bilərmi?",
+        "Bəli. Öz domeninizdə korporativ e-poçt serveri quraşdırır, onu qoruyur və ona texniki xidmət göstəririk."
+      ],
+      [
+        "Monitorinq nə verir?",
+        "Sistemlər 24/7 izlənilir və problem barədə xəbərdarlıq istifadəçilər onu hiss etməmişdən əvvəl gəlir."
+      ]
+    ],
+    "tags": [
+      "Linux",
+      "VMware",
+      "Bulud",
+      "E-poçt"
+    ]
+  },
+  "sup": {
+    "nav": "IT autsorsinq",
+    "h1": "IT autsorsinq və texniki dəstək",
+    "seo_title": "IT autsorsinq və texniki dəstək — SLA ilə | BagTech",
+    "desc": "Bakıda IT autsorsinq: IT şöbənizin işini öhdəmizə götürürük — gündəlik texniki dəstək, SLA üzrə cavab müddəti, avadanlıq və lisenziyaların idarəsi.",
+    "lead": "IT şöbənizin işini öhdəmizə götürürük: gündəlik texniki dəstək, SLA üzrə cavab müddəti, müraciətlərin qeydiyyatı (helpdesk), avadanlıq və lisenziyaların idarəsi.",
+    "problems": [
+      [
+        "Ştatda IT mütəxəssisi saxlamaq baha başa gəlir",
+        "Kiçik və orta şirkət üçün tam ştatlı IT şöbəsi hər zaman özünü doğrultmur."
+      ],
+      [
+        "IT məsələləri bir nəfərdən asılıdır",
+        "O, məzuniyyətdə və ya xəstə olanda işlər dayanır."
+      ],
+      [
+        "Müraciətlər itir",
+        "Kimin nə vaxt cavab verəcəyi bəlli deyil."
+      ]
+    ],
+    "inc": [
+      [
+        "Gündəlik dəstək",
+        "Əməkdaşların suallarına və problemlərinə operativ cavab."
+      ],
+      [
+        "SLA üzrə cavab müddəti",
+        "Hər müraciət növü üçün razılaşdırılmış cavab müddəti."
+      ],
+      [
+        "Müraciətlərin qeydiyyatı (helpdesk)",
+        "Bütün müraciətlər bir sistemdə: status, məsul şəxs, tarixçə."
+      ],
+      [
+        "Avadanlığın idarə olunması",
+        "Kompüterlərin, printerlərin və şəbəkə avadanlığının uçotu və xidməti."
+      ],
+      [
+        "Lisenziyalar",
+        "Proqram lisenziyalarının uçotu və vaxtında yenilənməsi."
+      ],
+      [
+        "Monitorinq",
+        "Sistemlərin vəziyyətinə daimi nəzarət."
+      ]
+    ],
+    "out": [
+      [
+        "Vahid əlaqə nöqtəsi",
+        "Bütün IT məsələləri üçün bir komanda."
+      ],
+      [
+        "Aydın qaydalar",
+        "Nə vaxt və necə cavab veriləcəyi SLA-da əvvəlcədən müəyyən olunur."
+      ],
+      [
+        "Davamlı nəzarət",
+        "Problemlər böyümədən həll olunur."
+      ]
+    ],
+    "faq": [
+      [
+        "IT autsorsinq nədir?",
+        "Şirkətin IT funksiyalarının — istifadəçi dəstəyi, serverlər, şəbəkə, lisenziyalar — kənar komandaya həvalə edilməsidir. Ştat saxlamaq əvəzinə razılaşdırılmış xidmət səviyyəsi (SLA) alırsınız."
+      ],
+      [
+        "IT autsorsinq nə zaman sərfəlidir?",
+        "Tam ştatlı IT şöbəsi üçün iş həcmi az olduqda, müxtəlif sahələr üzrə (şəbəkə, serverlər, təhlükəsizlik) mütəxəssis biliyi lazım olduqda və ya mövcud IT əməkdaşınıza dəstək tələb olunduqda."
+      ],
+      [
+        "SLA nədir?",
+        "SLA (ingiliscə Service Level Agreement) xidmət səviyyəsi haqqında razılaşmadır: hər müraciət növü üçün cavab və həll müddətlərini müəyyən edir."
+      ],
+      [
+        "Dəstək necə göstərilir?",
+        "Müraciətlər helpdesk sistemində qeydə alınır: hər birinin statusu, məsul şəxsi və tarixçəsi görünür."
+      ]
+    ],
+    "tags": [
+      "SLA",
+      "Helpdesk",
+      "Monitorinq"
+    ]
+  },
+  "_hub": {
+    "h1": "IT xidmətləri və həllər",
+    "seo_title": "IT xidmətləri Bakıda — proqram təminatı, sayt, AI | BagTech",
+    "desc": "BagTech-in IT xidmətləri: proqram təminatı, mobil tətbiqlər, süni intellekt, kibertəhlükəsizlik, CRM/ERP, inteqrasiya, saytlar, IT infrastrukturu və autsorsinq.",
+    "lead": "Proqram təminatından IT infrastrukturuna qədər doqquz istiqamət. Hər birində təhlildən dəstəyə qədər bütün işi görür, real işləyən sistem təhvil veririk."
+  }
+}

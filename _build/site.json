@@ -1,0 +1,31 @@
+{
+  "_comment": "Site-wide settings. Fill the empty values when you have them, then run: python3 _build/build.py",
+  "site": "https://bagtech.az",
+  "name": "BagTech",
+  "legal_name": "BagTech MMC",
+  "vat_id": "1310001931",
+  "founded": "2018",
+  "phone": "+994505250555",
+  "email": "info@bagtech.az",
+  "address": {
+    "street": "",
+    "postal_code": "",
+    "city": {"az": "Bakı", "en": "Baku", "ru": "Баку"},
+    "country": "AZ",
+    "lat": "",
+    "lng": ""
+  },
+  "socials": {
+    "linkedin": "",
+    "instagram": "",
+    "facebook": ""
+  },
+  "analytics": {
+    "ga4_id": "",
+    "gtm_id": ""
+  },
+  "verification": {
+    "google": "",
+    "bing": ""
+  }
+}

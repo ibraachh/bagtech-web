@@ -1,0 +1,158 @@
+{
+  "order": [
+    "sw",
+    "mob",
+    "ai",
+    "sec",
+    "crm",
+    "int",
+    "web",
+    "infra",
+    "sup"
+  ],
+  "base": {
+    "az": "xidmetler",
+    "en": "en/services",
+    "ru": "ru/uslugi"
+  },
+  "art": {
+    "sw": "software",
+    "mob": "mobile",
+    "ai": "ai",
+    "sec": "security",
+    "crm": "crm",
+    "int": "integration",
+    "web": "web",
+    "infra": "infra",
+    "sup": "support"
+  },
+  "slug": {
+    "sw": {
+      "az": "proqram-teminati",
+      "en": "custom-software-development",
+      "ru": "razrabotka-po"
+    },
+    "mob": {
+      "az": "mobil-tetbiqler",
+      "en": "mobile-app-development",
+      "ru": "mobilnye-prilozheniya"
+    },
+    "ai": {
+      "az": "suni-intellekt",
+      "en": "ai-solutions",
+      "ru": "iskusstvennyy-intellekt"
+    },
+    "sec": {
+      "az": "kibertehlukesizlik",
+      "en": "cybersecurity",
+      "ru": "kiberbezopasnost"
+    },
+    "crm": {
+      "az": "crm-erp",
+      "en": "crm-erp-systems",
+      "ru": "crm-erp-sistemy"
+    },
+    "int": {
+      "az": "sistem-inteqrasiyasi",
+      "en": "system-integration",
+      "ru": "sistemnaya-integraciya"
+    },
+    "web": {
+      "az": "saytlarin-hazirlanmasi",
+      "en": "web-development",
+      "ru": "razrabotka-saytov"
+    },
+    "infra": {
+      "az": "it-infrastruktur",
+      "en": "it-infrastructure",
+      "ru": "it-infrastruktura"
+    },
+    "sup": {
+      "az": "it-autsorsinq",
+      "en": "it-outsourcing",
+      "ru": "it-autsorsing"
+    }
+  },
+  "redirects": {
+    "/xidmetler/saytlar-e-ticaret/": "/xidmetler/saytlarin-hazirlanmasi/",
+    "/xidmetler/texniki-destek/": "/xidmetler/it-autsorsinq/"
+  },
+  "projects": {
+    "web": [
+      [
+        "Biznes TV",
+        "https://biznestv.az"
+      ],
+      [
+        "İnsun",
+        "https://insun.az"
+      ],
+      [
+        "OYGİB",
+        "https://oygib.az"
+      ],
+      [
+        "Leyla Gasimova",
+        "https://leylagasimova.com/"
+      ],
+      [
+        "ADAU THİK",
+        "https://adauthik.az/"
+      ],
+      [
+        "Brandmaker.az",
+        "https://brandmaker.az"
+      ]
+    ],
+    "sw": [
+      [
+        "Agro Business Forum",
+        "https://agrobusiness.az/"
+      ],
+      [
+        "ADAU THİK",
+        "https://adauthik.az/"
+      ],
+      [
+        "Dukkan.az",
+        "https://dukkan.az/"
+      ],
+      [
+        "Biznes TV",
+        "https://portal.biznestv.az"
+      ]
+    ]
+  },
+  "posts": {
+    "sw": [
+      "mvp"
+    ],
+    "mob": [
+      "mvp"
+    ],
+    "ai": [
+      "face"
+    ],
+    "sec": [
+      "sec"
+    ],
+    "crm": [
+      "crm",
+      "int"
+    ],
+    "int": [
+      "int",
+      "crm"
+    ],
+    "web": [
+      "web"
+    ],
+    "infra": [
+      "web",
+      "sec"
+    ],
+    "sup": [
+      "sec"
+    ]
+  }
+}

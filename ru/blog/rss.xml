@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Блог — практические статьи об IT для бизнеса | BagTech</title>
+    <link>https://bagtech.az/ru/blog/</link>
+    <atom:link href="https://bagtech.az/ru/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Блог BagTech: практические статьи о разработке ПО, искусственном интеллекте, кибербезопасности, CRM/ERP, системной интеграции и сайтах.</description>
+    <language>ru</language>
+    <item>
+      <title>Что такое MVP и почему проект стоит начинать с него</title>
+      <link>https://bagtech.az/ru/blog/chto-takoe-mvp/</link>
+      <guid isPermaLink="true">https://bagtech.az/ru/blog/chto-takoe-mvp/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Строить большую систему сразу заманчиво, но это самый дорогой путь. Объясняем, как выбрать первую версию продукта, что отложить на потом и когда пора расти.</description>
+    </item>
+    <item>
+      <title>Распознавание лиц в офисе: как это работает и где остаются данные</title>
+      <link>https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/</link>
+      <guid isPermaLink="true">https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Карты теряются, пароли забываются, табели заполняются вручную. Как распознавание лиц решает эти проблемы и что учесть, чтобы данные были в безопасности.</description>
+    </item>
+    <item>
+      <title>Кибербезопасность для малого и среднего бизнеса: первые 10 шагов</title>
+      <link>https://bagtech.az/ru/blog/kiberbezopasnost-10-shagov/</link>
+      <guid isPermaLink="true">https://bagtech.az/ru/blog/kiberbezopasnost-10-shagov/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Большинство атак начинается не со сложных технологий, а со слабого пароля и необновлённой программы. 10 практических шагов, которые не требуют большого бюджета.</description>
+    </item>
+    <item>
+      <title>CRM или ERP: что нужно вашей компании?</title>
+      <link>https://bagtech.az/ru/blog/crm-ili-erp/</link>
+      <guid isPermaLink="true">https://bagtech.az/ru/blog/crm-ili-erp/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Эти два термина часто путают. Объясняем, чем CRM отличается от ERP, в какой ситуации нужна каждая и как выбрать между готовой платформой и системой с нуля.</description>
+    </item>
+    <item>
+      <title>Как перестать переносить данные вручную: введение в системную интеграцию</title>
+      <link>https://bagtech.az/ru/blog/sistemnaya-integraciya-vvedenie/</link>
+      <guid isPermaLink="true">https://bagtech.az/ru/blog/sistemnaya-integraciya-vvedenie/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Заказ приходит с сайта, бухгалтер переносит его в программу, склад ведёт свою таблицу. Как это изменить с помощью API, вебхуков и продуманной архитектуры.</description>
+    </item>
+    <item>
+      <title>Почему ваш сайт медленный: 7 технических проверок для скорости и SEO</title>
+      <link>https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/</link>
+      <guid isPermaLink="true">https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/</guid>
+      <pubDate>Thu, 12 Nov 2026 09:00:00 +0400</pubDate>
+      <description>Медленный сайт теряет и клиентов, и позиции в поиске. 7 причин, которые можно проверить самому, и способы их устранить — от тяжёлых изображений до кеша и CDN.</description>
+    </item>
+  </channel>
+</rss>

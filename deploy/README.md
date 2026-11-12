@@ -1,25 +1,39 @@
-# Deploy — bagtech.az (docker topology)
+# Deploy — bagtech.az
 
-Ports 80/443 are owned by the `eticksystem-nginx` container. bagtech.az is
-served by its own tiny container (`bagtech-static`, bound to 172.17.0.1:8083
-only) and proxied from eticksystem-nginx — same pattern as `shamil-static`.
-Nothing belonging to other projects is modified; the proxy config lives in a
-marker-delimited block inside the host-mounted
-`/opt/eticksystem-app/nginx/nginx.conf` (backed up on every run, validated
-with `nginx -t` before reload, auto-restored on failure).
+The site is static HTML generated into this repository and served by the
+system nginx on the server straight from a git clone.
 
-## First-time / repair
+## Change content, then publish
+
 ```bash
-sudo /var/www/bagtech.az/deploy/deploy.sh          # pull latest
-sudo bash /var/www/bagtech.az/deploy/server-setup.sh
+python3 _build/build.py     # regenerates every page in az / en / ru
+python3 _build/check.py     # must print "0 problems"
+git add -A && git commit -m "…" && git push
+ssh root@<server> 'git -C /var/www/bagtech.az pull'
 ```
 
-## HTTPS (once HTTP answers)
-```bash
-sudo bash /var/www/bagtech.az/deploy/ssl-setup.sh
-```
+Nothing restarts: nginx serves the files as they are.
 
-## Updates (content only — nothing restarts)
-```bash
-sudo /var/www/bagtech.az/deploy/deploy.sh
-```
+## Where things are
+
+| What | Where |
+|---|---|
+| Homepage text (AZ) | `_build/templates/home.html` |
+| Homepage text (EN / RU) | `_build/i18n/en.json`, `_build/i18n/ru.json` |
+| Service pages | `_build/content/services.{az,en,ru}.json` |
+| Blog articles | `_build/content/blog/<key>.{az,en,ru}.html` |
+| Company data, analytics ids, search-console codes | `_build/site.json` |
+| nginx vhost (copy of the one on the server) | `deploy/nginx/bagtech.conf` |
+
+Generated — do not edit by hand: `index.html`, `en/`, `ru/`, `xidmetler/`,
+`blog/`, `404.html`, `sitemap.xml`, `robots.txt`, `llms.txt`.
+
+## Server
+
+- Files: `/var/www/bagtech.az`
+- nginx: `/etc/nginx/sites-available/bagtech.conf`, enabled as
+  `sites-enabled/zz-bagtech.conf`. After changing it: `nginx -t && systemctl reload nginx`.
+- The same server runs mail and other projects: touch only the files above.
+
+`deploy.sh`, `server-setup.sh` and `ssl-setup.sh` were written for an earlier
+docker-based server and do not apply to the current one.

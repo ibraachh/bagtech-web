@@ -1993,3 +1993,132 @@ a.x-port__card:hover .x-port__logo img,
   color: var(--ink-dim);
 }
 .bignum__of { color: var(--muted); }
+
+/* =========================================================
+   STATIC LANGUAGE PAGES + SEO SECTIONS
+   ========================================================= */
+
+/* language switcher: plain links to the same page in another language */
+.lang a {
+  padding: 7px 8px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.22s;
+}
+.lang a:hover { color: var(--ink-dim); }
+.lang a.is-active { color: var(--ink); }
+
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 1000; padding: 10px 16px; border-radius: 8px; background: var(--ink); color: #000; font-size: 14px; }
+.skip:focus { left: 8px; }
+
+/* above-the-fold copy appears with CSS alone, so the headline paints without waiting for JS */
+@keyframes riseIn { from { opacity: 0; transform: translateY(22px); } }
+.hero__copy > *, .svc-hero__copy > *, .blog-hero .shell > *, .post-hero .shell > * { animation: riseIn 0.9s var(--ease) both; }
+.hero__copy > :nth-child(2), .svc-hero__copy > :nth-child(2), .blog-hero .shell > :nth-child(2), .post-hero .shell > :nth-child(2) { animation-delay: 0.06s; }
+.hero__copy > :nth-child(3), .svc-hero__copy > :nth-child(3), .blog-hero .shell > :nth-child(3), .post-hero .shell > :nth-child(3) { animation-delay: 0.12s; }
+.hero__copy > :nth-child(4), .svc-hero__copy > :nth-child(4), .blog-hero .shell > :nth-child(4), .post-hero .shell > :nth-child(4) { animation-delay: 0.18s; }
+.hero__copy > :nth-child(n + 5), .svc-hero__copy > :nth-child(n + 5), .post-hero .shell > :nth-child(n + 5) { animation-delay: 0.24s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero__copy > *, .svc-hero__copy > *, .blog-hero .shell > *, .post-hero .shell > * { animation: none; }
+}
+
+/* "all services" link under a list */
+.x-split__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  color: var(--accent);
+}
+.x-split__all i { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(143, 184, 255, 0.4); border-radius: 50%; transition: transform 0.4s var(--ease), background 0.3s; }
+.x-split__all svg { width: 15px; height: 15px; }
+.x-split__all:hover i { background: var(--accent); color: #06060c; transform: translateX(4px); }
+
+.contact-list__item { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--ink-dim); }
+
+/* ---------- FAQ (homepage, service pages, articles) ---------- */
+.x-faq { border-top: 1px solid var(--line); }
+.x-faq__grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: start; }
+.x-faq__grid .section-head { margin-bottom: 0; }
+.faq { border-top: 1px solid var(--line); }
+.faq__item { border-bottom: 1px solid var(--line); }
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 4px;
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  color: var(--ink);
+  transition: color 0.25s;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary:hover { color: var(--accent); }
+.faq__item summary i {
+  position: relative;
+  flex: 0 0 34px;
+  height: 34px;
+  border: 1px solid rgba(143, 184, 255, 0.4);
+  border-radius: 50%;
+  transition: transform 0.4s var(--ease), background 0.3s, border-color 0.3s;
+}
+.faq__item summary i::before, .faq__item summary i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 1.5px;
+  background: var(--accent);
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s var(--ease), background 0.3s;
+}
+.faq__item summary i::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq__item[open] summary i { background: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
+.faq__item[open] summary i::before, .faq__item[open] summary i::after { background: #06060c; }
+.faq__item[open] summary i::after { transform: translate(-50%, -50%) rotate(0deg); }
+.faq__a { padding: 0 60px 26px 4px; font-size: 15.5px; line-height: 1.7; color: var(--ink-dim); max-width: 70ch; }
+.faq__item[open] .faq__a { animation: riseIn 0.45s var(--ease) both; }
+
+/* ---------- analytics consent bar (only shown when an analytics id is configured) ---------- */
+.consent {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 950;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 16px 18px 16px 22px;
+  border: 1px solid var(--line-strong);
+  border-radius: 18px;
+  background: rgba(10, 12, 18, 0.94);
+  backdrop-filter: blur(14px);
+  font-size: 14px;
+  color: var(--ink-dim);
+}
+.consent__actions { display: flex; gap: 8px; }
+.consent .btn { padding: 9px 16px; font-size: 13px; border-radius: 100px; }
+
+@media (max-width: 1000px) {
+  .x-faq__grid { grid-template-columns: 1fr; gap: 30px; }
+}
+@media (max-width: 620px) {
+  .faq__item summary { padding: 20px 2px; }
+  .faq__a { padding-right: 8px; }
+  .lang a { padding: 7px 5px; }
+}

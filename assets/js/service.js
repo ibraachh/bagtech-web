@@ -13,7 +13,7 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const fine = matchMedia("(pointer: fine)").matches;
   // a calm, finished-looking moment of each scene (reduced motion, blog covers)
-  const STILL = { software: 6.5, ai: 7.2, security: 3, crm: 6.6, integration: 2, web: 1, infra: 6, support: 2 };
+  const STILL = { software: 6.5, mobile: 1.2, ai: 7.2, security: 3, crm: 6.6, integration: 2, web: 1, infra: 6, support: 2 };
 
   const mount = (canvas) => {
     const ctx = canvas.getContext("2d");
@@ -33,8 +33,7 @@
     const easeIO = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
     const seg = (x, a, b) => clamp((x - a) / (b - a), 0, 1);       // progress of x through [a, b]
     const cyc = (t, period) => (t / period) % 1;                     // 0..1 loop
-    const lang = () => (document.documentElement.lang === "en" ? "en" : "az");
-    const L = (az, en) => (lang() === "en" ? en : az);
+    const L = (az, en, ru) => ({ en, ru })[document.documentElement.lang] ?? az;
 
     // seeded random, so a scene looks the same on every load
     let seed = 7;
@@ -500,8 +499,8 @@
        ========================================================= */
     const crm = () => {
       const mods = [
-        () => "CRM", () => L("Satış", "Sales"), () => "HR",
-        () => L("Maliyyə", "Finance"), () => L("Anbar", "Stock"), () => L("Hesabat", "Reports"),
+        () => "CRM", () => L("Satış", "Sales", "Продажи"), () => "HR",
+        () => L("Maliyyə", "Finance", "Финансы"), () => L("Anbar", "Stock", "Склад"), () => L("Hesabat", "Reports", "Отчёты"),
       ];
       return (t) => {
         const c = cyc(t, 11);
@@ -583,8 +582,8 @@
        05 · Integration — optical threads between systems
        ========================================================= */
     const integration = () => {
-      const left = [() => L("Bank", "Bank"), () => L("Ödəniş", "Payments"), () => "ERP", () => L("Dövlət", "Gov"), () => "CRM"];
-      const right = [() => L("Sayt", "Website"), () => L("Mobil", "Mobile"), () => L("Anbar", "Stock"), () => L("Hesabat", "Reports"), () => L("Kassa", "POS")];
+      const left = [() => L("Bank", "Bank", "Банк"), () => L("Ödəniş", "Payments", "Оплата"), () => "ERP", () => L("Dövlət", "Gov", "Госпортал"), () => "CRM"];
+      const right = [() => L("Sayt", "Website", "Сайт"), () => L("Mobil", "Mobile", "Приложение"), () => L("Anbar", "Stock", "Склад"), () => L("Hesabat", "Reports", "Отчёты"), () => L("Kassa", "POS", "Касса")];
       const n = left.length;
       let from = [0, 1, 2, 3, 4], to = [2, 0, 4, 1, 3], switchedAt = 0;
       const shuffle = () => {
@@ -905,8 +904,137 @@
       };
     };
 
+    /* =========================================================
+       Mobile apps — one product, two platforms, screens in sync
+       ========================================================= */
+    const mobile = () => {
+      // three app screens, drawn from simple blocks in the phone's 0..1 space
+      const screens = [
+        (x, y, w, h, a) => {                       // feed
+          bar(x + w * 0.1, y + h * 0.1, w * 0.5, 7, a * 0.5);
+          box(x + w * 0.1, y + h * 0.18, w * 0.8, h * 0.26, 10, a, true);
+          for (let i = 0; i < 3; i++) {
+            dot(x + w * 0.17, y + h * (0.53 + i * 0.11), w * 0.05, rgba(ACC, 0.4 * a));
+            bar(x + w * 0.28, y + h * (0.515 + i * 0.11), w * 0.46, 4, a * 0.4);
+            bar(x + w * 0.28, y + h * (0.545 + i * 0.11), w * 0.3, 4, a * 0.25);
+          }
+        },
+        (x, y, w, h, a) => {                       // catalogue
+          bar(x + w * 0.1, y + h * 0.1, w * 0.36, 7, a * 0.5);
+          for (let r = 0; r < 2; r++) for (let c = 0; c < 2; c++) {
+            const bx = x + w * (0.1 + c * 0.42), by = y + h * (0.18 + r * 0.3);
+            box(bx, by, w * 0.38, h * 0.2, 9, a, false);
+            bar(bx, by + h * 0.225, w * 0.26, 4, a * 0.4);
+            ctx.fillStyle = rgba(ACC, 0.55 * a);
+            rr(bx, by + h * 0.255, w * 0.14, 4, 2); ctx.fill();
+          }
+        },
+        (x, y, w, h, a) => {                       // done
+          ctx.strokeStyle = rgba(OK, 0.9 * a);
+          ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.arc(x + w / 2, y + h * 0.34, w * 0.17, 0, Math.PI * 2); ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(x + w * 0.42, y + h * 0.34);
+          ctx.lineTo(x + w * 0.48, y + h * 0.375);
+          ctx.lineTo(x + w * 0.59, y + h * 0.305);
+          ctx.stroke();
+          bar(x + w * 0.25, y + h * 0.52, w * 0.5, 6, a * 0.5);
+          bar(x + w * 0.32, y + h * 0.57, w * 0.36, 4, a * 0.3);
+        },
+      ];
+      const bar = (x, y, w, h, a) => { ctx.fillStyle = rgba(BLUE, a); rr(x, y, w, h, h / 2); ctx.fill(); };
+      const box = (x, y, w, h, r, a, picture) => {
+        rr(x, y, w, h, r);
+        ctx.fillStyle = rgba(ACC, 0.08 * a);
+        ctx.fill();
+        ctx.strokeStyle = rgba(BLUE, 0.4 * a);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        if (picture) {
+          ctx.strokeStyle = rgba(BLUE, 0.45 * a);
+          ctx.beginPath();
+          ctx.moveTo(x + w * 0.08, y + h * 0.8);
+          ctx.lineTo(x + w * 0.36, y + h * 0.45);
+          ctx.lineTo(x + w * 0.54, y + h * 0.66);
+          ctx.lineTo(x + w * 0.7, y + h * 0.5);
+          ctx.lineTo(x + w * 0.92, y + h * 0.8);
+          ctx.stroke();
+          dot(x + w * 0.76, y + h * 0.26, 4, rgba(ACC, 0.5 * a));
+        }
+      };
+
+      const phone = (px, py, pw, ph, kind, step, mv, tap) => {
+        rr(px, py, pw, ph, pw * 0.16);
+        ctx.fillStyle = rgba("10,13,20", 0.94);
+        ctx.fill();
+        ctx.strokeStyle = rgba(BLUE, 0.7);
+        ctx.lineWidth = 1.3;
+        ctx.stroke();
+        ctx.save();
+        rr(px + 3, py + 3, pw - 6, ph - 6, pw * 0.14);
+        ctx.clip();
+        // current screen slides out to the left, the next one comes in from the right
+        screens[step % 3](px - mv * pw, py, pw, ph, 1 - mv * 0.6);
+        if (mv > 0) screens[(step + 1) % 3](px + (1 - mv) * pw, py, pw, ph, 0.4 + mv * 0.6);
+        // bottom button with a tap ripple
+        const bx = px + pw * 0.1 - mv * pw, by = py + ph * 0.84;
+        rr(bx, by, pw * 0.8, ph * 0.075, ph * 0.04);
+        ctx.fillStyle = rgba(ACC, 0.5 * (1 - mv));
+        ctx.fill();
+        if (tap > 0 && tap < 1) {
+          ctx.strokeStyle = rgba(WHITE, 0.8 * (1 - tap));
+          ctx.lineWidth = 1.5;
+          ctx.beginPath(); ctx.arc(px + pw * 0.5, by + ph * 0.037, 5 + tap * 22, 0, Math.PI * 2); ctx.stroke();
+          dot(px + pw * 0.5, by + ph * 0.037, 3, rgba(WHITE, 0.95 * (1 - tap)));
+        }
+        ctx.restore();
+        // the one visible difference: pill notch on iOS, punch-hole on Android
+        if (kind === "ios") { rr(px + pw * 0.36, py + 9, pw * 0.28, 7, 3.5); ctx.fillStyle = rgba(BLUE, 0.45); ctx.fill(); }
+        else dot(px + pw / 2, py + 12, 3, rgba(BLUE, 0.5));
+        label(kind === "ios" ? "iOS" : "Android", px + pw / 2, py + ph + 20, rgba(BLUE, 0.75), 12);
+      };
+
+      return (t) => {
+        const period = 3.2;
+        const local = t % period;
+        const step = Math.floor(t / period);
+        const tap = seg(local, 1.9, 2.5);
+        const mv = easeIO(seg(local, 2.4, period));
+        const pw = S * 0.27, ph = S * 0.56;
+        const gap = S * 0.16;
+        const y = cy - ph / 2 - S * 0.02;
+        const lx = cx - gap / 2 - pw + ptr.x * 12, rx = cx + gap / 2 + ptr.x * 18;
+        const ly = y + ptr.y * 8, ry = y + S * 0.03 + ptr.y * 12;
+
+        // shared source in the middle: one codebase feeding both phones
+        const hx = cx + ptr.x * 6, hy = cy + ph * 0.02;
+        ctx.strokeStyle = rgba(BLUE, 0.3);
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 5]);
+        ctx.lineDashOffset = -t * 14;
+        line(hx, hy, lx + pw, ly + ph * 0.5);
+        line(hx, hy, rx, ry + ph * 0.5);
+        ctx.setLineDash([]);
+        for (let i = 0; i < 2; i++) {
+          const u = (t * 0.6 + i * 0.5) % 1;
+          dot(lerp(hx, lx + pw, u), lerp(hy, ly + ph * 0.5, u), 2.2, rgba(WHITE, 0.9 * (1 - u * 0.4)));
+          dot(lerp(hx, rx, u), lerp(hy, ry + ph * 0.5, u), 2.2, rgba(WHITE, 0.9 * (1 - u * 0.4)));
+        }
+        glow(hx, hy, 26, ACC, 0.3);
+        ctx.fillStyle = rgba("9,11,17", 0.95);
+        ctx.beginPath(); ctx.arc(hx, hy, 15, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = rgba(ACC, 0.8);
+        ctx.lineWidth = 1.3;
+        ctx.stroke();
+        label("</>", hx, hy + 0.5, rgba(ACC, 0.95), 11);
+
+        phone(lx, ly, pw, ph, "ios", step, mv, tap);
+        phone(rx, ry, pw, ph, "android", step, mv, tap);
+      };
+    };
+
     /* ---------- run ---------- */
-    const scenes = { software, ai, security, crm, integration, web, infra, support };
+    const scenes = { software, mobile, ai, security, crm, integration, web, infra, support };
     const make = scenes[canvas.dataset.art];
     if (!make) return;
     const scene = make();

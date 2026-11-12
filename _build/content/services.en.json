@@ -1,0 +1,785 @@
+{
+  "sw": {
+    "nav": "Custom software",
+    "h1": "Custom software development",
+    "seo_title": "Custom software development company in Azerbaijan | BagTech",
+    "desc": "Custom software development in Baku: web platforms, corporate systems, booking systems and marketplaces. From an idea to an MVP and on to a full-scale system.",
+    "lead": "Web platforms, internal corporate systems, APIs and backend. From idea to a working product: a first version (MVP) first, then the full system.",
+    "problems": [
+      [
+        "Off-the-shelf software doesn't fit your process",
+        "Standard solutions don't account for the specifics of your business, so you end up adapting your work to them."
+      ],
+      [
+        "Work runs on Excel and messaging apps",
+        "Data is scattered, several people repeat the same work and it gets harder to keep control."
+      ],
+      [
+        "You have an idea but don't know where to start",
+        "It isn't clear how to release a first version without putting the budget at risk."
+      ]
+    ],
+    "inc": [
+      [
+        "Web platforms",
+        "Personal accounts, admin panels and web systems with complex business logic."
+      ],
+      [
+        "APIs and backend",
+        "A reliable server side, documented APIs and database architecture."
+      ],
+      [
+        "Booking and online appointments",
+        "Online booking for services, queue and calendar systems, with payment integration."
+      ],
+      [
+        "Marketplaces",
+        "Seller and buyer accounts, order flow, commissions and reporting."
+      ],
+      [
+        "Internal corporate systems",
+        "Built around your company's own processes: requests, approvals, documents and reports."
+      ],
+      [
+        "From MVP to a full system",
+        "We launch a first version with the most important features, then expand it based on real usage."
+      ]
+    ],
+    "out": [
+      [
+        "A working product",
+        "At every stage you see a version that actually runs, not a presentation."
+      ],
+      [
+        "Ready to grow",
+        "The architecture is designed for new modules and users from day one."
+      ],
+      [
+        "After launch, too",
+        "Support, updates and new features — the project doesn't end at handover."
+      ]
+    ],
+    "faq": [
+      [
+        "How long does custom software development take?",
+        "It depends on the scope of the project. We usually launch a first version (MVP) with the most important features, then expand the system in stages. The exact timeline is set out in our proposal after an audit and requirements gathering."
+      ],
+      [
+        "How much does custom software development cost?",
+        "The cost depends on the number of features, the integrations, the complexity of the design and the platforms (web, iOS, Android). The initial consultation and estimate are free; the stages, timeline and budget are documented before anything is agreed."
+      ],
+      [
+        "Is it better to buy off-the-shelf software or order a custom system?",
+        "If your processes are standard, an off-the-shelf solution is faster and cheaper. If they are non-standard, or the ready-made software has to be adapted again and again, a custom system is more cost-effective in the long run."
+      ],
+      [
+        "Do you provide support after the project is delivered?",
+        "Yes. After launch, technical support, updates and the addition of new features continue under an SLA."
+      ],
+      [
+        "What technologies do you use?",
+        "Java / Spring on the server side, React and Next.js for web interfaces, and React Native, Swift and Flutter for mobile apps."
+      ]
+    ],
+    "tags": [
+      "Java / Spring",
+      "React / Next.js",
+      "React Native",
+      "Swift",
+      "Flutter"
+    ]
+  },
+  "mob": {
+    "nav": "Mobile apps",
+    "h1": "Mobile app development",
+    "seo_title": "Mobile app development in Baku — iOS and Android apps | BagTech",
+    "desc": "Mobile app development in Baku: iOS and Android apps built with React Native, Swift and Flutter. From design to release on the App Store and Google Play.",
+    "lead": "Mobile apps for iOS and Android: from idea and design to release on the App Store and Google Play. Integrated with your existing website, CRM and payment systems.",
+    "problems": [
+      [
+        "Your customers are on their phones, but your website isn't convenient",
+        "Users expect an app for ordering, booking and paying."
+      ],
+      [
+        "Native or cross-platform — a hard choice",
+        "The wrong technology choice increases both the budget and the time to launch."
+      ],
+      [
+        "The app is cut off from your existing systems",
+        "Data is kept in separate places and synchronised by hand."
+      ]
+    ],
+    "inc": [
+      [
+        "iOS apps",
+        "Native apps for iPhone and iPad, built with Swift."
+      ],
+      [
+        "Android apps",
+        "Android apps for a range of screen sizes and devices."
+      ],
+      [
+        "Cross-platform apps",
+        "An app for both platforms from a single codebase, using React Native or Flutter."
+      ],
+      [
+        "Corporate mobile apps",
+        "Internal apps for employees: tasks, approvals and reports."
+      ],
+      [
+        "Integration",
+        "Connecting the app to your existing website, CRM and ERP, payment systems and APIs."
+      ],
+      [
+        "Publishing and support",
+        "Release on the App Store and Google Play, updates and technical support."
+      ]
+    ],
+    "out": [
+      [
+        "Both platforms",
+        "iOS and Android users get the same quality of experience."
+      ],
+      [
+        "One system",
+        "The app works with the same data as your website and internal systems."
+      ],
+      [
+        "Ongoing development",
+        "Updates and new features continue after launch."
+      ]
+    ],
+    "faq": [
+      [
+        "What do you need to start developing a mobile app?",
+        "A description of the main scenario (what the user will do in the app), the target platforms and information about your existing systems are enough. The rest — requirements gathering, design and architecture — we work out together at the audit stage."
+      ],
+      [
+        "Should I choose a native or a cross-platform app?",
+        "It depends on the project's requirements, and we make the choice together with you. Cross-platform (React Native, Flutter) covers both platforms with a single codebase and is usually quicker to deliver. Native (Swift) suits apps that need to make the most of the device's capabilities and deliver high performance."
+      ],
+      [
+        "How much does it cost to develop a mobile app?",
+        "The cost depends on the number of screens and features, the platforms, the integrations and the design. The initial estimate is free; we usually recommend starting with an MVP version."
+      ],
+      [
+        "Do you publish the app on the App Store and Google Play?",
+        "Yes. We handle publishing the app in the stores and the updates that follow."
+      ]
+    ],
+    "tags": [
+      "Swift",
+      "React Native",
+      "Flutter",
+      "iOS",
+      "Android"
+    ]
+  },
+  "ai": {
+    "nav": "AI solutions",
+    "h1": "AI and smart solutions",
+    "seo_title": "AI solutions and face recognition system in Baku | BagTech",
+    "desc": "AI solutions in Baku: a face recognition system, AI assistants, automatic document processing and smart access systems. Data stays on the company's own server.",
+    "lead": "Face recognition, AI assistants that answer customers, automatic document processing and smart access systems — artificial intelligence for real business tasks.",
+    "problems": [
+      [
+        "Access cards get lost and attendance is tracked by hand",
+        "Control based on cards and logbooks takes time and is open to fraud."
+      ],
+      [
+        "Operators answer the same questions again and again",
+        "Repetitive requests take up the team's time while the customer waits for an answer."
+      ],
+      [
+        "Documents are processed by hand",
+        "Copying data from documents into the system is slow and leads to errors."
+      ]
+    ],
+    "inc": [
+      [
+        "Face recognition system",
+        "Recognises faces from a camera in real time. Adding a person to the system takes about 15 seconds: they turn their head slightly in front of the camera and that's it."
+      ],
+      [
+        "No special server needed",
+        "Runs fast even on an ordinary laptop. The data stays on the company's own server."
+      ],
+      [
+        "Where face recognition is used",
+        "Office and site access, employee attendance, VIP and guest entry at events, security."
+      ],
+      [
+        "AI assistants",
+        "Assistants that answer customer questions — freeing your operators' time from repetitive questions."
+      ],
+      [
+        "Document and data processing",
+        "Automatic processing of documents and data, data-driven forecasting and analytics."
+      ],
+      [
+        "Smart access systems",
+        "QR tickets, integration with stadium turnstiles, accreditation and badge printing for forums."
+      ]
+    ],
+    "out": [
+      [
+        "≈15 seconds",
+        "Is all it takes to add a person to the face recognition system."
+      ],
+      [
+        "Your own server",
+        "Face data never leaves your company."
+      ],
+      [
+        "Ordinary hardware",
+        "The system runs on an ordinary laptop — no need to buy a special server."
+      ]
+    ],
+    "faq": [
+      [
+        "How is AI used in business?",
+        "The areas that deliver the most are AI assistants that answer customer questions, automatic processing of documents and data, data-driven forecasting and analytics, and access and attendance control with face recognition. Adoption starts with choosing a specific problem and running a small pilot project."
+      ],
+      [
+        "How does a face recognition system work?",
+        "The camera detects a face and converts it into a digital signature, which is then compared with the signatures in the database. Adding a new person to the system takes about 15 seconds."
+      ],
+      [
+        "Where is face recognition data stored?",
+        "On the company's own server: the system runs there and the data is not sent to an external cloud. Because it runs fast even on an ordinary laptop, no special server is required."
+      ],
+      [
+        "Can an AI assistant work with our existing systems?",
+        "Yes. The assistant integrates with your website, CRM and other systems via API."
+      ]
+    ],
+    "tags": [
+      "Face recognition",
+      "AI assistants",
+      "QR access",
+      "On-premise"
+    ]
+  },
+  "sec": {
+    "nav": "Cybersecurity",
+    "h1": "Cybersecurity services",
+    "seo_title": "Cybersecurity services in Baku — audit, 2FA, pentest | BagTech",
+    "desc": "Cybersecurity services in Baku: two-factor authentication, encryption, access auditing, vulnerability testing and incident response — before a threat hits.",
+    "lead": "Two-factor authentication, encryption, access auditing, vulnerability testing and incident response. We protect your systems and data before a threat hits.",
+    "problems": [
+      [
+        "Weak passwords and shared accounts",
+        "One compromised account can open the way into the whole system."
+      ],
+      [
+        "Nobody knows who has access to what",
+        "The accounts of people who have left stay open, and access rights grow unchecked."
+      ],
+      [
+        "Nobody knows what to do during an incident",
+        "Without a plan, every hour adds to the loss."
+      ]
+    ],
+    "inc": [
+      [
+        "Two-factor authentication (2FA)",
+        "We protect account access with a second step on top of the password."
+      ],
+      [
+        "Encryption",
+        "Data is encrypted both in transit and at rest."
+      ],
+      [
+        "Access auditing",
+        "Who signed in, when and to which system — everything is logged and reviewed."
+      ],
+      [
+        "Vulnerability testing",
+        "We test your systems the way an attacker would and close the weak spots."
+      ],
+      [
+        "Incident response",
+        "Fast reaction when something happens: containment, investigation and recovery."
+      ],
+      [
+        "Security policies",
+        "Clear rules for passwords, access rights and backups."
+      ]
+    ],
+    "out": [
+      [
+        "Visible risks",
+        "After the audit, a clear list of weak spots and priorities."
+      ],
+      [
+        "Protected access",
+        "2FA and access rules make account takeover harder."
+      ],
+      [
+        "A plan in place",
+        "What to do during an incident is known in advance."
+      ]
+    ],
+    "faq": [
+      [
+        "Where does a cybersecurity audit start?",
+        "It starts with a review of your existing systems, access rights and backups. The result is a clear list of weak spots and priorities."
+      ],
+      [
+        "Does a small company need cybersecurity?",
+        "Yes. Most attacks begin with a weak password, software that hasn't been updated or a phishing email; these risks don't depend on the size of the company."
+      ],
+      [
+        "What is a pentest (vulnerability test)?",
+        "It is a check of your systems from an attacker's point of view. The goal is to find and close the weak spots before a real attack."
+      ],
+      [
+        "What cybersecurity measures should a company take first?",
+        "Start with two-factor authentication, working backups and timely updates: together they significantly reduce the most common risks."
+      ]
+    ],
+    "tags": [
+      "2FA",
+      "Encryption",
+      "Audit",
+      "Pentest"
+    ]
+  },
+  "crm": {
+    "nav": "CRM and ERP",
+    "h1": "CRM and ERP systems",
+    "seo_title": "CRM and ERP systems in Azerbaijan — implementation | BagTech",
+    "desc": "CRM and ERP systems in Baku: sales, customer base, HR, finance and inventory in one system. Customisation on ERPNext or a system built from scratch.",
+    "lead": "Sales, customer base, HR, finance and inventory in one system. Customisation on a ready-made platform (e.g. ERPNext) or a system built from scratch — integrated with the systems you already run.",
+    "problems": [
+      [
+        "Enquiries get lost",
+        "Customer history is kept in Excel and messaging apps, and the sales plan is hard to track."
+      ],
+      [
+        "Inventory and accounting don't match",
+        "Departments pass data to each other by hand and the figures differ."
+      ],
+      [
+        "Reports take days",
+        "Management makes decisions based on outdated data."
+      ]
+    ],
+    "inc": [
+      [
+        "CRM",
+        "Customer base, sales stages, tasks, the history of communication with each customer and managers' results."
+      ],
+      [
+        "ERP",
+        "Unified management of company resources with HR, finance, inventory and sales modules."
+      ],
+      [
+        "Process automation",
+        "Request, approval and execution flows — without paperwork and repetitive manual work."
+      ],
+      [
+        "Roles and permissions",
+        "Director, manager, employee — everyone sees only what their own work needs."
+      ],
+      [
+        "Ready-made or from scratch",
+        "Customisation on a ready-made solution such as ERPNext, or a system shaped entirely around your processes."
+      ],
+      [
+        "Integration",
+        "Connected to the systems you already use: website, payments, accounting and other services."
+      ]
+    ],
+    "out": [
+      [
+        "One picture",
+        "Every figure from sales to stock in one place."
+      ],
+      [
+        "Less manual work",
+        "Repetitive operations are automated."
+      ],
+      [
+        "Clear control",
+        "The status and owner of every task are visible."
+      ]
+    ],
+    "faq": [
+      [
+        "What is an ERP system?",
+        "ERP (Enterprise Resource Planning) is software that brings a company's internal operations — HR, finance, inventory, purchasing and sales — together in one system. The aim is for every department to work with the same data."
+      ],
+      [
+        "What is a CRM system and how is it different from ERP?",
+        "A CRM manages customer relationships and sales: the customer base, deal stages and tasks. An ERP covers the company's internal resources. In growing companies the two work together through integration."
+      ],
+      [
+        "Should we use a ready-made ERP platform or build a system from scratch?",
+        "If your processes are close to standard, customising a ready-made platform such as ERPNext is faster and more cost-effective. For a non-standard business model, a system built from scratch is a better fit."
+      ],
+      [
+        "What are the stages of CRM and ERP implementation?",
+        "Implementation moves through an audit, a pilot in one department, data migration, staff training and a phased rollout to the other departments."
+      ],
+      [
+        "Can a CRM or ERP be integrated with our existing software?",
+        "Yes: your website, payment systems, accounting and other services are connected via API."
+      ]
+    ],
+    "tags": [
+      "CRM",
+      "ERP",
+      "ERPNext"
+    ]
+  },
+  "int": {
+    "nav": "System integration",
+    "h1": "System integration",
+    "seo_title": "System integration in Baku — APIs, payment systems, SSO | BagTech",
+    "desc": "System integration in Baku: payment systems, government portals, ERP and third-party services connected through documented APIs, webhooks and SSO.",
+    "lead": "We connect payment systems, government portals, ERPs and third-party services with one another. Documented APIs and reliable data exchange.",
+    "problems": [
+      [
+        "The same data is entered several times",
+        "An order is recorded separately on the website, in the CRM and in accounting."
+      ],
+      [
+        "Payment and order statuses don't match",
+        "The systems know nothing about each other, and errors surface only when a customer calls."
+      ],
+      [
+        "Connecting a new partner takes weeks",
+        "Without a documented API, every integration starts from scratch."
+      ]
+    ],
+    "inc": [
+      [
+        "Payment gateways",
+        "Online payments, refunds and payment status synchronisation."
+      ],
+      [
+        "Government portals",
+        "Data exchange with government services and portals."
+      ],
+      [
+        "ERP and third-party services",
+        "Automatic flow between accounting, inventory, CRM and other systems."
+      ],
+      [
+        "API design",
+        "REST and GraphQL APIs — with clear documentation."
+      ],
+      [
+        "Webhooks",
+        "A change in one system reaches the other immediately."
+      ],
+      [
+        "SSO",
+        "One account to sign in to every internal system."
+      ]
+    ],
+    "out": [
+      [
+        "No manual copying",
+        "Data flows between systems on its own."
+      ],
+      [
+        "Documented APIs",
+        "Connecting new systems and partners gets easier."
+      ],
+      [
+        "Reliable exchange",
+        "Errors are tracked and failed requests are retried."
+      ]
+    ],
+    "faq": [
+      [
+        "What is system integration?",
+        "System integration means connecting separate applications — a website, CRM and ERP, payment systems, government portals — so that they exchange data automatically. As a result, data is no longer copied by hand."
+      ],
+      [
+        "What is the difference between an API and a webhook?",
+        "An API is how one system asks another for data, while a webhook is a system sending a notification itself as soon as an event happens."
+      ],
+      [
+        "Which systems do you integrate?",
+        "We integrate payment gateways, government portals, ERP and CRM, accounting and inventory software, as well as single sign-on (SSO)."
+      ],
+      [
+        "How do you make an integration reliable?",
+        "Through documentation, retrying failed requests, making sure repeated requests don't produce duplicate results (idempotency), and monitoring."
+      ]
+    ],
+    "tags": [
+      "REST / GraphQL",
+      "Webhooks",
+      "Payment gateways",
+      "SSO"
+    ]
+  },
+  "web": {
+    "nav": "Web development",
+    "h1": "Website development and e-commerce",
+    "seo_title": "Web development in Baku — websites and online stores | BagTech",
+    "desc": "Website development and web design in Baku: corporate websites, online stores, media and university portals. Fast, mobile-friendly and ready for SEO.",
+    "lead": "Website development: corporate websites, personal brand sites, media and university portals, online stores. Fast, mobile-friendly and ready for search engines.",
+    "problems": [
+      [
+        "Your website is dated and awkward on a phone",
+        "Most visitors open the site on a phone and leave after a few seconds."
+      ],
+      [
+        "Your website doesn't show up in search",
+        "Technical SEO hasn't been set up and pages load slowly."
+      ],
+      [
+        "Every content update needs a developer",
+        "A simple text or image change takes days."
+      ]
+    ],
+    "inc": [
+      [
+        "Corporate websites",
+        "Sites that present the company, its services and team clearly."
+      ],
+      [
+        "Personal brand sites",
+        "For experts and public figures."
+      ],
+      [
+        "Media portals",
+        "News, video and broadcast platforms — with an admin panel."
+      ],
+      [
+        "University portals",
+        "Student, alumni and campus portals."
+      ],
+      [
+        "Online stores",
+        "Catalogue, cart, payments and order management."
+      ],
+      [
+        "SEO and speed",
+        "Technical SEO, fast loading and analytics set up."
+      ]
+    ],
+    "out": [
+      [
+        "Mobile-friendly",
+        "The site looks and works right on every screen."
+      ],
+      [
+        "Easy to manage",
+        "A simple admin panel for keeping content up to date."
+      ],
+      [
+        "Visible in search",
+        "Technical SEO is set up from day one."
+      ]
+    ],
+    "faq": [
+      [
+        "How much does it cost to build a website?",
+        "The price depends on the type of site (corporate website, online store, portal), the number of pages, the design, the language versions and the integrations (payments, CRM). The initial consultation and estimate are free; the exact budget and timeline are set out in a proposal once the requirements have been gathered."
+      ],
+      [
+        "How is a corporate website built?",
+        "In four stages: requirements gathering and structure, web design, development and content entry, then testing and launch. You see an interim result at every stage."
+      ],
+      [
+        "Can you connect a payment system to an online store?",
+        "Yes. We set up online payments, order management and integration with inventory or accounting systems."
+      ],
+      [
+        "Will the website be ready for SEO?",
+        "Yes: unique titles and descriptions, a correct heading structure, a sitemap, fast loading and structured data are set up from day one."
+      ],
+      [
+        "Can we update the website ourselves later?",
+        "Yes, we set up a simple admin panel so that content can be updated without a developer."
+      ]
+    ],
+    "tags": [
+      "Corporate sites",
+      "Portals",
+      "E-commerce",
+      "SEO"
+    ]
+  },
+  "infra": {
+    "nav": "IT infrastructure",
+    "h1": "IT infrastructure and cloud",
+    "seo_title": "IT infrastructure and cloud migration in Azerbaijan | BagTech",
+    "desc": "IT infrastructure in Baku: server and network setup, DNS/DHCP, virtualisation, cloud migration, corporate email servers and 24/7 monitoring from BagTech.",
+    "lead": "Server and network setup, virtualisation, cloud migration, corporate email servers and 24/7 monitoring.",
+    "problems": [
+      [
+        "Servers have grown without a plan",
+        "There is no documentation and everything depends on one person's knowledge."
+      ],
+      [
+        "You learn about failures from your users",
+        "Without monitoring, a problem only becomes visible once it has already stopped work."
+      ],
+      [
+        "Backups are never tested",
+        "Whether recovery actually works only becomes clear when you need it."
+      ]
+    ],
+    "inc": [
+      [
+        "Servers and network",
+        "Installing and configuring servers and network equipment."
+      ],
+      [
+        "DNS / DHCP",
+        "Correct, resilient configuration of network services."
+      ],
+      [
+        "Virtualisation",
+        "Efficient use of resources in VMware and Linux environments."
+      ],
+      [
+        "Cloud migration",
+        "Planned migration of your systems to the cloud."
+      ],
+      [
+        "Corporate email",
+        "Email servers on your own domain: setup, security and support."
+      ],
+      [
+        "24/7 monitoring",
+        "We see a problem before your users notice it."
+      ]
+    ],
+    "out": [
+      [
+        "Resilient infrastructure",
+        "Systems keep working under load and through failures."
+      ],
+      [
+        "A clear map",
+        "The whole infrastructure is documented."
+      ],
+      [
+        "Constant oversight",
+        "Monitoring and timely alerts."
+      ]
+    ],
+    "faq": [
+      [
+        "What does IT infrastructure include?",
+        "IT infrastructure includes servers, network equipment, network services such as DNS and DHCP, virtualisation, cloud resources, corporate email and monitoring."
+      ],
+      [
+        "How does cloud migration work?",
+        "First the existing systems and their dependencies are analysed, then the migration is planned in stages so that work doesn't stop."
+      ],
+      [
+        "Can we have our own email server?",
+        "Yes. We set up, secure and support a corporate email server on your own domain."
+      ],
+      [
+        "What does IT infrastructure monitoring give you?",
+        "Systems are watched 24/7 and an alert arrives before users notice the problem."
+      ]
+    ],
+    "tags": [
+      "Linux",
+      "VMware",
+      "Cloud",
+      "Email"
+    ]
+  },
+  "sup": {
+    "nav": "IT outsourcing",
+    "h1": "IT outsourcing and technical support",
+    "seo_title": "IT outsourcing in Baku — managed IT support with SLA | BagTech",
+    "desc": "IT outsourcing in Baku: an external IT department with day-to-day technical support, SLA response times, a helpdesk, and hardware and licence management.",
+    "lead": "Your external IT department: day-to-day technical support, SLA-based response times, a helpdesk, hardware and licence management.",
+    "problems": [
+      [
+        "Keeping an in-house IT specialist is expensive",
+        "For a small or mid-sized company, a full-time position doesn't always pay for itself."
+      ],
+      [
+        "IT depends on one person",
+        "When they are on holiday or off sick, things come to a halt."
+      ],
+      [
+        "Requests get lost",
+        "Nobody knows who will respond or when."
+      ]
+    ],
+    "inc": [
+      [
+        "Day-to-day support",
+        "Fast answers to your users' questions and problems."
+      ],
+      [
+        "SLA-based response",
+        "An agreed response time for every type of request."
+      ],
+      [
+        "Helpdesk",
+        "Every request in one system: status, owner, history."
+      ],
+      [
+        "Hardware management",
+        "Inventory and servicing of computers, printers and network equipment."
+      ],
+      [
+        "Licences",
+        "Tracking software licences and renewing them on time."
+      ],
+      [
+        "Monitoring",
+        "Constant oversight of your systems' health."
+      ]
+    ],
+    "out": [
+      [
+        "One point of contact",
+        "One team for every IT question."
+      ],
+      [
+        "Clear rules",
+        "The SLA sets out when and how you get a response."
+      ],
+      [
+        "Ongoing oversight",
+        "Problems are solved before they grow."
+      ]
+    ],
+    "faq": [
+      [
+        "What is IT outsourcing?",
+        "IT outsourcing means handing a company's IT functions — user support, servers, network, licences — over to an external team. Instead of keeping in-house staff, you get an agreed service level (SLA)."
+      ],
+      [
+        "When does IT outsourcing make sense?",
+        "It makes sense when there isn't enough work for a full-time IT department, when you need expertise across several areas (network, servers, security), or when your existing IT employee needs reinforcing."
+      ],
+      [
+        "What is an SLA?",
+        "An SLA (Service Level Agreement) is an agreement that sets the response and resolution times for each type of request."
+      ],
+      [
+        "How does managed IT support work?",
+        "Requests are logged in a helpdesk system, where the status, owner and history of each one are visible."
+      ]
+    ],
+    "tags": [
+      "SLA",
+      "Helpdesk",
+      "Monitoring"
+    ]
+  },
+  "_hub": {
+    "h1": "IT services and solutions",
+    "seo_title": "IT services in Baku — software, websites, AI | BagTech",
+    "desc": "IT services from BagTech, an IT company in Baku: software, mobile apps, AI, cybersecurity, CRM and ERP, integration, websites, infrastructure, IT outsourcing.",
+    "lead": "From software to infrastructure: nine areas covering the digital side of a business. In each one we deliver a working system, from analysis through to support."
+  }
+}

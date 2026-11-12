@@ -280,3 +280,10 @@
   .post-body { font-size: 16px; }
   .post-help { padding: 24px; }
 }
+
+/* links and FAQ inside an article */
+.post-body a { color: var(--accent); border-bottom: 1px solid rgba(143, 184, 255, 0.35); transition: border-color 0.25s, color 0.25s; }
+.post-body a:hover { color: #c4d8ff; border-color: currentColor; }
+.post-body .faq { margin-top: 1.4em; }
+.post-body .faq__a { padding-right: 20px; }
+.post-body .faq__a > p { margin: 0; }

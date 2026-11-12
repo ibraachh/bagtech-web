@@ -1,148 +1,489 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://bagtech.az/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/xidmetler/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/blog/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/blog/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/blog/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/"/>
   </url>
   <url>
     <loc>https://bagtech.az/xidmetler/proqram-teminati/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/proqram-teminati/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/proqram-teminati/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/custom-software-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/razrabotka-po/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/proqram-teminati/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/custom-software-development/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/proqram-teminati/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/custom-software-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/razrabotka-po/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/proqram-teminati/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/razrabotka-po/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/proqram-teminati/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/custom-software-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/razrabotka-po/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/proqram-teminati/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/xidmetler/mobil-tetbiqler/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/mobil-tetbiqler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/mobil-tetbiqler/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/mobile-app-development/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/mobil-tetbiqler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/mobil-tetbiqler/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/mobil-tetbiqler/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/mobil-tetbiqler/"/>
   </url>
   <url>
     <loc>https://bagtech.az/xidmetler/suni-intellekt/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/suni-intellekt/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/suni-intellekt/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/ai-solutions/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/suni-intellekt/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/ai-solutions/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/suni-intellekt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/ai-solutions/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/suni-intellekt/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/suni-intellekt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/ai-solutions/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/suni-intellekt/"/>
   </url>
   <url>
     <loc>https://bagtech.az/xidmetler/kibertehlukesizlik/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/kibertehlukesizlik/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/kibertehlukesizlik/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/cybersecurity/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/kiberbezopasnost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/kibertehlukesizlik/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/cybersecurity/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/kibertehlukesizlik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/cybersecurity/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/kiberbezopasnost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/kibertehlukesizlik/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/kiberbezopasnost/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/kibertehlukesizlik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/cybersecurity/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/kiberbezopasnost/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/kibertehlukesizlik/"/>
   </url>
   <url>
     <loc>https://bagtech.az/xidmetler/crm-erp/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/crm-erp/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/crm-erp/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/crm-erp-systems/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/crm-erp-sistemy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/crm-erp/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/crm-erp-systems/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/crm-erp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/crm-erp-systems/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/crm-erp-sistemy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/crm-erp/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/crm-erp-sistemy/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/crm-erp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/crm-erp-systems/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/crm-erp-sistemy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/crm-erp/"/>
   </url>
   <url>
     <loc>https://bagtech.az/xidmetler/sistem-inteqrasiyasi/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/sistem-inteqrasiyasi/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/sistem-inteqrasiyasi/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/system-integration/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/sistemnaya-integraciya/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/sistem-inteqrasiyasi/"/>
   </url>
   <url>
-    <loc>https://bagtech.az/xidmetler/saytlar-e-ticaret/</loc>
+    <loc>https://bagtech.az/en/services/system-integration/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/saytlar-e-ticaret/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/saytlar-e-ticaret/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/saytlar-e-ticaret/"/>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/sistem-inteqrasiyasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/system-integration/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/sistemnaya-integraciya/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/sistem-inteqrasiyasi/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/sistemnaya-integraciya/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/sistem-inteqrasiyasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/system-integration/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/sistemnaya-integraciya/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/sistem-inteqrasiyasi/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/razrabotka-saytov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/web-development/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/razrabotka-saytov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/razrabotka-saytov/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/razrabotka-saytov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/saytlarin-hazirlanmasi/"/>
   </url>
   <url>
     <loc>https://bagtech.az/xidmetler/it-infrastruktur/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/it-infrastruktur/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/it-infrastruktur/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/it-infrastructure/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/it-infrastruktura/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/it-infrastruktur/"/>
   </url>
   <url>
-    <loc>https://bagtech.az/xidmetler/texniki-destek/</loc>
+    <loc>https://bagtech.az/en/services/it-infrastructure/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/texniki-destek/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/xidmetler/texniki-destek/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/texniki-destek/"/>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/it-infrastruktur/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/it-infrastructure/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/it-infrastruktura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/it-infrastruktur/"/>
   </url>
   <url>
-    <loc>https://bagtech.az/blog/</loc>
+    <loc>https://bagtech.az/ru/uslugi/it-infrastruktura/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/blog/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/"/>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/it-infrastruktur/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/it-infrastructure/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/it-infrastruktura/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/it-infrastruktur/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/xidmetler/it-autsorsinq/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/it-autsorsinq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/it-outsourcing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/it-autsorsing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/it-autsorsinq/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/services/it-outsourcing/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/it-autsorsinq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/it-outsourcing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/it-autsorsing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/it-autsorsinq/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/uslugi/it-autsorsing/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/xidmetler/it-autsorsinq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/services/it-outsourcing/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/uslugi/it-autsorsing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/xidmetler/it-autsorsinq/"/>
   </url>
   <url>
     <loc>https://bagtech.az/blog/mvp-nedir/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/mvp-nedir/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/blog/mvp-nedir/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/what-is-an-mvp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/chto-takoe-mvp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/mvp-nedir/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/blog/what-is-an-mvp/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/mvp-nedir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/what-is-an-mvp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/chto-takoe-mvp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/mvp-nedir/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/blog/chto-takoe-mvp/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/mvp-nedir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/what-is-an-mvp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/chto-takoe-mvp/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/mvp-nedir/"/>
   </url>
   <url>
     <loc>https://bagtech.az/blog/ofisde-uz-tanima/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/ofisde-uz-tanima/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/blog/ofisde-uz-tanima/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/face-recognition-in-the-office/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/ofisde-uz-tanima/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/blog/face-recognition-in-the-office/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/ofisde-uz-tanima/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/face-recognition-in-the-office/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/ofisde-uz-tanima/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/ofisde-uz-tanima/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/face-recognition-in-the-office/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/raspoznavanie-lic-v-ofise/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/ofisde-uz-tanima/"/>
   </url>
   <url>
     <loc>https://bagtech.az/blog/kibertehlukesizlik-10-addim/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/kibertehlukesizlik-10-addim/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/blog/kibertehlukesizlik-10-addim/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/cybersecurity-first-10-steps/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/kiberbezopasnost-10-shagov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/kibertehlukesizlik-10-addim/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/blog/cybersecurity-first-10-steps/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/kibertehlukesizlik-10-addim/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/cybersecurity-first-10-steps/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/kiberbezopasnost-10-shagov/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/kibertehlukesizlik-10-addim/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/blog/kiberbezopasnost-10-shagov/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/kibertehlukesizlik-10-addim/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/cybersecurity-first-10-steps/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/kiberbezopasnost-10-shagov/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/kibertehlukesizlik-10-addim/"/>
   </url>
   <url>
     <loc>https://bagtech.az/blog/crm-yoxsa-erp/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/crm-yoxsa-erp/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/blog/crm-yoxsa-erp/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/crm-vs-erp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/crm-ili-erp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/crm-yoxsa-erp/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/blog/crm-vs-erp/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/crm-yoxsa-erp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/crm-vs-erp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/crm-ili-erp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/crm-yoxsa-erp/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/blog/crm-ili-erp/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/crm-yoxsa-erp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/crm-vs-erp/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/crm-ili-erp/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/crm-yoxsa-erp/"/>
   </url>
   <url>
     <loc>https://bagtech.az/blog/sistem-inteqrasiyasi-giris/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/system-integration-introduction/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/sistemnaya-integraciya-vvedenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/blog/system-integration-introduction/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/system-integration-introduction/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/sistemnaya-integraciya-vvedenie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/blog/sistemnaya-integraciya-vvedenie/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/system-integration-introduction/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/sistemnaya-integraciya-vvedenie/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sistem-inteqrasiyasi-giris/"/>
   </url>
   <url>
     <loc>https://bagtech.az/blog/sayt-niye-yavasdir/</loc>
     <lastmod>2026-11-12</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sayt-niye-yavasdir/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/blog/sayt-niye-yavasdir/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/why-is-your-website-slow/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sayt-niye-yavasdir/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/en/blog/why-is-your-website-slow/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sayt-niye-yavasdir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/why-is-your-website-slow/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sayt-niye-yavasdir/"/>
+  </url>
+  <url>
+    <loc>https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sayt-niye-yavasdir/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/why-is-your-website-slow/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sayt-niye-yavasdir/"/>
   </url>
 </urlset>

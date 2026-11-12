@@ -1,0 +1,53 @@
+<!--
+{
+  "title": "Məlumatı əl ilə köçürməyi necə dayandırmaq olar: sistem inteqrasiyasına giriş",
+  "seo_title": "Sistem inteqrasiyası nədir? API və webhook sadə dillə | BagTech",
+  "desc": "Sifariş saytdan gəlir, mühasib onu proqrama köçürür, anbar isə ayrıca cədvəl aparır. Bu vəziyyəti API və webhook-larla necə dəyişmək olar?",
+  "lead": "Bir çox şirkətdə eyni məlumat bir neçə dəfə əl ilə daxil edilir: saytda, CRM-də, mühasibat proqramında və anbar cədvəlində. Bu həm vaxt itkisidir, həm də səhvlərin əsas mənbəyi. Sistem inteqrasiyası bu təkrarları aradan qaldırır.",
+  "photo_alt": "Server şkafında səliqəli qoşulmuş sarı optik kabellər"
+}
+-->
+<h2>Problem nədədir?</h2>
+<p>Hər əl ilə köçürmə itirilmiş vaxt və səhv ehtimalı deməkdir. Sifarişin məbləği yanlış yazılır, ödəniş statusu yenilənmir, anbar qalığı faktiki vəziyyətlə uyğun gəlmir. Nəticədə qərarlar köhnə və ya yanlış məlumatlara əsaslanır.</p>
+<h2>API və webhook: sadə dillə</h2>
+<ul>
+<li><b>API</b> bir sistemin digərinə "sual verməsi" üçün razılaşdırılmış qapıdır: "bu sifarişin statusu nədir?", "yeni müştəri yarat".</li>
+<li><b>Webhook</b> isə əksinə, sistemin özünün xəbər verməsidir: "ödəniş indicə uğurla tamamlandı". Beləliklə digər sistem dərhal reaksiya verir və daim yoxlamağa ehtiyac qalmır.</li>
+<li><b>SSO</b> bir hesabla bütün daxili sistemlərə girişdir.</li>
+</ul>
+<h2>Etibarlı inteqrasiyanın 4 qaydası</h2>
+<ol>
+<li><b>Hər şey sənədləşdirilir.</b> Hansı məlumatın, hansı formatda və nə vaxt ötürüldüyü yazılı olmalıdır ki, yeni tərəfdaşı qoşmaq asan olsun.</li>
+<li><b>Uğursuz sorğular təkrarlanır.</b> Şəbəkə kəsilə bilər; sistem bunu nəzərə almalı və sorğunu yenidən göndərməlidir.</li>
+<li><b>Təkrar sorğu ikiqat nəticə yaratmır.</b> Eyni ödəniş bildirişi iki dəfə gəlsə belə, sifariş bir dəfə ödənilmiş sayılmalıdır. Buna idempotentlik deyilir.</li>
+<li><b>Hər şey izlənir.</b> Xətalar qeydə alınır və vaxtında xəbərdarlıq gəlir: problem müştəri zəng etməzdən əvvəl görünür.</li>
+</ol>
+<blockquote>Yaxşı inteqrasiya görünmür: məlumat sadəcə lazım olan yerdə və lazım olan anda olur.</blockquote>
+<h2>Nümunə: sifarişdən hesab-fakturaya qədər</h2>
+<p>İnteqrasiyadan sonra tipik onlayn sifariş aşağıdakı yolu keçir və heç bir addımda məlumat əl ilə yenidən daxil edilmir:</p>
+<ol>
+<li>Müştəri saytda sifariş verir və kartla ödəyir.</li>
+<li>Ödəniş sistemi webhook ilə "ödəniş uğurludur" xəbərini göndərir.</li>
+<li>Sifariş avtomatik olaraq CRM-də müştərinin tarixçəsinə əlavə olunur.</li>
+<li>Anbar sistemi məhsulu sifariş üçün ayırır və qalığı yeniləyir.</li>
+<li>Mühasibat proqramında hesab-faktura yaranır, müştəriyə isə təsdiq məktubu gedir.</li>
+</ol>
+<h2>Hazır konnektor, yoxsa fərdi inteqrasiya?</h2>
+<p>Bir çox populyar xidmət üçün hazır konnektorlar mövcuddur və sadə ssenarilər üçün onlar kifayətdir. Lakin məlumatlar mürəkkəb qaydalarla çevrilməlidirsə, yerli ödəniş sistemləri və ya dövlət portalları qoşulursa, ya da axın biznes üçün kritikdirsə, fərdi inteqrasiya daha etibarlı olur və asan idarə olunur: xətaları siz görür və onlara nəzarət edirsiniz.</p>
+<h2>Haradan başlamaq?</h2>
+<p>Ən çox vaxt aparan təkrarlanan əməliyyatların siyahısını tərtib edin: kim, hansı məlumatı, hansı sistemdən hansına və gündə neçə dəfə köçürür. Ən çox əl işi tələb edən axın ilk inteqrasiya üçün ən yaxşı namizəddir. Adətən bu, sayt sifarişlərinin və ödənişlərin mühasibat və ya anbar sistemi ilə bağlanmasıdır.</p>
+<p>Bu işi biz <a href="/xidmetler/sistem-inteqrasiyasi/">sistem inteqrasiyası</a> xidməti çərçivəsində görürük. CRM və ERP arasındakı əlaqə barədə <a href="/blog/crm-yoxsa-erp/">“CRM, yoxsa ERP”</a> yazısına baxın.</p>
+<div class="callout"><p class="callout__title">Qısa xülasə</p><ul>
+<li>Əl ilə köçürmə vaxt itkisi və səhvlərin mənbəyidir.</li>
+<li>API sorğu üçün, webhook bildiriş üçündür.</li>
+<li>Sənədləşmə, təkrar cəhd, idempotentlik və monitorinq etibarlılığın əsasıdır.</li>
+<li>Ən çox əl işi tələb edən axından başlayın.</li>
+</ul></div>
+
+<!--faq-->
+<h3>Sistem inteqrasiyası nədir?</h3>
+<p>Ayrı-ayrı proqramların məlumatı avtomatik mübadilə etməsi üçün bir-birinə bağlanmasıdır; nəticədə eyni məlumat əl ilə bir neçə dəfə daxil edilmir.</p>
+<h3>API nədir?</h3>
+<p>API bir proqramın digərindən məlumat soruşması və ya ona əmr göndərməsi üçün razılaşdırılmış interfeysdir.</p>
+<h3>İdempotentlik nədir?</h3>
+<p>Eyni sorğunun təkrar göndərilməsinin nəticəni dəyişməməsidir: məsələn, ödəniş bildirişi iki dəfə gəlsə də, sifariş bir dəfə ödənilmiş sayılır.</p>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Почему сайт медленно грузится: 7 проверок для SEO | BagTech</title>
+<meta name="description" content="Медленный сайт теряет и клиентов, и позиции в поиске. 7 причин, которые можно проверить самому, и способы их устранить — от тяжёлых изображений до кеша и CDN.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/">
+<link rel="alternate" hreflang="az" href="https://bagtech.az/blog/sayt-niye-yavasdir/">
+<link rel="alternate" hreflang="en" href="https://bagtech.az/en/blog/why-is-your-website-slow/">
+<link rel="alternate" hreflang="ru" href="https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/">
+<link rel="alternate" hreflang="x-default" href="https://bagtech.az/blog/sayt-niye-yavasdir/">
+<meta name="theme-color" content="#050508">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BagTech">
+<meta property="og:title" content="Почему сайт медленно грузится: 7 проверок для SEO | BagTech">
+<meta property="og:description" content="Медленный сайт теряет и клиентов, и позиции в поиске. 7 причин, которые можно проверить самому, и способы их устранить — от тяжёлых изображений до кеша и CDN.">
+<meta property="og:image" content="https://bagtech.az/assets/img/blog/sayt-niye-yavasdir-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="az_AZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Почему сайт медленно грузится: 7 проверок для SEO | BagTech">
+<meta name="twitter:description" content="Медленный сайт теряет и клиентов, и позиции в поиске. 7 причин, которые можно проверить самому, и способы их устранить — от тяжёлых изображений до кеша и CDN.">
+<meta name="twitter:image" content="https://bagtech.az/assets/img/blog/sayt-niye-yavasdir-og.jpg">
+<link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon.png?v=1785582282">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1785582282">
+<link rel="alternate" type="application/rss+xml" title="BagTech — Блог" href="/ru/blog/rss.xml">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/onest-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-cyrillic.woff2" crossorigin>
+<style>@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Inter';font-style:normal;font-weight:400 500;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/onest-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 600;font-display:swap;src:url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}html[lang="ru"]{--font-display:"Onest","Space Grotesk",-apple-system,BlinkMacSystemFont,sans-serif}</style>
+<link rel="stylesheet" href="/assets/css/style.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/service.css?v=a1deed577d">
+<link rel="stylesheet" href="/assets/css/blog.css?v=a1deed577d">
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","legalName":"BagTech MMC","url":"https://bagtech.az/ru/","logo":"https://bagtech.az/assets/img/logo-light.png","image":"https://bagtech.az/assets/img/og.jpg?v=2","description":"BagTech — IT-компания из Баку. С 2018 года разрабатывает программное обеспечение, мобильные приложения и сайты, внедряет искусственный интеллект, CRM/ERP-системы и системную интеграцию, обеспечивает кибербезопасность, IT-инфраструктуру и IT-аутсорсинг.","foundingDate":"2018","vatID":"1310001931","email":"info@bagtech.az","telephone":"+994505250555","address":{"@type":"PostalAddress","addressLocality":"Баку","addressCountry":"AZ"},"areaServed":{"@type":"Country","name":"Azerbaijan"},"knowsLanguage":["az","en","ru"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","telephone":"+994505250555","email":"info@bagtech.az","availableLanguage":["az","en","ru"]},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Услуги","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка программного обеспечения на заказ","url":"https://bagtech.az/ru/uslugi/razrabotka-po/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка мобильных приложений","url":"https://bagtech.az/ru/uslugi/mobilnye-prilozheniya/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Искусственный интеллект и умные решения для бизнеса","url":"https://bagtech.az/ru/uslugi/iskusstvennyy-intellekt/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Услуги кибербезопасности","url":"https://bagtech.az/ru/uslugi/kiberbezopasnost/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CRM- и ERP-системы","url":"https://bagtech.az/ru/uslugi/crm-erp-sistemy/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Системная интеграция","url":"https://bagtech.az/ru/uslugi/sistemnaya-integraciya/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Разработка сайтов и интернет-магазинов","url":"https://bagtech.az/ru/uslugi/razrabotka-saytov/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT-инфраструктура и облако","url":"https://bagtech.az/ru/uslugi/it-infrastruktura/"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"IT-аутсорсинг и техническая поддержка","url":"https://bagtech.az/ru/uslugi/it-autsorsing/"}}]}},{"@type":"WebSite","@id":"https://bagtech.az/#site","url":"https://bagtech.az/","name":"BagTech","inLanguage":["az","en","ru"],"publisher":{"@id":"https://bagtech.az/#org"}},{"@type":"BlogPosting","@id":"https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/#post","headline":"Почему ваш сайт медленный: 7 технических проверок для скорости и SEO","description":"Медленный сайт теряет и клиентов, и позиции в поиске. 7 причин, которые можно проверить самому, и способы их устранить — от тяжёлых изображений до кеша и CDN.","url":"https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/","mainEntityOfPage":"https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/","datePublished":"2026-11-12","dateModified":"2026-11-12","inLanguage":"ru","image":"https://bagtech.az/assets/img/blog/sayt-niye-yavasdir-og.jpg","articleSection":"Разработка сайтов","wordCount":417,"author":{"@type":"Organization","@id":"https://bagtech.az/#org","name":"BagTech","url":"https://bagtech.az/"},"publisher":{"@id":"https://bagtech.az/#org"},"about":{"@id":"https://bagtech.az/ru/uslugi/razrabotka-saytov/#service"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://bagtech.az/ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://bagtech.az/ru/blog/"},{"@type":"ListItem","position":3,"name":"Почему ваш сайт медленный: 7 технических проверок для скорости и SEO","item":"https://bagtech.az/ru/blog/pochemu-sayt-medlennyy/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что такое Core Web Vitals?","acceptedAnswer":{"@type":"Answer","text":"Core Web Vitals — это три метрики, которыми Google измеряет удобство страницы: LCP (время появления основного содержимого), INP (скорость реакции на клики) и CLS (смещение элементов при загрузке)."}},{"@type":"Question","name":"Влияет ли скорость сайта на SEO?","acceptedAnswer":{"@type":"Answer","text":"Да. Google учитывает удобство страницы в результатах поиска, а с медленного сайта посетители уходят быстрее."}},{"@type":"Question","name":"Что такое CDN?","acceptedAnswer":{"@type":"Answer","text":"CDN (Content Delivery Network) — это сеть, которая отдаёт файлы сайта с ближайшего к пользователю сервера и тем самым ускоряет загрузку."}}]}]}</script>
+</head>
+<body class="blog-page">
+<a class="skip" href="#main">Перейти к содержимому</a>
+<canvas class="signal" id="signal" aria-hidden="true"></canvas>
+<header class="nav" id="nav">
+  <div class="shell nav__inner">
+    <a href="/ru/" class="brand"><img src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></a>
+
+    <nav class="nav__links" id="navLinks">
+      <span class="nav__ind" aria-hidden="true"></span>
+      <a href="/ru/#solutions">Решения</a>
+      <a href="/ru/#process">Как работаем</a>
+      <a href="/ru/#portfolio">Портфолио</a>
+      <a href="/ru/blog/">Блог</a>
+      <a href="/ru/#contact">Контакты</a>
+    </nav>
+
+    <div class="nav__right">
+      <div class="lang" id="lang"><a href="/blog/sayt-niye-yavasdir/" hreflang="az" lang="az">AZ</a><span>/</span><a href="/en/blog/why-is-your-website-slow/" hreflang="en" lang="en">EN</a><span>/</span><a href="/ru/blog/pochemu-sayt-medlennyy/" hreflang="ru" lang="ru" class="is-active" aria-current="true">RU</a></div>
+      <a href="/ru/#contact" class="btn btn-primary"><span>Связаться</span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Меню"><i></i><i></i></button>
+    </div>
+    <i class="nav__progress" aria-hidden="true"></i>
+  </div>
+</header>
+<main id="main">
+<section class="post-hero" id="top">
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="shell">
+    <nav class="crumbs" aria-label="breadcrumb"><a href="/ru/">Главная</a><i></i><a href="/ru/blog/">Блог</a><i></i><b>Разработка сайтов</b></nav>
+    <h1>Почему ваш сайт медленный: 7 технических проверок для скорости и SEO</h1>
+    <p class="post-meta"><time datetime="2026-11-12">12 ноября 2026</time><i></i><span>3 мин чтения</span><i></i><span>Команда BagTech</span></p>
+    <p class="lead">Большинство пользователей открывают сайт с телефона и через мобильный интернет. Если страница не загрузилась за несколько секунд, посетитель уходит. К тому же Google учитывает в результатах поиска удобство страницы, в том числе её скорость.</p>
+    <figure class="post-photo">
+      <img src="/assets/img/blog/sayt-niye-yavasdir-1600.webp" srcset="/assets/img/blog/sayt-niye-yavasdir-800.webp 800w, /assets/img/blog/sayt-niye-yavasdir-1600.webp 1600w" sizes="(max-width: 1400px) 100vw, 1300px" alt="Ноутбук на столе с открытой страницей интернет-магазина" width="1600" height="924" fetchpriority="high" decoding="async">
+      <figcaption>Фото: <a href="https://unsplash.com/@igormiske?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Igor Miske</a> / <a href="https://unsplash.com/?utm_source=bagtech&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="shell post-layout">
+  <aside class="toc" aria-label="Содержание"><p class="toc__title">Содержание</p><ol></ol></aside>
+  <div class="post-main">
+    <article class="post-body">
+<h2>Как измерить скорость?</h2>
+<p>Бесплатный инструмент Google PageSpeed Insights проверяет мобильную и десктопную версии сайта и показывает метрики Core Web Vitals: как быстро появляется основное содержимое (LCP), как быстро страница реагирует на клики (INP) и смещаются ли элементы во время загрузки (CLS).</p>
+<h2>7 частых причин</h2>
+<ol>
+<li><b>Тяжёлые изображения.</b> Фото весом 4 МБ показывается в маленькой карточке. Решение: отдавать изображения в нужном размере и в формате WebP или AVIF.</li>
+<li><b>Всё загружается сразу.</b> Изображения и видео за пределами экрана тоже загружаются немедленно. Решение: lazy loading («ленивая загрузка»), то есть загрузка только тогда, когда элемент появляется на экране.</li>
+<li><b>Много скриптов и плагинов.</b> Каждый лишний виджет утяжеляет страницу. Решение: удалить неиспользуемые, а загрузку остальных отложить.</li>
+<li><b>Нет кеширования.</b> Браузер каждый раз заново скачивает одни и те же файлы. Решение: правильные правила кеширования для статических файлов.</li>
+<li><b>Не используется CDN.</b> Все посетители обращаются к одному удалённому серверу. Решение: CDN, например Cloudflare, отдаёт файлы с сервера, близкого к пользователю.</li>
+<li><b>Шрифты задерживают появление текста.</b> Решение: загружать только нужные начертания и использовать «font-display: swap».</li>
+<li><b>Слабый хостинг или тяжёлые запросы.</b> Решение: измерить время ответа сервера (TTFB) и при необходимости оптимизировать сервер или запросы к базе данных.</li>
+</ol>
+<blockquote>Даже самый красивый дизайн не виден, если приходится ждать, пока он загрузится.</blockquote>
+<h2>Целевые значения метрик</h2>
+<p>Для Core Web Vitals Google считает «хорошими» следующие пороги:</p>
+<table>
+<thead><tr><th>Метрика</th><th>Что измеряет</th><th>Хороший результат</th></tr></thead>
+<tbody>
+<tr><td>LCP</td><td>Время появления основного содержимого</td><td>До 2,5 с</td></tr>
+<tr><td>INP</td><td>Скорость реакции на клики</td><td>До 200 мс</td></tr>
+<tr><td>CLS</td><td>Смещение элементов при загрузке</td><td>До 0,1</td></tr>
+</tbody>
+</table>
+<h2>Быстрые улучшения, на которые хватит одного дня</h2>
+<ul>
+<li>Сожмите 10 самых тяжёлых изображений и переведите их в WebP.</li>
+<li>Отключите неиспользуемые плагины и виджеты.</li>
+<li>Переведите сайт за CDN и включите кеширование статических файлов.</li>
+<li>Укажите у изображений ширину и высоту, чтобы страница не «прыгала» при загрузке.</li>
+</ul>
+<p>После этих шагов измерьте скорость в PageSpeed Insights ещё раз: разница часто видна сразу. Более глубокую оптимизацию, например переработку кода и серверной части, стоит вести уже по плану, основанному на измерениях.</p>
+<h2>Как связаны скорость и SEO?</h2>
+<p>Быстрый сайт — это больше просмотров страниц, меньше отказов и выше конверсия. Нельзя забывать и о других основах технического SEO: уникальные заголовок и описание для каждой страницы, правильная структура заголовков (H1, H2), sitemap.xml и robots.txt, адаптация под мобильные устройства и структурированные данные (schema.org).</p>
+<p>Если хотите, чтобы новый сайт с первого дня был быстрым и готовым к SEO, посмотрите нашу услугу <a href="/ru/uslugi/razrabotka-saytov/">разработки сайтов</a>. По серверной части и CDN пригодится страница <a href="/ru/uslugi/it-infrastruktura/">ИТ-инфраструктуры</a>.</p>
+<div class="callout"><p class="callout__title">Коротко о главном</p><ul>
+<li>Начните с измерения в PageSpeed Insights.</li>
+<li>Главные причины — изображения, скрипты и кеширование.</li>
+<li>CDN и правильно подключённые шрифты ускоряют сайт без больших затрат.</li>
+<li>Скорость — часть технического SEO.</li>
+</ul></div>
+<h2>Частые вопросы</h2>
+<div class="faq">
+<details class="faq__item"><summary><span>Что такое Core Web Vitals?</span><i></i></summary><div class="faq__a"><p>Core Web Vitals — это три метрики, которыми Google измеряет удобство страницы: LCP (время появления основного содержимого), INP (скорость реакции на клики) и CLS (смещение элементов при загрузке).</p></div></details>
+<details class="faq__item"><summary><span>Влияет ли скорость сайта на SEO?</span><i></i></summary><div class="faq__a"><p>Да. Google учитывает удобство страницы в результатах поиска, а с медленного сайта посетители уходят быстрее.</p></div></details>
+<details class="faq__item"><summary><span>Что такое CDN?</span><i></i></summary><div class="faq__a"><p>CDN (Content Delivery Network) — это сеть, которая отдаёт файлы сайта с ближайшего к пользователю сервера и тем самым ускоряет загрузку.</p></div></details>
+</div>
+    </article>
+    <div class="post-help">
+      <div>
+        <h3>Нужна помощь по этой теме?</h3>
+        <p>Обсудим ваш проект: первая консультация бесплатна.</p>
+      </div>
+      <div class="post-help__actions">
+        <a href="/ru/#contact" class="btn btn-primary" data-track="cta_contact"><span>Обсудить проект</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="/ru/uslugi/razrabotka-saytov/" class="btn btn-ghost"><span>Разработка сайтов и интернет-магазинов</span></a>
+      </div>
+    </div>
+    <p class="post-author"><img src="/assets/img/logo-light.webp" alt="BagTech" width="110" height="38" loading="lazy"><span>Команда BagTech</span><span>·</span><time datetime="2026-11-12">12 ноября 2026</time></p>
+  </div>
+</div>
+
+<section class="svc-sec">
+  <div class="shell">
+    <div class="section-head" data-reveal-group data-reveal-step="0.1">
+      <p class="eyebrow" data-reveal>Блог</p>
+      <h2 class="h-lg" data-reveal data-decode>Другие статьи</h2>
+    </div>
+    <div class="post-grid">
+      <a class="post-card" href="/ru/blog/chto-takoe-mvp/" data-cat="sw" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/mvp-nedir-800.webp" alt="Рука над эскизами экранов приложения на доске" width="800" height="533" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Разработка ПО</span><i></i><span>4 мин чтения</span></p>
+          <h3>Что такое MVP и почему проект стоит начинать с него</h3>
+          <p>Строить большую систему сразу заманчиво, но это самый дорогой путь. Объясняем, как выбрать первую версию продукта, что отложить на потом и когда пора расти.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/ru/blog/raspoznavanie-lic-v-ofise/" data-cat="ai" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/ofisde-uz-tanima-800.webp" alt="Турникеты со световыми индикаторами на входе в офис" width="800" height="533" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Искусственный интеллект</span><i></i><span>4 мин чтения</span></p>
+          <h3>Распознавание лиц в офисе: как это работает и где остаются данные</h3>
+          <p>Карты теряются, пароли забываются, табели заполняются вручную. Как распознавание лиц решает эти проблемы и что учесть, чтобы данные были в безопасности.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="post-card" href="/ru/blog/kiberbezopasnost-10-shagov/" data-cat="sec" data-fx="rise" data-fx-amt="30">
+        <div class="post-card__cover"><img src="/assets/img/blog/kibertehlukesizlik-10-addim-800.webp" alt="Красный замок на клавиатуре компьютера" width="800" height="534" loading="lazy" decoding="async"></div>
+        <div class="post-card__body">
+          <p class="post-meta"><span class="post-meta__cat">Кибербезопасность</span><i></i><span>3 мин чтения</span></p>
+          <h3>Кибербезопасность для малого и среднего бизнеса: первые 10 шагов</h3>
+          <p>Большинство атак начинается не со сложных технологий, а со слабого пароля и необновлённой программы. 10 практических шагов, которые не требуют большого бюджета.</p>
+          <span class="post-card__go"><span>Читать</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="x-foot">
+  <div class="shell">
+    <div class="x-foot__top" data-reveal>
+      <div class="x-foot__big"><img loading="lazy" decoding="async" src="/assets/img/logo-light.webp" alt="BagTech" width="800" height="280"></div>
+      <p class="x-foot__about">IT-решения для бизнеса: разработка ПО, искусственный интеллект, кибербезопасность, CRM/ERP и системная интеграция. Баку, Азербайджан.</p>
+    </div>
+    <div class="footer__grid x-foot__grid">
+      <div class="footer__col">
+        <h4>Решения</h4>
+        <a href="/ru/uslugi/razrabotka-po/">Разработка ПО</a>
+        <a href="/ru/uslugi/iskusstvennyy-intellekt/">Искусственный интеллект</a>
+        <a href="/ru/uslugi/kiberbezopasnost/">Кибербезопасность</a>
+        <a href="/ru/uslugi/crm-erp-sistemy/">CRM и ERP</a>
+        <a href="/ru/uslugi/sistemnaya-integraciya/">Системная интеграция</a>
+      </div>
+      <div class="footer__col">
+        <h4>Продукты</h4>
+        <a href="https://brandmaker.az" target="_blank" rel="noopener">Brandmaker.az</a>
+        <a href="/ru/#portfolio">BagERP</a>
+      </div>
+      <div class="footer__col">
+        <h4>Компания</h4>
+        <a href="/ru/#process">Как мы работаем</a>
+        <a href="/ru/blog/">Блог</a>
+        <a href="/ru/#contact">Контакты</a>
+        <a href="/ru/uslugi/">Услуги</a>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+994505250555">+994 50 525 05 55</a>
+        <a href="mailto:info@bagtech.az">info@bagtech.az</a>
+        <span>Баку, Азербайджан</span>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 BagTech MMC · VÖEN 1310001931 · <span>Все права защищены.</span></span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/main.js?v=a1deed577d" defer></script>
+<script src="/assets/js/blog.js?v=a1deed577d" defer></script>
+<script src="/assets/js/analytics.js?v=a1deed577d" defer data-ga4="" data-gtm="" data-text="Мы используем анонимную статистику, чтобы улучшать сайт." data-yes="Принять" data-no="Отклонить"></script>
+</body>
+</html>

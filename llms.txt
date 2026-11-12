@@ -1,0 +1,38 @@
+# BagTech
+
+> BagTech is an IT company based in Baku, Azerbaijan. Since 2018 it has delivered custom software, mobile apps, websites, AI solutions, cybersecurity, CRM/ERP systems, system integration, IT infrastructure and IT outsourcing for businesses.
+
+- Legal name: BagTech MMC (VOEN 1310001931), founded 2018, Baku, Azerbaijan
+- Contact: +994505250555, info@bagtech.az
+- Languages: Azerbaijani (default, /), English (/en/), Russian (/ru/)
+
+## Services
+
+- [Custom software development](https://bagtech.az/en/services/custom-software-development/): Custom software development in Baku: web platforms, corporate systems, booking systems and marketplaces. From an idea to an MVP and on to a full-scale system.
+- [Mobile app development](https://bagtech.az/en/services/mobile-app-development/): Mobile app development in Baku: iOS and Android apps built with React Native, Swift and Flutter. From design to release on the App Store and Google Play.
+- [AI and smart solutions](https://bagtech.az/en/services/ai-solutions/): AI solutions in Baku: a face recognition system, AI assistants, automatic document processing and smart access systems. Data stays on the company's own server.
+- [Cybersecurity services](https://bagtech.az/en/services/cybersecurity/): Cybersecurity services in Baku: two-factor authentication, encryption, access auditing, vulnerability testing and incident response — before a threat hits.
+- [CRM and ERP systems](https://bagtech.az/en/services/crm-erp-systems/): CRM and ERP systems in Baku: sales, customer base, HR, finance and inventory in one system. Customisation on ERPNext or a system built from scratch.
+- [System integration](https://bagtech.az/en/services/system-integration/): System integration in Baku: payment systems, government portals, ERP and third-party services connected through documented APIs, webhooks and SSO.
+- [Website development and e-commerce](https://bagtech.az/en/services/web-development/): Website development and web design in Baku: corporate websites, online stores, media and university portals. Fast, mobile-friendly and ready for SEO.
+- [IT infrastructure and cloud](https://bagtech.az/en/services/it-infrastructure/): IT infrastructure in Baku: server and network setup, DNS/DHCP, virtualisation, cloud migration, corporate email servers and 24/7 monitoring from BagTech.
+- [IT outsourcing and technical support](https://bagtech.az/en/services/it-outsourcing/): IT outsourcing in Baku: an external IT department with day-to-day technical support, SLA response times, a helpdesk, and hardware and licence management.
+
+## Articles
+
+- [What is an MVP and why your project should start with one](https://bagtech.az/en/blog/what-is-an-mvp/): Building a big system in one go looks tempting, but it is the most expensive route. How to choose the first version, what to leave for later and when to grow.
+- [Face recognition in the office: how it works and where the data stays](https://bagtech.az/en/blog/face-recognition-in-the-office/): Cards get lost, passwords are forgotten and attendance sheets are filled in by hand. How face recognition solves this and what it takes to keep the data safe.
+- [Cybersecurity for small and mid-sized businesses: the first 10 steps](https://bagtech.az/en/blog/cybersecurity-first-10-steps/): Most attacks start with a weak password or unpatched software, not with sophisticated technology. Ten practical steps that do not require a big budget.
+- [CRM or ERP: which one does your company need?](https://bagtech.az/en/blog/crm-vs-erp/): CRM and ERP are often confused. We explain how they differ, when you need each one, and how to choose between a ready-made platform and a custom-built system.
+- [How to stop copying data by hand: an introduction to system integration](https://bagtech.az/en/blog/system-integration-introduction/): An order comes in from the website, the accountant retypes it, the warehouse keeps its own spreadsheet. How APIs, webhooks and sound design change that picture.
+- [Why is your website slow? 7 technical checks for speed and SEO](https://bagtech.az/en/blog/why-is-your-website-slow/): A slow website loses both customers and positions in search. Seven common causes of slow loading that you can check yourself, and how to fix each one.
+
+## Other languages
+
+- [Azərbaycanca](https://bagtech.az/): BagTech — Bakıda IT şirkəti: fərdi proqram təminatı, mobil tətbiqlər, saytların hazırlanması, süni intellekt, kibertəhlükəsizlik, CRM/ERP və IT autsorsinq.
+- [Русский](https://bagtech.az/ru/): BagTech — IT-компания в Баку: разработка ПО и мобильных приложений, создание сайтов, искусственный интеллект, кибербезопасность, CRM/ERP, IT-аутсорсинг.
+
+## Optional
+
+- [Sitemap](https://bagtech.az/sitemap.xml)
+- [Blog RSS](https://bagtech.az/en/blog/rss.xml)

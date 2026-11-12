@@ -1,0 +1,272 @@
+{
+  "home.title": {
+    "az": "Bakıda IT şirkəti — proqram təminatı, saytlar, AI | BagTech",
+    "en": "IT company in Baku, Azerbaijan — software, web, AI | BagTech",
+    "ru": "IT-компания в Баку — разработка ПО, сайтов, AI | BagTech"
+  },
+  "home.desc": {
+    "az": "BagTech — Bakıda IT şirkəti: fərdi proqram təminatı, mobil tətbiqlər, saytların hazırlanması, süni intellekt, kibertəhlükəsizlik, CRM/ERP və IT autsorsinq.",
+    "en": "BagTech is an IT company in Baku, Azerbaijan: custom software, mobile apps, web development, AI solutions, cybersecurity, CRM/ERP and IT outsourcing.",
+    "ru": "BagTech — IT-компания в Баку: разработка ПО и мобильных приложений, создание сайтов, искусственный интеллект, кибербезопасность, CRM/ERP, IT-аутсорсинг."
+  },
+  "org.desc": {
+    "az": "BagTech — Bakıda yerləşən IT şirkəti. 2018-ci ildən biznes üçün proqram təminatı, mobil tətbiqlər, saytlar, süni intellekt həlləri, kibertəhlükəsizlik, CRM/ERP sistemləri, sistem inteqrasiyası, IT infrastruktur və IT autsorsinq xidmətləri göstərir.",
+    "en": "BagTech is an IT company based in Baku, Azerbaijan. Since 2018 it has delivered custom software, mobile apps, websites, AI solutions, cybersecurity, CRM/ERP systems, system integration, IT infrastructure and IT outsourcing for businesses.",
+    "ru": "BagTech — IT-компания из Баку. С 2018 года разрабатывает программное обеспечение, мобильные приложения и сайты, внедряет искусственный интеллект, CRM/ERP-системы и системную интеграцию, обеспечивает кибербезопасность, IT-инфраструктуру и IT-аутсорсинг."
+  },
+  "crumb.home": {
+    "az": "Ana səhifə",
+    "en": "Home",
+    "ru": "Главная"
+  },
+  "crumb.services": {
+    "az": "Xidmətlər",
+    "en": "Services",
+    "ru": "Услуги"
+  },
+  "crumb.blog": {
+    "az": "Bloq",
+    "en": "Blog",
+    "ru": "Блог"
+  },
+  "cta.discuss": {
+    "az": "Layihəni müzakirə edək",
+    "en": "Discuss your project",
+    "ru": "Обсудить проект"
+  },
+  "cta.title": {
+    "az": "Layihənizi<br>müzakirə edək",
+    "en": "Let's discuss<br>your project",
+    "ru": "Обсудим<br>ваш проект"
+  },
+  "cta.lead": {
+    "az": "İlkin konsultasiya və layihənin təxmini dəyərinin hesablanması pulsuzdur. Müraciətlərə 24 saat ərzində cavab veririk.",
+    "en": "The initial consultation and project estimate are free. We reply to enquiries within 24 hours.",
+    "ru": "Первичная консультация и предварительная оценка проекта бесплатны. Отвечаем на обращения в течение 24 часов."
+  },
+  "svc.all": {
+    "az": "Bütün xidmətlər",
+    "en": "All services",
+    "ru": "Все услуги"
+  },
+  "svc.more": {
+    "az": "Ətraflı",
+    "en": "Learn more",
+    "ru": "Подробнее"
+  },
+  "svc.prob.e": {
+    "az": "Problemlər",
+    "en": "Challenges",
+    "ru": "Задачи"
+  },
+  "svc.prob.t": {
+    "az": "Hansı problemləri həll edirik",
+    "en": "The problems we solve",
+    "ru": "Какие проблемы мы решаем"
+  },
+  "svc.inc.e": {
+    "az": "Nə daxildir",
+    "en": "What's included",
+    "ru": "Что входит"
+  },
+  "svc.inc.t": {
+    "az": "Bu istiqamətdə nə edirik",
+    "en": "What we do in this area",
+    "ru": "Что мы делаем в этом направлении"
+  },
+  "svc.out.e": {
+    "az": "Nəticə",
+    "en": "Outcome",
+    "ru": "Результат"
+  },
+  "svc.out.t": {
+    "az": "Nə əldə edirsiniz",
+    "en": "What you get",
+    "ru": "Что вы получаете"
+  },
+  "svc.proc.e": {
+    "az": "Proses",
+    "en": "Process",
+    "ru": "Процесс"
+  },
+  "svc.proc.t": {
+    "az": "Necə işləyirik",
+    "en": "How we work",
+    "ru": "Как мы работаем"
+  },
+  "svc.cases.e": {
+    "az": "Portfolio",
+    "en": "Portfolio",
+    "ru": "Портфолио"
+  },
+  "svc.cases.t": {
+    "az": "Portfoliodan nümunələr",
+    "en": "Examples from our portfolio",
+    "ru": "Примеры из портфолио"
+  },
+  "svc.cases.all": {
+    "az": "Bütün layihələr",
+    "en": "All projects",
+    "ru": "Все проекты"
+  },
+  "svc.posts.e": {
+    "az": "Bloq",
+    "en": "Blog",
+    "ru": "Блог"
+  },
+  "svc.posts.t": {
+    "az": "Bu mövzuda yazılar",
+    "en": "Articles on this topic",
+    "ru": "Статьи по теме"
+  },
+  "svc.faq.e": {
+    "az": "Suallar",
+    "en": "Questions",
+    "ru": "Вопросы"
+  },
+  "svc.faq.t": {
+    "az": "Tez-tez verilən suallar",
+    "en": "Frequently asked questions",
+    "ru": "Частые вопросы"
+  },
+  "svc.other.e": {
+    "az": "Digər xidmətlər",
+    "en": "Other services",
+    "ru": "Другие услуги"
+  },
+  "svc.other.t": {
+    "az": "Başqa nə edirik",
+    "en": "What else we do",
+    "ru": "Что ещё мы делаем"
+  },
+  "hub.e": {
+    "az": "Xidmətlər",
+    "en": "Services",
+    "ru": "Услуги"
+  },
+  "blog.eyebrow": {
+    "az": "Bloq",
+    "en": "Blog",
+    "ru": "Блог"
+  },
+  "blog.h1": {
+    "az": "Texnologiyalar haqqında sadə dillə",
+    "en": "Technology, in plain words",
+    "ru": "Технологии простым языком"
+  },
+  "blog.title": {
+    "az": "Bloq — biznes üçün IT haqqında praktik yazılar | BagTech",
+    "en": "Blog — practical writing on IT for business | BagTech",
+    "ru": "Блог — практические статьи об IT для бизнеса | BagTech"
+  },
+  "blog.desc": {
+    "az": "BagTech bloqu: proqram təminatı, süni intellekt, kibertəhlükəsizlik, CRM/ERP, sistem inteqrasiyası və saytlar haqqında praktik yazılar.",
+    "en": "The BagTech blog: practical articles on software development, AI, cybersecurity, CRM/ERP, system integration and websites for business.",
+    "ru": "Блог BagTech: практические статьи о разработке ПО, искусственном интеллекте, кибербезопасности, CRM/ERP, системной интеграции и сайтах."
+  },
+  "blog.lead": {
+    "az": "Biznes üçün IT haqqında praktik yazılar: proqram təminatı, süni intellekt, təhlükəsizlik, CRM/ERP, inteqrasiya və saytlar. Öz təcrübəmizə əsaslanaraq, mürəkkəb terminlər olmadan.",
+    "en": "Practical writing on IT for business: software, AI, security, CRM/ERP, integration and websites. From our own experience, without the jargon.",
+    "ru": "Практические статьи об IT для бизнеса: разработка, искусственный интеллект, безопасность, CRM/ERP, интеграция и сайты. Из собственного опыта, без жаргона."
+  },
+  "blog.all": {
+    "az": "Hamısı",
+    "en": "All",
+    "ru": "Все"
+  },
+  "blog.read": {
+    "az": "Ardını oxu",
+    "en": "Read",
+    "ru": "Читать"
+  },
+  "blog.min": {
+    "az": "{n} dəqiqəyə oxunur",
+    "en": "{n} min read",
+    "ru": "{n} мин чтения"
+  },
+  "blog.toc": {
+    "az": "Məzmun",
+    "en": "Contents",
+    "ru": "Содержание"
+  },
+  "blog.author": {
+    "az": "BagTech komandası",
+    "en": "BagTech team",
+    "ru": "Команда BagTech"
+  },
+  "blog.updated": {
+    "az": "Yenilənib",
+    "en": "Updated",
+    "ru": "Обновлено"
+  },
+  "blog.photo": {
+    "az": "Foto",
+    "en": "Photo",
+    "ru": "Фото"
+  },
+  "blog.faq": {
+    "az": "Tez-tez verilən suallar",
+    "en": "Frequently asked questions",
+    "ru": "Частые вопросы"
+  },
+  "blog.help.t": {
+    "az": "Bu mövzuda kömək lazımdır?",
+    "en": "Need help with this?",
+    "ru": "Нужна помощь по этой теме?"
+  },
+  "blog.help.d": {
+    "az": "Layihənizi müzakirə edək: ilkin konsultasiya pulsuzdur.",
+    "en": "Let's discuss your project: the first consultation is free.",
+    "ru": "Обсудим ваш проект: первая консультация бесплатна."
+  },
+  "blog.more.t": {
+    "az": "Digər yazılar",
+    "en": "More articles",
+    "ru": "Другие статьи"
+  },
+  "form.sent": {
+    "az": "Təşəkkür edirik! Bu, sınaq versiyasıdır — mesaj əslində göndərilmədi.",
+    "en": "Thank you! This is a demo — the message was not actually sent.",
+    "ru": "Спасибо! Это демо-версия — сообщение не было отправлено."
+  },
+  "e404.title": {
+    "az": "Səhifə tapılmadı — BagTech",
+    "en": "Page not found — BagTech",
+    "ru": "Страница не найдена — BagTech"
+  },
+  "e404.h1": {
+    "az": "Səhifə tapılmadı",
+    "en": "Page not found",
+    "ru": "Страница не найдена"
+  },
+  "e404.lead": {
+    "az": "Axtardığınız səhifə başqa ünvana köçürülüb və ya mövcud deyil.",
+    "en": "The page you are looking for has moved or does not exist.",
+    "ru": "Страница, которую вы ищете, перемещена или не существует."
+  },
+  "skip": {
+    "az": "Əsas məzmuna keçid",
+    "en": "Skip to content",
+    "ru": "Перейти к содержимому"
+  },
+  "consent.text": {
+    "az": "Saytın işini yaxşılaşdırmaq üçün anonim statistikadan istifadə edirik.",
+    "en": "We use anonymous analytics to improve this site.",
+    "ru": "Мы используем анонимную статистику, чтобы улучшать сайт."
+  },
+  "consent.yes": {
+    "az": "Razıyam",
+    "en": "Accept",
+    "ru": "Принять"
+  },
+  "consent.no": {
+    "az": "İmtina edirəm",
+    "en": "Decline",
+    "ru": "Отклонить"
+  },
+  "months": {
+    "az": "yanvar,fevral,mart,aprel,may,iyun,iyul,avqust,sentyabr,oktyabr,noyabr,dekabr",
+    "en": "January,February,March,April,May,June,July,August,September,October,November,December",
+    "ru": "января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря"
+  }
+}
