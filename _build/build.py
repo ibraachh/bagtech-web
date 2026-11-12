@@ -177,9 +177,6 @@ def org_ld(lang):
             {"@type": "Offer", "itemOffered": {"@type": "Service", "name": SVC[lang][k]["h1"], "url": SITE + url("svc:" + k, lang)}}
             for k in ORDER]},
     }
-    same = [v for v in SITE_CFG["socials"].values() if v]
-    if same:
-        org["sameAs"] = same
     if a["lat"] and a["lng"]:
         org["geo"] = {"@type": "GeoCoordinates", "latitude": a["lat"], "longitude": a["lng"]}
     return org

@@ -10,15 +10,14 @@
   "address": {
     "street": "",
     "postal_code": "",
-    "city": {"az": "Bakı", "en": "Baku", "ru": "Баку"},
+    "city": {
+      "az": "Bakı",
+      "en": "Baku",
+      "ru": "Баку"
+    },
     "country": "AZ",
     "lat": "",
     "lng": ""
-  },
-  "socials": {
-    "linkedin": "",
-    "instagram": "",
-    "facebook": ""
   },
   "analytics": {
     "ga4_id": "",
