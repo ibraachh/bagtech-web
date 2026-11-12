@@ -258,7 +258,7 @@ def head(lang, pid, title, desc, ld, css=(), og_img=None, og_type="website", noi
         h.append("<style>" + FONTS["css"] + "</style>")
     else:
         h += ['<link rel="preconnect" href="https://fonts.googleapis.com">', '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-              '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">']
+              '<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">']
     for c in ("style.css",) + tuple(css):
         h.append(f'<link rel="stylesheet" href="/assets/css/{c}?v={VER}">')
     h.append('<script>document.documentElement.classList.add("js");</script>')

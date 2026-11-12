@@ -25,7 +25,7 @@
     const WHITE = "236,243,255";
     const OK = "126,226,184";
     const WARN = "255,196,107";
-    const DISPLAY = '500 13px "Space Grotesk", system-ui, sans-serif';
+    const DISPLAY = '500 13px "IBM Plex Sans", system-ui, sans-serif';
     const rgba = (c, a) => `rgba(${c},${Math.max(0, Math.min(1, a)).toFixed(3)})`;
     const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
     const lerp = (a, b, t) => a + (b - a) * t;

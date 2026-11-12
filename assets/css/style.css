@@ -21,7 +21,7 @@
   --accent: #8fb8ff;
   --accent-deep: #3f7bff;
 
-  --font-display: "Space Grotesk", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --pad: clamp(20px, 5vw, 76px);
@@ -54,22 +54,13 @@ ul { list-style: none; }
 .shell { width: 100%; max-width: 1400px; margin-inline: auto; padding-inline: var(--pad); }
 
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  display: block;
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
   color: var(--muted);
-  margin-bottom: 24px;
-}
-.eyebrow::before {
-  content: "";
-  width: 28px;
-  height: 1px;
-  background: var(--line-strong);
+  margin-bottom: 20px;
 }
 
 h1, h2, h3, h4 {
@@ -1750,7 +1741,6 @@ a.x-port__card:hover .x-port__logo img,
 
 /* eyebrows carry the accent now */
 .eyebrow { color: rgba(143, 184, 255, 0.8); }
-.eyebrow::before { background: linear-gradient(90deg, var(--accent), transparent); }
 
 /* primary buttons: brand-blue gradient instead of plain white */
 .btn-primary {
