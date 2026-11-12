@@ -36,6 +36,9 @@ class Parser(html.parser.HTMLParser):
             v = a.get(k, "")
             if tag in ("img", "script", "link") and v.startswith("/") and not (tag == "link" and a.get("rel") in ("canonical", "alternate")):
                 self.assets.append(v)
+        for k in ("placeholder", "aria-label"):      # visible / spoken text that lives in attributes
+            if a.get(k):
+                self.text.append(a[k])
         if tag == "img" and a.get("srcset"):
             self.assets += [p.split()[0] for p in a["srcset"].split(",")]
         if tag in ("script", "style"):

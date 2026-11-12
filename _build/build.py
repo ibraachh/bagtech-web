@@ -127,6 +127,7 @@ def localize(src, lang):
         pid = AZ_PATH.get(m.group(1))
         return f'href="{ROUTES[pid][lang]}{m.group(2) or ""}"' if pid else m.group(0)
     src = src.replace('aria-label="Menyu"', 'aria-label="%s"' % {"az": "Menyu", "en": "Menu", "ru": "Меню"}[lang])
+    src = src.replace('aria-label="Bölmələr"', 'aria-label="%s"' % {"az": "Bölmələr", "en": "Sections", "ru": "Разделы"}[lang])
     return re.sub(r'href="(/[^"#?]*)([#?][^"]*)?"', sub, src)
 
 
@@ -401,6 +402,8 @@ def build_home(lang):
     hero = re.sub(r'\sstyle="transition-delay:[^"]*"', "", hero)
     body = body[:a] + hero + body[b:]
     body = body.replace('<form class="form x-cta__form" id="form"', f'<form class="form x-cta__form" id="form" ' + " ".join(f'data-{k}="{e(U("form." + k, lang))}"' for k in ("sent", "busy", "invalid", "rate", "err")))
+    for k in ("name", "company", "email", "msg"):      # placeholders are attributes, fill() only handles text
+        body = body.replace(f'placeholder="{U("form.ph." + k, "az")}"', f'placeholder="{e(U("form.ph." + k, lang))}"')
     nav_end = body.index("</header>") + len("</header>")
     foot_start = body.index('<footer class="x-foot">')
     title, desc = U("home.title", lang), U("home.desc", lang)

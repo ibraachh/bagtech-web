@@ -249,6 +249,26 @@
     "en": "The message could not be sent. Please try again later or write to info@bagtech.az.",
     "ru": "Не удалось отправить заявку. Попробуйте позже или напишите на info@bagtech.az."
   },
+  "form.ph.name": {
+    "az": "Adınız və soyadınız",
+    "en": "Your full name",
+    "ru": "Ваше имя и фамилия"
+  },
+  "form.ph.company": {
+    "az": "Şirkətin adı",
+    "en": "Company name",
+    "ru": "Название компании"
+  },
+  "form.ph.email": {
+    "az": "E-poçt ünvanınız",
+    "en": "Your email address",
+    "ru": "Ваш e-mail"
+  },
+  "form.ph.msg": {
+    "az": "Layihəniz haqqında qısaca…",
+    "en": "Briefly describe your project…",
+    "ru": "Коротко о вашем проекте…"
+  },
   "e404.title": {
     "az": "Səhifə tapılmadı — BagTech",
     "en": "Page not found — BagTech",
