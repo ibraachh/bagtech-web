@@ -10,11 +10,91 @@
 
   let lang = "az";
 
-  /* ---------- Sticky nav ---------- */
+  // Cache the original AZ copy up front: the heading decoder temporarily
+  // rewrites text, and the language switch must never cache that state.
+  $$("[data-i18n]").forEach((el) => { el.dataset.az = el.innerHTML; });
+
+  const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
+
+  /* ---------- Scroll velocity ----------
+     One smoothed reading (px per frame, + = down) shared by everything that
+     reacts to *how fast* you scroll. Samples only while scrolling. */
+  const motion = { v: 0 };
+  {
+    let lastY = scrollY, raf = null;
+    const sample = () => {
+      const y = scrollY;
+      motion.v += (y - lastY - motion.v) * 0.2;
+      lastY = y;
+      if (Math.abs(motion.v) > 0.05) raf = requestAnimationFrame(sample);
+      else { motion.v = 0; raf = null; }
+    };
+    addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(sample); }, { passive: true });
+  }
+
+  /* ---------- Nav: slim bar → floating capsule ----------
+     Past the first few pixels the bar morphs into a capsule (CSS); --p feeds
+     the progress line along its bottom edge. */
   const nav = $("#nav");
-  const onScroll = () => nav.classList.toggle("is-stuck", scrollY > 20);
-  addEventListener("scroll", onScroll, { passive: true });
+  const navInner = $(".nav__inner", nav);
+  const fine = matchMedia("(pointer: fine)").matches;
+  let navPending = false;
+  const onScroll = () => {
+    navPending = false;
+    nav.classList.toggle("is-stuck", scrollY > 20);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    nav.style.setProperty("--p", max > 0 ? clamp(scrollY / max, 0, 1).toFixed(4) : 0);
+  };
+  addEventListener("scroll", () => {
+    if (!navPending) { navPending = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
   onScroll();
+
+  // light inside the capsule follows the cursor
+  navInner.addEventListener("pointermove", (e) => {
+    const r = navInner.getBoundingClientRect();
+    navInner.style.setProperty("--mx", `${(e.clientX - r.left).toFixed(0)}px`);
+  });
+
+  // pill under the links: slides to the hovered link, rests on the current section
+  const navInd = $(".nav__ind");
+  let navHover = null, navActive = null;
+  const placeInd = () => {
+    const a = navHover || navActive;
+    if (!navInd) return;
+    if (!a || !a.offsetWidth) { navInd.style.opacity = "0"; return; }
+    if (navInd.style.opacity !== "1") {            // appear in place, don't slide in from 0
+      navInd.style.transition = "none";
+      navInd.style.width = `${a.offsetWidth}px`;
+      navInd.style.transform = `translateX(${a.offsetLeft}px)`;
+      void navInd.offsetWidth;
+      navInd.style.transition = "";
+      navInd.style.opacity = "1";
+      return;
+    }
+    navInd.style.width = `${a.offsetWidth}px`;
+    navInd.style.transform = `translateX(${a.offsetLeft}px)`;
+  };
+  const setNavActive = (a) => { if (a !== navActive) { navActive = a; placeInd(); } };
+  const navLinksEl = $("#navLinks");
+  navLinksEl.addEventListener("pointerover", (e) => {
+    const a = e.target.closest("a");
+    if (a && a !== navHover) { navHover = a; placeInd(); }
+  });
+  navLinksEl.addEventListener("pointerleave", () => { navHover = null; placeInd(); });
+  new ResizeObserver(placeInd).observe(navLinksEl);   // language switch changes link widths
+
+  // the header CTA leans toward the cursor
+  const navCta = $(".nav__right .btn-primary");
+  if (navCta && fine && !reduced) {
+    navCta.addEventListener("pointermove", (e) => {
+      const r = navCta.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.22;
+      const y = (e.clientY - r.top - r.height / 2) * 0.35;
+      navCta.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+    });
+    navCta.addEventListener("pointerleave", () => { navCta.style.transform = ""; });
+  }
 
   /* ---------- Mobile menu ---------- */
   const toggle = $("#navToggle");
@@ -177,7 +257,6 @@
      — the "alive" feel. Driven by a rAF-throttled scroll handler. */
   const fxEls = $$("[data-fx]");
   if (fxEls.length && !reduced) {
-    const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
 
     const applyFx = () => {
       const vh = innerHeight;
@@ -219,6 +298,32 @@
   const tlFill = $("#xTlFill");
   if (timeline && tlFill) {
     const steps = $$(".x-step", timeline);
+
+    // Giant numeral beside the timeline: shows the latest step that reached the
+    // middle of the screen, rolls to it like a counter, and fills its outline
+    // while that step is being read. The duration line is read from the step
+    // itself, so it follows the language switch.
+    const bnStrip = $("#bnStrip");
+    const bnDigits = bnStrip ? $$("span", bnStrip) : [];
+    const bnMeta = $("#bnMeta");
+    let bnNow = -1;
+    const paintNum = (trigger) => {
+      if (!bnStrip) return;
+      let idx = 0;
+      steps.forEach((st, i) => { if (st.classList.contains("is-on")) idx = i; });
+      if (idx !== bnNow) {
+        bnNow = idx;
+        bnStrip.style.transform = `translateY(${-idx * 100 / bnDigits.length}%)`;
+      }
+      bnDigits.forEach((d, i) => {
+        const r = steps[i].getBoundingClientRect();
+        const f = clamp((trigger - r.top) / r.height, 0, 1);
+        d.style.setProperty("--fill", `${(f * 100).toFixed(1)}%`);
+      });
+      const meta = $(".x-step__meta", steps[idx]);
+      if (meta && bnMeta.textContent !== meta.textContent) bnMeta.textContent = meta.textContent;
+    };
+
     const paintTl = () => {
       const r = timeline.getBoundingClientRect();
       const trigger = innerHeight * 0.5;
@@ -228,6 +333,7 @@
       steps.forEach((st) => {
         st.classList.toggle("is-on", st.getBoundingClientRect().top < trigger);
       });
+      paintNum(trigger);
     };
     let tlPending = false;
     const onTl = () => {
@@ -241,82 +347,302 @@
     paintTl();
   }
 
-  /* ---------- Sphere companion ----------
-     Desktop only. The sphere has a parking spot per section: it holds that
-     spot while the section scrolls by, then glides to the next one during the
-     last stretch of the section — так он "стоит на месте" и переезжает.
-     Runs sync in hidden tabs (no frames to wait for). */
-  const heroVisual = $(".hero__visual");
-  if (heroVisual && !reduced) {
-    // x is a translate fraction of vw (container sits on the right, so
-    // negative x moves the orb left); y in px; s = scale; o = opacity
-    // x — translate as a fraction of vw; yv — fraction of vh; s — scale; o — opacity
-    const STATIONS = [
-      { sel: "#top",       x: 0,     yv: 0,     s: 1,    o: 1    },
-      { sel: "#solutions", x: -0.62, yv: 0.24,  s: 0.36, o: 0.55 }, // bottom-left void under the sticky head
-      { sel: "#process",   x: -0.04, yv: 0.02,  s: 0.5,  o: 0.6  }, // big, filling the empty right half
-      { sel: "#portfolio", x: 0.27,  yv: -0.04, s: 0.26, o: 0.6  }, // peeks from the right edge behind cards
-      { sel: "#team",      x: -0.06, yv: 0.05,  s: 0.34, o: 0.55 }, // the void between names and CEO/CTO
-      { sel: "#contact",   x: -0.62, yv: 0,     s: 0.34, o: 0.55 },
-      { sel: ".x-foot",    x: -0.16, yv: -0.12, s: 0.26, o: 0.65 }, // beside the big footer wordmark
-    ];
+  /* =========================================================
+     Signal field — the page background is a live dot network.
+     · scrolling stretches the dots into streaks (data in motion) and makes
+       random nodes flash; the faster you scroll, the more it streams
+     · the grid drifts slower than the content, so it reads as depth
+     · the cursor "plugs in": nearby nodes light up and wire to the pointer
+     Renders only while something is moving; idle = no frames.
+     ========================================================= */
+  const field = $("#signal");
+  if (field) {
+    const ctx = field.getContext("2d");
+    const RADIUS = 150;                 // cursor reach, px
+    let w = 0, h = 0, gap = 28, cols = 0, rows = 0;
+    let px = -1e4, py = -1e4, hover = 0, hoverT = 0;
+    let flashes = [];                   // {i, j, life}
+    let raf = null;
 
-    const lerp = (a, b, t) => a + (b - a) * t;
-
-    const followFx = () => {
-      if (!matchMedia("(min-width: 1101px)").matches) {
-        heroVisual.style.transform = "";
-        heroVisual.style.opacity = "";
-        heroVisual.classList.remove("is-mini");
-        return;
-      }
-      const vh = innerHeight, vw = innerWidth;
-
-      // resolve anchors fresh — section offsets move with content/layout
-      const pts = STATIONS
-        .map((st) => {
-          const el = document.querySelector(st.sel);
-          return el ? { ...st, at: Math.max(0, el.offsetTop - vh * 0.2) } : null;
-        })
-        .filter(Boolean)
-        .sort((a, b) => a.at - b.at);
-
-      let a = pts[0], b = null;
-      for (let i = 0; i < pts.length; i++) {
-        if (scrollY >= pts[i].at) { a = pts[i]; b = pts[i + 1] || null; }
-      }
-
-      const ay = (a.yv || 0) * vh;
-      let x = a.x, y = ay, sc = a.s, op = a.o;
-      if (b) {
-        const by = (b.yv || 0) * vh;
-        const p = (scrollY - a.at) / (b.at - a.at);
-        // park for the first 45%, travel during 45–85%, settled before the next section
-        const pt = Math.min(Math.max((p - 0.45) / 0.4, 0), 1);
-        const e = pt * pt * (3 - 2 * pt);            // smoothstep
-        x = lerp(a.x, b.x, e);
-        y = lerp(ay, by, e);
-        sc = lerp(a.s, b.s, e);
-        op = lerp(a.o, b.o, e);
-      }
-
-      heroVisual.style.transform =
-        `translate(${(x * vw).toFixed(1)}px, ${y.toFixed(1)}px) scale(${sc.toFixed(4)})`;
-      heroVisual.style.opacity = op.toFixed(3);
-      heroVisual.classList.toggle("is-mini", sc < 0.97);
+    const resize = () => {
+      const dpr = Math.min(devicePixelRatio || 1, 2);
+      w = innerWidth; h = innerHeight;
+      gap = w < 700 ? 34 : 28;
+      field.width = Math.round(w * dpr);
+      field.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cols = Math.ceil(w / gap) + 1;
+      rows = Math.ceil(h / gap) + 2;
     };
 
-    let followPending = false;
-    const onFollow = () => {
-      if (document.hidden) { followFx(); return; }
-      if (followPending) return;
-      followPending = true;
-      requestAnimationFrame(() => { followFx(); followPending = false; });
+    const draw = () => {
+      ctx.clearRect(0, 0, w, h);
+      const v = motion.v;
+      const speed = clamp(Math.abs(v) / 26, 0, 1);
+      const streak = clamp(v * 0.6, -20, 20);           // streak length, px
+      const off = -((scrollY * 0.35) % gap);            // parallax drift
+      const base = Math.floor((scrollY * 0.35) / gap);  // world row of screen row 0
+      const near = [];
+
+      hover += (hoverT - hover) * 0.12;
+
+      // spawn flashes in proportion to scroll speed
+      const spawn = speed * 1.6;
+      for (let k = 0; k < spawn; k++) {
+        if (Math.random() < spawn - k) {
+          flashes.push({ i: (Math.random() * cols) | 0, j: (Math.random() * rows) | 0, life: 1 });
+        }
+      }
+      const lit = new Map();
+      flashes = flashes.filter((f) => (f.life -= 0.05) > 0);
+      for (const f of flashes) lit.set(f.j * cols + f.i, f.life);
+
+      ctx.fillStyle = "rgb(160,196,255)";
+      ctx.strokeStyle = "rgb(160,196,255)";
+      ctx.lineCap = "round";
+
+      for (let j = 0; j < rows; j++) {
+        const y0 = j * gap + off;
+        for (let i = 0; i < cols; i++) {
+          let x = i * gap + (j % 2 ? gap / 2 : 0);
+          let y = y0;
+          let a = 0.11;
+
+          if (hover > 0.01) {
+            const dx = px - x, dy = py - y;
+            const d2 = dx * dx + dy * dy;
+            if (d2 < RADIUS * RADIUS) {
+              const d = Math.sqrt(d2);
+              const k = (1 - d / RADIUS) * hover;
+              a += k * 0.65;
+              x += dx * k * 0.12;                         // lens: pull toward pointer
+              y += dy * k * 0.12;
+              if (k > 0.25) near.push({ x, y, k });
+            }
+          }
+
+          const fl = lit.get(j * cols + i);
+          if (fl) a = Math.max(a, fl * 0.6);
+
+          // only about one node in four turns into a stream; the rest stay dots.
+          // Hashed on the world grid, so the choice doesn't jump as rows wrap.
+          const h = ((i * 374761393) ^ ((j + base) * 668265263)) >>> 0;
+          const streams = fl || ((h >>> 16) & 3) === 0;
+          a = Math.min(1, a + speed * 0.05);
+          ctx.globalAlpha = streams ? a * 0.8 : a;
+          if (speed > 0.04 && streams) {
+            ctx.lineWidth = fl ? 1.4 : 1;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x, y + streak * (fl ? 1.3 : 1));   // trail opposite to the drift
+            ctx.stroke();
+          } else {
+            const r = fl ? 2.2 : 1.15;
+            ctx.fillRect(x - r / 2, y - r / 2, r, r);
+          }
+        }
+      }
+
+      // wire the closest nodes to the cursor
+      if (near.length) {
+        near.sort((p, q) => q.k - p.k);
+        ctx.lineWidth = 0.8;
+        for (const n of near.slice(0, 7)) {
+          ctx.globalAlpha = n.k * 0.55;
+          ctx.beginPath();
+          ctx.moveTo(px, py);
+          ctx.lineTo(n.x, n.y);
+          ctx.stroke();
+        }
+      }
+      ctx.globalAlpha = 1;
     };
-    addEventListener("scroll", onFollow, { passive: true });
-    addEventListener("resize", onFollow, { passive: true });
-    document.addEventListener("visibilitychange", () => { if (!document.hidden) followFx(); });
-    followFx();
+
+    const loop = () => {
+      draw();
+      const busy = Math.abs(motion.v) > 0.05 || flashes.length || Math.abs(hoverT - hover) > 0.01;
+      raf = busy ? requestAnimationFrame(loop) : null;
+    };
+    const kick = () => { if (!raf && !reduced) raf = requestAnimationFrame(loop); };
+
+    addEventListener("scroll", kick, { passive: true });
+    addEventListener("resize", () => { resize(); draw(); });
+    if (fine) {
+      addEventListener("pointermove", (e) => {
+        px = e.clientX; py = e.clientY; hoverT = 1;
+        if (!raf) raf = requestAnimationFrame(loop);
+      }, { passive: true });
+      document.documentElement.addEventListener("pointerleave", () => { hoverT = 0; kick(); });
+    }
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) draw(); });
+
+    resize();
+    draw();
+  }
+
+  /* ---------- Section minimap (rail) ----------
+     Each node sits where its section really is on the page, so the rail is a
+     map of the document; the packet is you. Also lights the matching link in
+     the top nav. Desktop only (CSS). */
+  const rail = $("#rail");
+  if (rail) {
+    const fill = $(".rail__fill", rail);
+    const packet = $(".rail__packet", rail);
+    const nodes = $$(".rail__node", rail).map((a) => {
+      const id = a.getAttribute("href");
+      return { a, sec: $(id), link: $(`#navLinks a[href="${id}"]`), at: 0 };
+    }).filter((n) => n.sec);
+    let max = 1;
+
+    const layout = () => {
+      max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+      for (const n of nodes) {
+        n.at = clamp((n.sec.offsetTop - innerHeight * 0.35) / max, 0, 1);
+        n.a.style.top = `${(n.at * 100).toFixed(2)}%`;
+      }
+      paint();
+    };
+
+    const paint = () => {
+      const p = clamp(scrollY / max, 0, 1);
+      fill.style.transform = `scaleY(${p.toFixed(4)})`;
+      packet.style.top = `${(p * 100).toFixed(2)}%`;
+      let current = null;
+      for (const n of nodes) if (p >= n.at - 0.002) current = n;
+      for (const n of nodes) {
+        n.a.classList.toggle("is-on", p >= n.at - 0.002);
+        n.a.classList.toggle("is-active", n === current);
+        n.link?.classList.toggle("is-active", n === current);
+      }
+      setNavActive(current?.link || null);
+      rail.classList.toggle("is-shown", scrollY > innerHeight * 0.55);
+    };
+
+    let pending = false;
+    addEventListener("scroll", () => {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(() => { paint(); pending = false; });
+    }, { passive: true });
+    // section offsets move as fonts/images load and on resize
+    new ResizeObserver(layout).observe(document.body);
+    layout();
+  }
+
+  /* ---------- Solutions: the item at eye level takes focus ----------
+     While the list crosses the middle of the screen, the nearest item gets the
+     hover treatment, the rest dim, and the sticky counter follows (03 / 07). */
+  const solBody = $(".x-split__body");
+  const solNow = $("#solNow");
+  if (solBody) {
+    const items = $$(".x-item", solBody);
+    let shown = -1;
+    const focus = () => {
+      const mid = innerHeight * 0.5;
+      const r = solBody.getBoundingClientRect();
+      const active = r.top < mid && r.bottom > mid;
+      let best = 0, bd = Infinity;
+      items.forEach((it, i) => {
+        const rr = it.getBoundingClientRect();
+        const d = Math.abs(rr.top + rr.height / 2 - mid);
+        if (d < bd) { bd = d; best = i; }
+      });
+      solBody.classList.toggle("has-focus", active);
+      items.forEach((it, i) => it.classList.toggle("is-focus", active && i === best));
+      if (active && solNow && best !== shown) {
+        shown = best;
+        solNow.textContent = String(best + 1).padStart(2, "0");
+        solNow.classList.remove("is-tick");
+        void solNow.offsetWidth;                    // restart the tick animation
+        solNow.classList.add("is-tick");
+      }
+    };
+    let pending = false;
+    addEventListener("scroll", () => {
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(() => { focus(); pending = false; });
+    }, { passive: true });
+    focus();
+  }
+
+  /* ---------- Headings decrypt as they arrive ----------
+     Characters resolve left→right out of scrambled glyphs. Each character is
+     locked to its final width first, so nothing reflows while it runs; the
+     original markup is put back at the end. Default state is the plain text,
+     so if this never runs nothing is lost. */
+  const GLYPHS = "<>/\\{}[]=+*#%01_$&";
+  const decode = (el) => {
+    const original = el.innerHTML;
+    const chars = [];
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const texts = [];
+    while (walker.nextNode()) if (walker.currentNode.data.trim()) texts.push(walker.currentNode);
+
+    for (const t of texts) {
+      const frag = document.createDocumentFragment();
+      for (const part of t.data.split(/(\s+)/)) {
+        if (!part) continue;
+        if (/^\s+$/.test(part)) { frag.append(part); continue; }
+        const word = document.createElement("span");
+        word.className = "dc-w";
+        for (const ch of part) {
+          const c = document.createElement("span");
+          c.className = "dc-c";
+          c.textContent = ch;
+          word.append(c);
+          chars.push({ c, ch, at: 0 });
+        }
+        frag.append(word);
+      }
+      t.replaceWith(frag);
+    }
+    if (!chars.length) return;
+
+    for (const o of chars) o.w = o.c.getBoundingClientRect().width;
+    chars.forEach((o, i) => {
+      o.c.style.width = `${o.w}px`;
+      o.at = (i / chars.length) * 0.78 + Math.random() * 0.22;   // resolve moment, 0..1
+      o.c.classList.add("is-wait");
+    });
+
+    const marker = chars[0].c;
+    const dur = clamp(chars.length * 32, 700, 1500);
+    const t0 = performance.now();
+    const WINDOW = 0.3;                                           // scramble lead
+
+    const tick = (now) => {
+      if (!marker.isConnected) return;   // language switched mid-run: new copy is already in place
+      const p = (now - t0) / dur;
+      let done = true;
+      for (const o of chars) {
+        if (p >= o.at) {
+          if (o.state !== 2) { o.c.textContent = o.ch; o.c.className = "dc-c"; o.state = 2; }
+        } else {
+          done = false;
+          if (p >= o.at - WINDOW) {
+            if (o.state !== 1) { o.c.className = "dc-c is-scr"; o.state = 1; }
+            if (Math.random() < 0.5) o.c.textContent = GLYPHS[(Math.random() * GLYPHS.length) | 0];
+          }
+        }
+      }
+      if (done) el.innerHTML = original;
+      else requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if (!reduced) {
+    const decodeIO = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        decodeIO.unobserve(en.target);
+        decode(en.target);
+      });
+    }, { threshold: 0.35 });
+    const startDecode = () => $$("[data-decode]").forEach((el) => decodeIO.observe(el));
+    // widths must be measured in the final font
+    if (document.fonts?.ready) document.fonts.ready.then(startDecode); else startDecode();
   }
 
   /* ---------- Portfolio: mobile "show all" ---------- */
@@ -334,20 +660,35 @@
   }
 
   /* ---------- Partners marquee ----------
-     Clone the set until the track is at least twice the viewport, then shift
-     by exactly one copy's width. Measuring in pixels (rather than a -50%
-     guess) keeps the seam invisible for any number of copies. */
+     Clone the set until the track is at least twice the viewport, then wrap
+     by exactly one copy's width (measured in px, so the seam stays invisible).
+     Driven from JS rather than a CSS animation so it can react to the scroll:
+     scrolling down speeds it up, scrolling up throws it backwards, and the
+     strip leans into the motion. Runs only while the strip is on screen. */
   const track = $("#partnersTrack");
   if (track && !reduced) {
     const originals = [...track.children];
-    const SPEED = 42;   // px per second
+    const SPEED = 42;   // px per second at rest
+    const WARM_MS = 3500;   // first arrival: crawl, then build up to full speed
+    let copyWidth = 0, x = 0, last = 0, raf = null, lean = 0;
+    let arrived = false, needStart = true, warmUntil = 0;
+
+    // The first time the strip appears it starts from its first logo, placed
+    // just past the left fade, and crawls for a few seconds so the key partners
+    // (Yığım → PAŞA → bir → ATİB → Agro → ADAU) read first. It never stops.
+    // x is kept in (-copyWidth, 0]; one copy back + the lead = the same frame.
+    const startPos = () => {
+      if (!copyWidth) return;
+      x = -copyWidth + track.parentElement.clientWidth * 0.07;   // a little past the 5% fade
+      needStart = false;
+    };
 
     const layout = () => {
       // reset to a single copy before re-measuring
       track.style.animation = "none";
       [...track.children].slice(originals.length).forEach((n) => n.remove());
 
-      const copyWidth = originals.reduce((sum, el) => {
+      copyWidth = originals.reduce((sum, el) => {
         const r = el.getBoundingClientRect();
         return sum + r.width + parseFloat(getComputedStyle(el).marginRight || 0);
       }, 0);
@@ -362,10 +703,37 @@
         });
       }
 
-      track.style.setProperty("--shift", `${copyWidth}px`);
-      track.style.setProperty("--dur", `${copyWidth / SPEED}s`);
-      track.style.animation = "";
+      if (needStart) startPos();
+      else { x %= copyWidth; if (x > 0) x -= copyWidth; }
     };
+
+    const tick = (now) => {
+      const dt = Math.min((now - (last || now)) / 1000, 0.05);
+      last = now;
+      if (copyWidth) {
+        // scroll velocity (px/frame) → extra px/s; sign follows scroll direction
+        const k = clamp(1 - (warmUntil - now) / WARM_MS, 0, 1);
+        const ease = k * k * (3 - 2 * k);
+        x -= (SPEED * (0.3 + 0.7 * ease) + clamp(motion.v, -60, 60) * 26 * ease) * dt;
+        if (x <= -copyWidth) x += copyWidth;
+        if (x > 0) x -= copyWidth;
+        lean += (clamp(-motion.v * 0.35, -9, 9) - lean) * 0.12;
+        track.style.transform = `translate3d(${x.toFixed(2)}px,0,0) skewX(${lean.toFixed(2)}deg)`;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    new IntersectionObserver(([en]) => {
+      if (en.isIntersecting && !raf) {
+        if (!arrived) {
+          arrived = true;
+          startPos();                    // no-op until measured; layout() will place it
+          warmUntil = performance.now() + WARM_MS;
+        }
+        last = 0;
+        raf = requestAnimationFrame(tick);
+      }
+      else if (!en.isIntersecting && raf) { cancelAnimationFrame(raf); raf = null; }
+    }).observe(track);
 
     // Item widths are fixed in CSS, so don't hard-block on image loading —
     // race it against a short timeout (lazy/deferred images would otherwise
@@ -636,7 +1004,6 @@
     const TILT_LIMIT = 1.15;
     let dragging = false, lastX = 0, lastY = 0, velSpin = 0, velTilt = 0;
 
-    const clamp = (v, lo, hi) => (v < lo ? lo : v > hi ? hi : v);
 
     canvas.addEventListener("pointerdown", (e) => {
       dragging = true;
