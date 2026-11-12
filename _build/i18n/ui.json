@@ -225,9 +225,29 @@
     "ru": "Другие статьи"
   },
   "form.sent": {
-    "az": "Təşəkkür edirik! Bu, sınaq versiyasıdır — mesaj əslində göndərilmədi.",
-    "en": "Thank you! This is a demo — the message was not actually sent.",
-    "ru": "Спасибо! Это демо-версия — сообщение не было отправлено."
+    "az": "Təşəkkür edirik! Müraciətiniz göndərildi, 24 saat ərzində sizinlə əlaqə saxlayacağıq.",
+    "en": "Thank you! Your message has been sent — we will get back to you within 24 hours.",
+    "ru": "Спасибо! Заявка отправлена — мы свяжемся с вами в течение 24 часов."
+  },
+  "form.busy": {
+    "az": "Göndərilir…",
+    "en": "Sending…",
+    "ru": "Отправляем…"
+  },
+  "form.invalid": {
+    "az": "Zəhmət olmasa, adınızı və düzgün e-poçt ünvanınızı daxil edin.",
+    "en": "Please enter your name and a valid email address.",
+    "ru": "Пожалуйста, укажите имя и корректный e-mail."
+  },
+  "form.rate": {
+    "az": "Çox sayda müraciət göndərildi. Bir neçə dəqiqə sonra yenidən cəhd edin.",
+    "en": "Too many messages. Please try again in a few minutes.",
+    "ru": "Слишком много заявок. Попробуйте снова через несколько минут."
+  },
+  "form.err": {
+    "az": "Müraciəti göndərmək alınmadı. Bir az sonra yenidən cəhd edin və ya info@bagtech.az ünvanına yazın.",
+    "en": "The message could not be sent. Please try again later or write to info@bagtech.az.",
+    "ru": "Не удалось отправить заявку. Попробуйте позже или напишите на info@bagtech.az."
   },
   "e404.title": {
     "az": "Səhifə tapılmadı — BagTech",

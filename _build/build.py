@@ -403,7 +403,7 @@ def build_home(lang):
     hero = re.sub(r'\sdata-reveal(="[^"]*")?', "", body[a:b])
     hero = re.sub(r'\sstyle="transition-delay:[^"]*"', "", hero)
     body = body[:a] + hero + body[b:]
-    body = body.replace('<form class="form x-cta__form" id="form"', f'<form class="form x-cta__form" id="form" data-sent="{e(U("form.sent", lang))}"')
+    body = body.replace('<form class="form x-cta__form" id="form"', f'<form class="form x-cta__form" id="form" ' + " ".join(f'data-{k}="{e(U("form." + k, lang))}"' for k in ("sent", "busy", "invalid", "rate", "err")))
     nav_end = body.index("</header>") + len("</header>")
     foot_start = body.index('<footer class="x-foot">')
     title, desc = U("home.title", lang), U("home.desc", lang)

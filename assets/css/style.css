@@ -974,6 +974,13 @@ section { position: relative; padding-block: clamp(76px, 9.5vw, 150px); }
 }
 .form .btn { justify-content: center; margin-top: 5px; }
 .form__note { font-size: 12px; color: var(--muted); text-align: center; }
+.form__status { font-size: 13.5px; text-align: center; min-height: 0; }
+.form__status:empty { display: none; }
+.form__status.is-ok { color: var(--accent); }
+.form__status.is-err { color: #ff7a7a; }
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form { position: relative; }
+.form button[disabled] { opacity: 0.6; cursor: progress; }
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); padding-block: 60px 28px; }

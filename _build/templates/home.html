@@ -539,11 +539,13 @@
           <label data-i18n="f.msg">Mesaj</label>
           <textarea name="message" rows="4" placeholder="Layihəniz haqqında qısaca..."></textarea>
         </div>
+        <div class="form__hp" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn-primary">
           <span data-i18n="f.send">Göndər</span>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </button>
-        <p class="form__note" id="formNote" data-i18n="f.note">Bu, sınaq versiyasıdır: forma hələ serverə qoşulmayıb.</p>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form__note" id="formNote" data-i18n="f.note">Formanı göndərməklə məlumatlarınızın yalnız müraciətinizə cavab vermək üçün istifadə olunmasına razılıq verirsiniz.</p>
       </form>
     </div>
   </div>

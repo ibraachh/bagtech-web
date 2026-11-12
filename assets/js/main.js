@@ -1068,14 +1068,43 @@
     document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
   }
 
-  /* ---------- Contact form (prototype only) ---------- */
-  $("#form")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const note = $("#formNote");
-    note.textContent = e.target.dataset.sent || "";
-    note.style.color = "var(--accent)";
-    e.target.reset();
-  });
+  /* ---------- Contact form -> POST /api/contact (deploy/form/app.py) ---------- */
+  const form = $("#form");
+  if (form) {
+    const opened = Date.now();
+    const status = $("#formStatus");
+    const btn = form.querySelector('button[type="submit"]');
+    const say = (key, ok) => {
+      status.textContent = form.dataset[key] || "";
+      status.className = "form__status " + (ok ? "is-ok" : "is-err");
+    };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (btn.disabled) return;
+      const f = new FormData(form);
+      const data = Object.fromEntries(["name", "company", "email", "topic", "message", "website"].map((k) => [k, (f.get(k) || "").toString().trim()]));
+      if (!data.name || !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(data.email)) return say("invalid", false);
+      data.lang = document.documentElement.lang;
+      data.page = location.pathname;
+      data.elapsed = (Date.now() - opened) / 1000;
+      btn.disabled = true;
+      status.className = "form__status";
+      status.textContent = form.dataset.busy || "";
+      try {
+        const r = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+        if (r.ok) {
+          say("sent", true);
+          form.reset();
+        } else {
+          say(r.status === 422 ? "invalid" : r.status === 429 ? "rate" : "err", false);
+        }
+      } catch {
+        say("err", false);
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
 
   /* ---------- Init ---------- */
   if (hasEco) setNode("etick");
