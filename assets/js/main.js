@@ -1082,8 +1082,10 @@
       e.preventDefault();
       if (btn.disabled) return;
       const f = new FormData(form);
-      const data = Object.fromEntries(["name", "company", "email", "topic", "message", "website"].map((k) => [k, (f.get(k) || "").toString().trim()]));
-      if (!data.name || !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(data.email)) return say("invalid", false);
+      const data = Object.fromEntries(["name", "company", "email", "phone", "topic", "message", "website"].map((k) => [k, (f.get(k) || "").toString().trim()]));
+      const emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(data.email);
+      const phoneOk = data.phone.replace(/\D/g, "").length >= 7;
+      if (!data.name || (data.email && !emailOk) || (!emailOk && !phoneOk)) return say("invalid", false);
       data.lang = document.documentElement.lang;
       data.page = location.pathname;
       data.elapsed = (Date.now() - opened) / 1000;

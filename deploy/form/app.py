@@ -29,7 +29,7 @@ MAIL_FROM = ENV.get("MAIL_FROM", SMTP_USER)
 MAIL_TO = [a.strip() for a in ENV["MAIL_TO"].split(",") if a.strip()]
 PORT = int(ENV.get("LISTEN_PORT", "8787"))
 
-LIMITS = {"name": 100, "company": 150, "email": 200, "topic": 80, "message": 5000, "lang": 5, "page": 300}
+LIMITS = {"name": 100, "company": 150, "email": 200, "phone": 40, "topic": 80, "message": 5000, "lang": 5, "page": 300}
 EMAIL_RE = re.compile(r"^[^@\s<>\"',;]+@[^@\s<>\"',;]+\.[^@\s<>\"',;]{2,}$")
 PER_IP = (5, 600)        # at most 5 messages per IP in 10 minutes
 GLOBAL = (60, 3600)      # and 60 per hour in total
@@ -67,7 +67,8 @@ def send(d, ip, ua):
         "",
         f"Ad:       {d['name']}",
         f"Şirkət:   {d['company'] or '—'}",
-        f"E-poçt:   {d['email']}",
+        f"E-poçt:   {d['email'] or '—'}",
+        f"Telefon:  {d['phone'] or '—'}",
         f"Mövzu:    {d['topic'] or '—'}",
         f"Dil:      {d['lang'] or '—'}",
         "",
@@ -78,12 +79,14 @@ def send(d, ip, ua):
         f"Səhifə: {d['page'] or '—'}",
         f"IP: {ip}",
         f"Brauzer: {one_line(ua)[:200]}",
-        "Cavab vermək üçün sadəcə bu məktuba cavab yazın (Reply-To müştərinin ünvanıdır).",
+        "Cavab vermək üçün sadəcə bu məktuba cavab yazın (Reply-To müştərinin ünvanıdır)." if d["email"]
+        else "Müştəri e-poçt ünvanı yazmayıb — telefonla əlaqə saxlayın.",
     ])
     m = EmailMessage()
     m["From"] = formataddr(("BagTech sayt", MAIL_FROM))
     m["To"] = ", ".join(MAIL_TO)
-    m["Reply-To"] = formataddr((one_line(d["name"]), d["email"]))
+    if d["email"]:
+        m["Reply-To"] = formataddr((one_line(d["name"]), d["email"]))
     m["Subject"] = one_line(subject)[:200]
     m["Date"] = formatdate(localtime=True)
     m["Message-ID"] = make_msgid(domain=MAIL_FROM.split("@")[-1])
@@ -132,7 +135,10 @@ class Handler(BaseHTTPRequestHandler):
 
         d = {k: clean(raw.get(k), n) for k, n in LIMITS.items()}
         d.update({k: one_line(d[k]) for k in d if k != "message"})
-        if not d["name"] or not EMAIL_RE.match(d["email"]):
+        d["phone"] = re.sub(r"[^\d+()\- ]", "", d["phone"]).strip()
+        email_ok = bool(EMAIL_RE.match(d["email"]))
+        phone_ok = len(re.sub(r"\D", "", d["phone"])) >= 7
+        if not d["name"] or (d["email"] and not email_ok) or not (email_ok or phone_ok):
             return self.reply(422, {"ok": False, "error": "invalid"})
         if not allowed(ip, *PER_IP) or not allowed("*", *GLOBAL):
             return self.reply(429, {"ok": False, "error": "rate"})

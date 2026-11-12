@@ -235,9 +235,9 @@
     "ru": "Отправляем…"
   },
   "form.invalid": {
-    "az": "Zəhmət olmasa, adınızı və düzgün e-poçt ünvanınızı daxil edin.",
-    "en": "Please enter your name and a valid email address.",
-    "ru": "Пожалуйста, укажите имя и корректный e-mail."
+    "az": "Zəhmət olmasa, adınızı və e-poçt ünvanınızı və ya telefon nömrənizi daxil edin.",
+    "en": "Please enter your name and an email address or phone number.",
+    "ru": "Пожалуйста, укажите имя и e-mail или номер телефона."
   },
   "form.rate": {
     "az": "Çox sayda müraciət göndərildi. Bir neçə dəqiqə sonra yenidən cəhd edin.",
@@ -263,6 +263,11 @@
     "az": "E-poçt ünvanınız",
     "en": "Your email address",
     "ru": "Ваш e-mail"
+  },
+  "form.ph.phone": {
+    "az": "Telefon nömrəniz",
+    "en": "Your phone number",
+    "ru": "Ваш номер телефона"
   },
   "form.ph.msg": {
     "az": "Layihəniz haqqında qısaca…",

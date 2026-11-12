@@ -508,32 +508,36 @@
         <div class="form__row">
           <div class="field">
             <label data-i18n="f.name">Ad və soyad</label>
-            <input type="text" name="name" placeholder="Adınız və soyadınız" required>
+            <input type="text" name="name" placeholder="Adınız və soyadınız" autocomplete="name" required>
           </div>
           <div class="field">
             <label data-i18n="f.company">Şirkət</label>
-            <input type="text" name="company" placeholder="Şirkətin adı">
+            <input type="text" name="company" placeholder="Şirkətin adı" autocomplete="organization">
           </div>
         </div>
         <div class="form__row">
           <div class="field">
             <label data-i18n="f.email">E-poçt</label>
-            <input type="email" name="email" placeholder="E-poçt ünvanınız" required>
+            <input type="email" name="email" placeholder="E-poçt ünvanınız" autocomplete="email">
           </div>
           <div class="field">
-            <label data-i18n="f.topic">Mövzu</label>
-            <select name="topic">
-              <option data-i18n="f.t1">Proqram təminatı</option>
-              <option data-i18n="f.t2">Süni intellekt</option>
-              <option data-i18n="f.t3">Kibertəhlükəsizlik</option>
-              <option data-i18n="f.t4">CRM və ERP</option>
-              <option data-i18n="f.t5">Sistem inteqrasiyası</option>
-              <option data-i18n="f.t7">Sayt və e-ticarət</option>
-              <option data-i18n="f.t8">IT infrastrukturu</option>
-              <option data-i18n="f.t9">Mobil tətbiq</option>
-              <option data-i18n="f.t6">Digər</option>
-            </select>
+            <label data-i18n="f.phone">Telefon</label>
+            <input type="tel" name="phone" placeholder="Telefon nömrəniz" autocomplete="tel" inputmode="tel">
           </div>
+        </div>
+        <div class="field">
+          <label data-i18n="f.topic">Mövzu</label>
+          <select name="topic">
+            <option data-i18n="f.t1">Proqram təminatı</option>
+            <option data-i18n="f.t2">Süni intellekt</option>
+            <option data-i18n="f.t3">Kibertəhlükəsizlik</option>
+            <option data-i18n="f.t4">CRM və ERP</option>
+            <option data-i18n="f.t5">Sistem inteqrasiyası</option>
+            <option data-i18n="f.t7">Sayt və e-ticarət</option>
+            <option data-i18n="f.t8">IT infrastrukturu</option>
+            <option data-i18n="f.t9">Mobil tətbiq</option>
+            <option data-i18n="f.t6">Digər</option>
+          </select>
         </div>
         <div class="field">
           <label data-i18n="f.msg">Mesaj</label>

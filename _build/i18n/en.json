@@ -93,6 +93,7 @@
   "f.name": "Full name",
   "f.company": "Company",
   "f.email": "Email",
+  "f.phone": "Phone",
   "f.topic": "Topic",
   "f.t1": "Software development",
   "f.t2": "Artificial intelligence",

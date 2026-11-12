@@ -402,7 +402,7 @@ def build_home(lang):
     hero = re.sub(r'\sstyle="transition-delay:[^"]*"', "", hero)
     body = body[:a] + hero + body[b:]
     body = body.replace('<form class="form x-cta__form" id="form"', f'<form class="form x-cta__form" id="form" ' + " ".join(f'data-{k}="{e(U("form." + k, lang))}"' for k in ("sent", "busy", "invalid", "rate", "err")))
-    for k in ("name", "company", "email", "msg"):      # placeholders are attributes, fill() only handles text
+    for k in ("name", "company", "email", "phone", "msg"):      # placeholders are attributes, fill() only handles text
         body = body.replace(f'placeholder="{U("form.ph." + k, "az")}"', f'placeholder="{e(U("form.ph." + k, lang))}"')
     nav_end = body.index("</header>") + len("</header>")
     foot_start = body.index('<footer class="x-foot">')
