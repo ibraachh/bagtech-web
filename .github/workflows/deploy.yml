@@ -1,0 +1,66 @@
+# Checks the site on every push and pull request; on main, publishes it to the server.
+#
+# The deploy key can do exactly one thing: on the server it is bound (authorized_keys, command=…) to
+# /usr/local/bin/deploy-bagtech, which runs `git fetch` + `git reset --hard origin/main` in /var/www/bagtech.az
+# and restarts bagtech-form when deploy/form/ changed. nginx config changes (deploy/nginx/) are applied by hand.
+#
+# Secrets (Settings → Secrets and variables → Actions): DEPLOY_HOST (deploy@<server>), DEPLOY_SSH_KEY (private key,
+# comment bagtech-github-actions-azure), DEPLOY_KNOWN_HOSTS (the server's host keys, so the connection cannot be
+# intercepted). Run it by hand: Actions → Check / Deploy → Run workflow.
+name: Check / Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time; a newer push waits for the running one instead of interrupting it.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Site check (links, sitemap, pages)
+        run: python3 _build/check.py
+
+  deploy:
+    needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: SSH access
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          printf 'Host *\n  IdentityFile ~/.ssh/id_ed25519\n  IdentitiesOnly yes\n  StrictHostKeyChecking yes\n' > ~/.ssh/config
+
+      - name: Deploy
+        env:
+          HOST: ${{ secrets.DEPLOY_HOST }}
+        run: ssh "$HOST"
+
+      - name: Smoke test
+        run: |
+          curl -fsS --retry 3 --retry-delay 5 -o /dev/null -w "bagtech.az %{http_code}\n" https://bagtech.az/
+          curl -fsS -o /dev/null -w "bagtech.az/en/ %{http_code}\n" https://bagtech.az/en/
+
+      - name: Forget the key
+        if: always()
+        run: rm -f ~/.ssh/id_ed25519

@@ -9,10 +9,13 @@ system nginx on the server straight from a git clone.
 python3 _build/build.py     # regenerates every page in az / en / ru
 python3 _build/check.py     # must print "0 problems"
 git add -A && git commit -m "…" && git push
-ssh root@<server> 'git -C /var/www/bagtech.az pull'
 ```
 
-Nothing restarts: nginx serves the files as they are.
+The push publishes it: GitHub Actions (`.github/workflows/deploy.yml`) runs `_build/check.py`, then connects
+as `deploy@<server>` with a key that can only run `/usr/local/bin/deploy-bagtech` (fetch + reset to
+`origin/main` in `/var/www/bagtech.az`, restart `bagtech-form` when `deploy/form/` changed). nginx serves the
+files as they are. Revoke CI access: remove the `bagtech-github-actions-azure` line from
+`/home/deploy/.ssh/authorized_keys` on the server.
 
 ## Where things are
 
@@ -46,7 +49,7 @@ The form on the homepage posts JSON to `/api/contact`. nginx proxies it to
 - Settings and SMTP password: `/etc/bagtech-form.env` (root, mode 600, not in git):
   `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_TO` (comma-separated), `LISTEN_PORT`
 - Change recipients or password: edit the env file, then `systemctl restart bagtech-form`
-- After `git pull` that changes `app.py`: `systemctl restart bagtech-form`
+- After a deploy that changes `app.py` the form is restarted automatically
 - Logs: `journalctl -u bagtech-form` (no message contents are logged)
 
 `deploy.sh`, `server-setup.sh` and `ssl-setup.sh` were written for an earlier
